@@ -226,6 +226,9 @@ html.lenis body {
 }
 .btn__icon {
   display: inline-block;
+  /* Inter Tight draws the arrow on the x-height, which reads low next to the
+     capitals. Lift it to the label's optical centre. */
+  translate: 0 -0.14em;
   transition:
     transform 0.5s var(--ease-out-expo),
     opacity 0.3s;
@@ -274,6 +277,13 @@ html.lenis body {
   --btn-bg: transparent;
   --btn-bg-hover: rgb(27 40 72 / 0.05);
   box-shadow: inset 0 0 0 1px rgb(27 40 72 / 0.2);
+}
+/* Hollow button for dark surfaces. */
+.btn--outline-light {
+  --btn-bg: transparent;
+  --btn-bg-hover: rgb(255 255 255 / 0.1);
+  --btn-fg: var(--color-paper);
+  box-shadow: inset 0 0 0 1px rgb(248 246 241 / 0.7);
 }
 .btn--small {
   height: 38px;
@@ -464,7 +474,19 @@ html.lenis body {
 }
 .site-header__nav {
   gap: 28px;
-  transition: gap 0.45s var(--ease-out-cubic);
+  /* At the top the links sit in their own navy pill; once the whole header
+     condenses into the pill, this one fades out and hands over. */
+  padding: 5px 5px 5px 22px;
+  border-radius: 6px;
+  color: var(--color-paper);
+  --accent: var(--color-gold);
+  background: rgb(27 40 72 / 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    gap 0.45s var(--ease-out-cubic),
+    padding 0.45s var(--ease-out-cubic),
+    background-color 0.4s var(--ease-out-cubic);
 }
 .logo {
   --logo-h: 18px;
@@ -502,6 +524,10 @@ html.lenis body {
 }
 [data-compact] .site-header__nav {
   gap: 22px;
+  padding: 0;
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 [data-compact] .logo {
   width: calc(var(--logo-h) * 1.459);
@@ -519,4 +545,3 @@ html.lenis body {
     gap: 24px;
   }
 }
-

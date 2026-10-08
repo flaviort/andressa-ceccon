@@ -114,9 +114,7 @@ export function Header() {
             })}
             <Link
               href="/pre-analise"
-              className={`body-sm rounded-[4px] px-3.5 py-1.5 transition-[background-color,color] duration-500 hover:opacity-85 ${
-                scrolled || dark ? "bg-gold text-ink" : "bg-ink text-paper"
-              }`}
+              className="body-sm rounded-[4px] bg-paper px-3.5 py-1.5 text-ink transition-opacity hover:opacity-85"
             >
               Pré-análise
             </Link>
@@ -214,7 +212,7 @@ function MobileMenu({ open, onClose, pathname }: { open: boolean; onClose: () =>
           ))}
         </ul>
 
-        <p className="label-mono mt-10 text-gold">Serviços</p>
+        <p className="label-mono mt-10 text-paper/65">Serviços</p>
         <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
           {services.map((s) => (
             <li key={s.slug}>
@@ -229,7 +227,7 @@ function MobileMenu({ open, onClose, pathname }: { open: boolean; onClose: () =>
           <a href={whatsappLink("Olá! Gostaria de falar com a Dra. Andressa.")} target="_blank" rel="noopener noreferrer" className="btn btn--light w-full justify-center">
             <span className="btn__inner">Falar no WhatsApp</span>
           </a>
-          <a href={site.clientArea} target="_blank" rel="noopener noreferrer" className="btn btn--glass w-full justify-center">
+          <a href={site.clientArea} target="_blank" rel="noopener noreferrer" className="btn btn--outline-light w-full justify-center">
             <span className="btn__inner">Área do cliente</span>
           </a>
         </div>

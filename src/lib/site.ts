@@ -5,7 +5,7 @@ export const site = {
   oab: "OAB/PR 74.854",
   url: "https://andressaceccon.com.br",
   description:
-    "Advocacia previdenciária em Curitiba, com atendimento presencial no escritório e online para todo o Brasil. Planejamento previdenciário, aposentadorias, pensão por morte, BPC/LOAS e benefícios por incapacidade junto ao INSS.",
+    "Advocacia previdenciária em Curitiba, com atendimento presencial no escritório e online para todo o Brasil. Planejamento previdenciário, aposentadorias, pensão por morte, BPC/LOAS, auxílio-doença e revisão de benefícios do INSS.",
   phoneDisplay: "+55 41 98467-4841",
   phoneE164: "+5541984674841",
   whatsapp: "5541984674841",

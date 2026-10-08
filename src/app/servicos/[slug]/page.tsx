@@ -113,7 +113,7 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
       <div className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-12 py-20 md:py-32">
         <aside className="col-span-12 md:col-span-4 lg:col-span-3">
           <div className="md:sticky md:top-28">
-            <p className="label-mono text-bronze">Nesta página</p>
+            <p className="label-mono text-ash">Nesta página</p>
             <ul className="mt-4 flex flex-col gap-2 border-l border-ink/10 pl-4">
               {service.sections.map((s) => (
                 <li key={s.heading}>
@@ -135,14 +135,14 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
             </ul>
 
             <div className="mt-10 rounded-card bg-ink p-6 text-paper">
-              <p className="label-mono text-gold">Seu caso</p>
+              <p className="label-mono text-paper/65">Seu caso</p>
               <p className="heading-xs mt-4">Quer saber se tem direito?</p>
               <p className="body-sm mt-3 text-white/70">Fale com a advogada e receba uma orientação inicial.</p>
               <div className="mt-6 flex flex-col gap-2">
                 <Button href={whatsappLink(`Olá! Gostaria de falar sobre ${service.title}.`)} variant="light" size="small">
                   WhatsApp
                 </Button>
-                <Button href="/pre-analise" variant="glass" size="small">
+                <Button href="/pre-analise" variant="outline-light" size="small">
                   Pré-análise
                 </Button>
               </div>

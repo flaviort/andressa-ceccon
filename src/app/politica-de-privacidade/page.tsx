@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Política de Privacidade",
-  description: "Como o site da Andressa Ceccon Advocacia trata dados pessoais, em conformidade com a LGPD.",
+  description: "Como o site da Andressa Ceccon Advocacia trata os dados pessoais de quem entra em contato, de acordo com a LGPD.",
   path: "/politica-de-privacidade",
 });
 

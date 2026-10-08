@@ -4,8 +4,8 @@ import { SplitReveal } from "@/components/motion/split-reveal";
 import { Parallax } from "@/components/motion/parallax";
 
 export function PushCta({
-  title = ["Seu futuro", "começa agora."],
-  text = "Uma pré-análise mostra em poucos minutos quais caminhos existem para o seu caso. Sem compromisso, com uma advogada especialista.",
+  title = ["Antes de pedir,", "planeje."],
+  text = "São cinco perguntas e alguns minutos. Com as respostas, a advogada indica quais regras de aposentadoria podem valer para você. Sem compromisso.",
   image = "/images/cta.jpg",
 }: {
   title?: string[];
@@ -28,10 +28,10 @@ export function PushCta({
         </SplitReveal>
         <p className="body-lg mt-10 max-w-[40ch] text-white/80">{text}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-2">
-          <Button href="/pre-analise" variant="gold">
+          <Button href="/pre-analise" variant="light">
             Solicitar pré-análise
           </Button>
-          <Button href="/contato" variant="glass">
+          <Button href="/contato" variant="outline-light">
             Falar com a advogada
           </Button>
         </div>

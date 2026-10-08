@@ -12,9 +12,9 @@ import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 const meta = {
-  title: "O Escritório e a Dra. Andressa Ceccon",
+  title: "Dra. Andressa Ceccon, Advogada Previdenciária",
   description:
-    "Conheça a Dra. Andressa Ceccon (OAB/PR 74.854), advogada previdenciária formada pela PUC/PR e pós-graduada pela EMATRA IX, com 10 anos de atuação.",
+    "Dra. Andressa Ceccon (OAB/PR 74.854), advogada previdenciária em Curitiba há 10 anos. Formada pela PUC/PR e pós-graduada pela EMATRA IX.",
   path: "/sobre",
 };
 
@@ -23,19 +23,19 @@ export const metadata = pageMetadata(meta);
 const values = [
   {
     title: "Presencial ou online",
-    text: "Atendimento no escritório, no Centro de Curitiba, ou por vídeo e WhatsApp, com o processo acompanhado pela área do cliente.",
+    text: "No escritório, no Centro de Curitiba, ou por videochamada e WhatsApp. Os documentos podem ser enviados pelo celular e o andamento fica na área do cliente.",
   },
   {
-    title: "Rigor técnico",
-    text: "Cada pedido é montado com a documentação e a fundamentação necessárias para reduzir exigências e negativas do INSS.",
+    title: "Pedido bem montado",
+    text: "Antes de protocolar, conferimos o CNIS, juntamos as provas e escrevemos a fundamentação. Um pedido completo costuma receber menos exigências do INSS.",
   },
   {
-    title: "Transparência",
-    text: "Você sabe em que fase está o seu caso, quais são os riscos e o que esperar. Sem promessas, com informação clara.",
+    title: "Conversa franca",
+    text: "Você sabe em que fase o caso está, quais são os riscos e quanto tempo o INSS costuma levar. Não prometemos resultado.",
   },
   {
-    title: "Agilidade",
-    text: "Procedimentos organizados para que o seu requerimento chegue ao fim no menor tempo possível.",
+    title: "Prazos em dia",
+    text: "Acompanhamos os prazos do INSS e respondemos às exigências assim que aparecem, para o pedido não ficar parado.",
   },
 ];
 
@@ -53,12 +53,12 @@ export default function SobrePage() {
       />
       <PageHeader
         crumbs={[{ label: "Início", href: "/" }, { label: "Escritório" }]}
+        wide
         title={
           <>
-            <span className="block">Responsabilidade,</span>
-            <span className="block">dedicação e</span>
+            <span className="block">Quem atende você</span>
             <span className="block">
-              <em>pessoalidade.</em>
+              <em>conhece o seu caso.</em>
             </span>
           </>
         }
@@ -77,7 +77,7 @@ export default function SobrePage() {
           />
         </Parallax>
         <div className="col-span-12 md:col-span-6 lg:col-span-6 lg:col-start-7">
-          <p className="label-mono text-bronze">{site.oab}</p>
+          <p className="label-mono text-ash">{site.oab}</p>
           <p className="heading-sm mt-5 max-w-[22ch]">
             Atendimento próximo, do primeiro contato até o primeiro pagamento do benefício.
           </p>
@@ -90,17 +90,17 @@ export default function SobrePage() {
         </SplitReveal>
         <div className="col-span-12 md:col-span-7 md:col-start-6">
           <ScrubText className="heading-sm">
-            O escritório foi idealizado pela Dra. Andressa Ceccon para atuar com responsabilidade, dedicação, excelência e
-            pessoalidade. A estratégia de cada caso parte do que o cliente precisa, de forma transparente e ética.
+            A Dra. Andressa Ceccon criou o escritório com uma ideia simples: quem conduz o processo é quem conversa com o
+            cliente. Cada estratégia parte da história de trabalho de quem nos procura.
           </ScrubText>
           <div className="body-lg mt-12 grid gap-6 text-[#3a4257] md:grid-cols-2">
             <p>
-              Com sede em Curitiba/PR e atuação em todo o território nacional, o escritório é especializado em
-              planejamento previdenciário e em requerimentos de benefícios em geral junto ao INSS.
+              Com sede no Centro de Curitiba, atendemos clientes de todo o Brasil. O foco é o planejamento
+              previdenciário e os pedidos de benefício ao INSS.
             </p>
             <p>
-              Isso inclui todas as regras de aposentadoria, reconhecimento de atividade especial, rural e de pessoa com
-              deficiência, pensão por morte, revisões, salário-maternidade, BPC/LOAS e benefícios por incapacidade.
+              Na prática, isso vai da aposentadoria por idade, por tempo de contribuição, especial, rural e da pessoa com
+              deficiência até pensão por morte, BPC/LOAS, auxílio-doença, salário-maternidade e revisão de benefícios.
             </p>
           </div>
         </div>
@@ -109,21 +109,21 @@ export default function SobrePage() {
       <section data-theme="dark" className="bg-ink py-24 text-paper md:py-36" aria-labelledby="formacao">
         <div className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-12">
           <div className="col-span-12 md:col-span-5">
-            <p className="label-mono text-gold">Advogada responsável</p>
+            <p className="label-mono text-paper/65">Advogada responsável</p>
             <SplitReveal as="h2" className="heading-lg mt-6">
               <span id="formacao">Dra. Andressa Ceccon</span>
             </SplitReveal>
-            <p className="label-mono mt-6 text-gold">{site.oab}</p>
+            <p className="label-mono mt-6 text-paper/65">{site.oab}</p>
           </div>
           <Reveal as="dl" className="col-span-12 grid gap-px overflow-hidden rounded-card bg-white/10 md:col-span-7">
             {[
               ["Graduação", "Bacharela em Direito pela Pontifícia Universidade Católica do Paraná (PUC/PR)"],
               ["Pós-graduação", "Direito e Processo do Trabalho e Direito Previdenciário pela Escola da Associação dos Magistrados do Trabalho do Paraná (EMATRA IX)"],
-              ["Atuação", "10 anos no mercado previdenciário, com foco em planejamento e na solução administrativa de benefícios junto ao INSS"],
-              ["Abrangência", "Sede em Curitiba/PR, clientes em todo o Brasil"],
+              ["Atuação", "10 anos de advocacia previdenciária, com foco em planejamento e em pedidos administrativos ao INSS"],
+              ["Abrangência", "Escritório em Curitiba/PR e atendimento online para todo o Brasil"],
             ].map(([k, v]) => (
               <div key={k} className="grid gap-2 bg-ink p-6 md:grid-cols-[160px_1fr] md:p-8">
-                <dt className="label-mono pt-1 text-gold">{k}</dt>
+                <dt className="label-mono pt-1 text-paper/65">{k}</dt>
                 <dd className="body-lg text-white/90">{v}</dd>
               </div>
             ))}
@@ -133,7 +133,7 @@ export default function SobrePage() {
 
       <section className="container-x py-24 md:py-36" aria-labelledby="valores">
         <SplitReveal as="h2" className="heading-md max-w-[16ch]">
-          <span id="valores">Compromisso com o seu caso</span>
+          <span id="valores">Como trabalhamos</span>
         </SplitReveal>
         <Reveal className="mt-14 grid gap-x-[var(--grid-gutter)] gap-y-10 border-t border-ink/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v, i) => (
@@ -146,7 +146,7 @@ export default function SobrePage() {
         </Reveal>
       </section>
 
-      <PushCta title={["Seja", "bem-vindo."]} image="/images/idade.jpg" />
+      <PushCta title={["Vamos olhar", "o seu caso?"]} image="/images/idade.jpg" />
     </PageTransition>
   );
 }

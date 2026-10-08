@@ -9,7 +9,14 @@ export function ContactForm() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const text = [`Olá! Meu nome é ${data.get("nome")}.`, "", String(data.get("mensagem"))].join("\n");
+    const text = [
+      `Olá! Meu nome é ${data.get("nome")}.`,
+      "",
+      String(data.get("mensagem")),
+      "",
+      `E-mail: ${data.get("email")}`,
+      `Telefone: ${data.get("telefone")}`,
+    ].join("\n");
     window.open(whatsappLink(text), "_blank", "noopener,noreferrer");
   }
 
@@ -17,6 +24,12 @@ export function ContactForm() {
     <form onSubmit={onSubmit} className="grid gap-3">
       <label htmlFor="c-nome" className="sr-only">Nome</label>
       <input id="c-nome" name="nome" required autoComplete="name" placeholder="Nome" className={field} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label htmlFor="c-email" className="sr-only">E-mail</label>
+        <input id="c-email" name="email" type="email" required autoComplete="email" placeholder="E-mail" className={field} />
+        <label htmlFor="c-tel" className="sr-only">Telefone com DDD</label>
+        <input id="c-tel" name="telefone" type="tel" required autoComplete="tel" placeholder="Telefone com DDD" className={field} />
+      </div>
       <label htmlFor="c-msg" className="sr-only">Mensagem</label>
       <textarea id="c-msg" name="mensagem" required rows={5} placeholder="Conte brevemente a sua situação" className={`${field} resize-none`} />
       <label className="body-sm mt-2 flex items-start gap-3 text-white/60">

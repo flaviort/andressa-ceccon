@@ -5,17 +5,20 @@ export function PageHeader({
   crumbs,
   title,
   lead,
+  wide = false,
   children,
 }: {
   crumbs?: { label: string; href?: string }[];
   title: React.ReactNode;
   lead?: string;
+  /** Lets a long title run wider than the default 14ch measure. */
+  wide?: boolean;
   children?: React.ReactNode;
 }) {
   return (
     <section className="container-x pt-[calc(var(--header-h)+56px)] pb-14 md:pt-[calc(var(--header-h)+96px)] md:pb-20">
       {crumbs && (
-        <nav aria-label="Trilha de navegação" className="label-mono mb-8 text-bronze md:mb-12">
+        <nav aria-label="Trilha de navegação" className="label-mono mb-8 text-ash md:mb-12">
           <ol className="flex flex-wrap items-center gap-2">
             {crumbs.map((c, i) => (
               <li key={c.label} className="flex items-center gap-2">
@@ -34,7 +37,7 @@ export function PageHeader({
           </ol>
         </nav>
       )}
-      <SplitReveal as="h1" trigger="load" className="display-lg max-w-[14ch]">
+      <SplitReveal as="h1" trigger="load" className={`display-lg ${wide ? "max-w-[30ch]" : "max-w-[14ch]"}`}>
         {title}
       </SplitReveal>
       {(lead || children) && (

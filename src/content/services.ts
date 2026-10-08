@@ -31,7 +31,7 @@ export const services: Service[] = [
     index: "01",
     metaTitle: "Planejamento Previdenciário em Curitiba e Online",
     metaDescription:
-      "Descubra qual regra de aposentadoria rende mais no seu caso antes de pedir ao INSS. Atendimento presencial em Curitiba ou online.",
+      "Planejamento previdenciário com advogada em Curitiba: compare as regras de aposentadoria, datas e valores antes de pedir ao INSS. Presencial ou online.",
     keywords: [
       "planejamento previdenciário",
       "advogada previdenciária Curitiba",
@@ -42,22 +42,22 @@ export const services: Service[] = [
     image: "/images/planejamento.jpg",
     imageAlt: "Homem idoso de óculos analisando documentos à mesa de casa",
     excerpt:
-      "O estudo que mostra quando você pode se aposentar, por qual regra e com qual valor. Feito antes do pedido, quando ainda dá para escolher.",
+      "Mostra quando você pode se aposentar, por qual regra e com qual valor. Vale fazer antes do pedido ao INSS, enquanto ainda dá para escolher.",
     lead:
-      "Quem contribui para o INSS costuma se encaixar em mais de uma regra de aposentadoria. Cada regra tem uma data diferente e um valor diferente. O planejamento coloca essas opções lado a lado para que a escolha seja sua, e não do sistema.",
+      "Quem contribui para o INSS costuma se encaixar em mais de uma regra de aposentadoria. Cada regra tem uma data diferente e um valor diferente. O planejamento coloca essas opções lado a lado, com datas e valores, para você decidir quando e como pedir.",
     sections: [
       {
         heading: "O que é o planejamento previdenciário",
         body: [
-          "É uma análise completa da sua vida contributiva. Revisamos o CNIS (o extrato do INSS), carteiras de trabalho, carnês, períodos especiais, rurais ou no serviço público, e projetamos cada regra de aposentadoria a que você pode ter direito.",
-          "O resultado é um parecer com datas, valores estimados de renda mensal inicial e as providências necessárias para cada cenário. Você entende o que tem hoje e o que ganha se esperar mais alguns meses.",
+          "É uma análise de toda a sua vida de contribuições. Revisamos o CNIS (o extrato do INSS), carteiras de trabalho, carnês, períodos especiais, rurais ou no serviço público, e projetamos cada regra de aposentadoria a que você pode ter direito.",
+          "No fim você recebe um parecer com as datas possíveis, o valor estimado do benefício em cada regra e o que precisa ser feito em cada caso. Fica claro o que você já tem hoje e quanto muda se esperar mais alguns meses.",
         ],
       },
       {
         heading: "Por que fazer antes de pedir a aposentadoria",
         body: [
-          "Depois que o INSS concede o benefício e você saca o primeiro pagamento, não dá para trocar de regra. Se havia uma opção mais vantajosa, ela se perde.",
-          "O INSS também é rigoroso com documentação. Um período sem prova adequada pode atrasar o pedido ou gerar uma negativa. No planejamento, as falhas aparecem antes, quando ainda há tempo de corrigir o cadastro e reunir provas.",
+          "Depois que o INSS concede o benefício e você saca o primeiro pagamento, não dá mais para trocar de regra. Se existia uma opção melhor, ela fica para trás.",
+          "O INSS também é rigoroso com documentos. Um período sem prova pode atrasar o pedido ou levar a uma negativa. No planejamento, esses buracos aparecem antes, quando ainda há tempo de corrigir o cadastro e juntar as provas.",
         ],
       },
       {
@@ -75,7 +75,7 @@ export const services: Service[] = [
       {
         heading: "Para quem é indicado",
         body: [
-          "Para quem está a poucos anos de se aposentar, para quem trabalhou em atividade insalubre ou rural, para quem teve vínculos em regimes diferentes (INSS e serviço público) e para autônomos e MEIs que querem saber se vale a pena ajustar a contribuição.",
+          "Faz mais diferença para quem está a poucos anos de se aposentar, trabalhou em atividade insalubre ou na roça, teve vínculos no INSS e no serviço público, ou é autônomo ou MEI e quer saber se vale a pena mudar a forma de contribuir.",
         ],
       },
     ],
@@ -89,11 +89,11 @@ export const services: Service[] = [
     faq: [
       {
         q: "Com quantos anos de antecedência devo fazer o planejamento?",
-        a: "O ideal é de cinco a dez anos antes da data provável de aposentadoria, porque ainda dá tempo de corrigir o cadastro e ajustar contribuições. Mas mesmo às vésperas do pedido o estudo costuma evitar a escolha de uma regra menos vantajosa.",
+        a: "O ideal é de cinco a dez anos antes da data provável, porque ainda dá tempo de corrigir o cadastro e ajustar as contribuições. Mesmo perto do pedido, porém, o estudo ajuda a não escolher uma regra que paga menos.",
       },
       {
         q: "O planejamento serve para quem já está aposentado?",
-        a: "Para quem já recebe, o caminho é outro: a revisão do benefício, que verifica se o INSS calculou corretamente o valor. Consulte nossa página de revisão.",
+        a: "Para quem já recebe, o caminho é outro: a revisão do benefício, que confere se o INSS calculou o valor corretamente. Veja a página de revisão de aposentadoria.",
       },
       {
         q: "Preciso ir ao escritório?",
@@ -109,7 +109,7 @@ export const services: Service[] = [
     index: "02",
     metaTitle: "Aposentadoria por Idade INSS: Requisitos e Como Pedir",
     metaDescription:
-      "Idade mínima, tempo de contribuição e carência da aposentadoria por idade após a Reforma. Orientação para pedir ao INSS sem erros de cadastro.",
+      "Aposentadoria por idade no INSS: idade mínima, tempo de contribuição, carência e cálculo do valor depois da Reforma. Veja como pedir sem erros de cadastro.",
     keywords: [
       "aposentadoria por idade",
       "aposentadoria por idade requisitos",
@@ -119,9 +119,9 @@ export const services: Service[] = [
     image: "/images/idade.jpg",
     imageAlt: "Mãos de um casal de idosos entrelaçadas",
     excerpt:
-      "Idade mínima, carência e o cálculo do valor depois da Reforma. Organizamos a documentação para o pedido sair certo da primeira vez.",
+      "Idade mínima, carência e o cálculo do valor depois da Reforma. Conferimos o cadastro e os documentos antes de fazer o pedido ao INSS.",
     lead:
-      "A aposentadoria por idade é o benefício mais pedido no INSS e, ainda assim, um dos que mais recebem exigências e negativas. Quase sempre o problema é cadastro incompleto ou contribuição que não aparece no sistema.",
+      "A aposentadoria por idade é um dos benefícios mais pedidos ao INSS e também um dos que mais voltam com exigência ou negativa. Na maioria das vezes, o motivo é um cadastro incompleto ou uma contribuição que não aparece no sistema.",
     sections: [
       {
         heading: "Requisitos depois da Reforma da Previdência",
@@ -138,7 +138,7 @@ export const services: Service[] = [
         heading: "Como o valor é calculado",
         body: [
           "O valor parte da média de todos os salários de contribuição desde julho de 1994. Sobre essa média aplica-se 60%, com acréscimo de 2% para cada ano que ultrapassar 15 anos de contribuição (mulheres) ou 20 anos (homens).",
-          "Por isso, um único vínculo esquecido pode fazer diferença no valor final. Conferir o CNIS antes do pedido é o passo que mais protege o seu benefício.",
+          "Por isso, um único vínculo esquecido pode mudar o valor final. Conferir o CNIS antes de pedir é o cuidado mais importante.",
         ],
       },
       {
@@ -162,7 +162,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "Trabalhei sem registro em carteira. Esse tempo conta?",
-        a: "Pode contar, desde que haja provas do vínculo, como recibos, declarações, fotos ou testemunhas, e em geral é preciso pedir o reconhecimento ao INSS ou na Justiça. Avaliamos as provas disponíveis no seu caso.",
+        a: "Pode contar, desde que existam provas do trabalho, como recibos, declarações, fotos ou testemunhas. Em geral é preciso pedir o reconhecimento ao INSS ou na Justiça. Na consulta avaliamos as provas que você tem.",
       },
       {
         q: "Posso continuar trabalhando depois de aposentado por idade?",
@@ -176,7 +176,7 @@ export const services: Service[] = [
     title: "Regras de Transição e Tempo de Contribuição",
     short: "Regras de transição",
     index: "03",
-    metaTitle: "Regras de Transição da Aposentadoria: Pontos, Pedágio e Idade",
+    metaTitle: "Regras de Transição da Aposentadoria: Pontos e Pedágio",
     metaDescription:
       "Regras de transição da Reforma para quem já contribuía antes de 2019: pontos, idade progressiva, pedágio de 50% e de 100%. Veja qual vale para você.",
     keywords: [
@@ -189,9 +189,9 @@ export const services: Service[] = [
     image: "/images/transicao.jpg",
     imageAlt: "Mão escrevendo em um caderno aberto sobre a mesa",
     excerpt:
-      "Pontos, idade progressiva, pedágio de 50% e de 100%. Quem já contribuía antes de 2019 pode ter várias saídas e cada uma paga diferente.",
+      "Pontos, idade progressiva, pedágio de 50% e de 100%. Quem já contribuía antes de 2019 pode ter mais de uma saída, e cada uma paga um valor diferente.",
     lead:
-      "A aposentadoria por tempo de contribuição sem idade mínima acabou com a Reforma de 2019, mas quem já contribuía antes de 13 de novembro daquele ano ganhou regras de transição. Elas convivem entre si, e a mais rápida nem sempre é a que paga melhor.",
+      "A aposentadoria por tempo de contribuição sem idade mínima acabou com a Reforma de 2019, mas quem já contribuía antes de 13 de novembro daquele ano ganhou regras de transição. Essas regras valem ao mesmo tempo, e a que chega primeiro nem sempre é a que paga mais.",
     sections: [
       {
         heading: "As quatro regras de transição",
@@ -208,7 +208,7 @@ export const services: Service[] = [
       {
         heading: "Por que comparar antes de escolher",
         body: [
-          "O pedágio de 100% costuma pagar mais, mas pode exigir alguns anos a mais de trabalho. A regra dos pontos pode chegar antes e pagar menos. Em alguns casos, esperar poucos meses muda bastante a renda.",
+          "O pedágio de 100% costuma pagar mais, mas pode exigir alguns anos a mais de trabalho. A regra dos pontos pode chegar antes e pagar menos. Às vezes, esperar poucos meses muda bastante a renda.",
           "Somar períodos especiais convertidos (até 2019), tempo rural ou tempo de serviço público pode antecipar a data em qualquer uma das regras.",
         ],
       },
@@ -236,7 +236,7 @@ export const services: Service[] = [
     title: "Aposentadoria Especial",
     short: "Especial",
     index: "04",
-    metaTitle: "Aposentadoria Especial: Atividade Insalubre e Agentes Nocivos",
+    metaTitle: "Aposentadoria Especial: Atividade Insalubre e PPP",
     metaDescription:
       "Trabalhou exposto a ruído, calor, químicos ou agentes biológicos? Requisitos da aposentadoria especial, como provar com PPP e laudos, e conversão.",
     keywords: [
@@ -249,9 +249,9 @@ export const services: Service[] = [
     image: "/images/especial.jpg",
     imageAlt: "Soldador de máscara trabalhando em meio a faíscas",
     excerpt:
-      "Para quem trabalhou exposto a agentes nocivos à saúde. A prova certa (PPP e laudos) é o que separa o deferimento da negativa.",
+      "Para quem trabalhou exposto a ruído, calor, químicos ou agentes biológicos. Na maioria dos casos, o pedido depende da qualidade do PPP e dos laudos.",
     lead:
-      "Quem trabalha exposto a agentes que prejudicam a saúde tem direito a se aposentar com menos tempo. Na prática, o INSS nega boa parte desses pedidos por falhas no PPP ou por entender que o EPI eliminou o risco. É aí que a análise técnica faz diferença.",
+      "Quem trabalha exposto a agentes que prejudicam a saúde tem direito a se aposentar com menos tempo. Na prática, o INSS nega boa parte desses pedidos por falhas no PPP ou por entender que o EPI eliminou o risco. Por isso vale revisar a documentação antes de pedir.",
     sections: [
       {
         heading: "Quem pode ter direito",
@@ -276,8 +276,8 @@ export const services: Service[] = [
       {
         heading: "A prova: PPP e laudos técnicos",
         body: [
-          "O Perfil Profissiográfico Previdenciário (PPP) é o documento central. Ele precisa descrever os agentes, a intensidade da exposição e o responsável técnico pelos registros. PPPs incompletos ou com informações genéricas são a principal causa de negativa.",
-          "Quando a empresa fechou ou se recusa a fornecer o documento, há caminhos: laudos de empresas similares, perícia judicial e outras provas.",
+          "O Perfil Profissiográfico Previdenciário (PPP) é o documento central. Ele precisa descrever os agentes, a intensidade da exposição e o responsável técnico pelos registros. PPP incompleto ou preenchido de forma genérica é o motivo mais comum de negativa.",
+          "Se a empresa fechou ou não quer entregar o documento, ainda há saída: laudos de empresas parecidas, perícia judicial e outras provas.",
         ],
       },
     ],
@@ -304,7 +304,7 @@ export const services: Service[] = [
     title: "Aposentadoria Rural",
     short: "Rural",
     index: "05",
-    metaTitle: "Aposentadoria Rural: Requisitos e Como Comprovar Atividade Rural",
+    metaTitle: "Aposentadoria Rural: Requisitos e Como Provar o Trabalho",
     metaDescription:
       "Aposentadoria rural aos 55 e 60 anos com 15 anos de atividade no campo. Quais documentos provam o trabalho rural e quando cabe a aposentadoria híbrida.",
     keywords: [
@@ -317,9 +317,9 @@ export const services: Service[] = [
     image: "/images/rural.jpg",
     imageAlt: "Agricultor de costas observando a plantação ao entardecer",
     excerpt:
-      "Para quem trabalhou no campo, sozinho ou em regime de economia familiar. A dificuldade quase sempre está em provar o período rural.",
+      "Para quem trabalhou no campo, sozinho ou com a família. O mais difícil costuma ser provar o tempo de trabalho rural.",
     lead:
-      "Quem trabalhou na roça pode se aposentar cinco anos mais cedo do que o trabalhador urbano, mesmo sem nunca ter recolhido ao INSS. O desafio é provar esse trabalho, muitas vezes feito há décadas e sem nenhum registro formal.",
+      "Quem trabalhou na roça pode se aposentar cinco anos mais cedo do que o trabalhador urbano, mesmo sem nunca ter recolhido ao INSS. A parte difícil é provar esse trabalho, muitas vezes feito há décadas e sem nenhum registro.",
     sections: [
       {
         heading: "Requisitos",
@@ -347,7 +347,7 @@ export const services: Service[] = [
       {
         heading: "Aposentadoria híbrida",
         body: [
-          "Quem trabalhou parte da vida no campo e parte na cidade pode somar os dois períodos na chamada aposentadoria híbrida, com a idade do trabalhador urbano (62 anos para mulheres e 65 para homens). É uma saída para quem não completa os requisitos em nenhuma das modalidades isoladamente.",
+          "Quem trabalhou parte da vida no campo e parte na cidade pode somar os dois períodos na chamada aposentadoria híbrida, com a idade do trabalhador urbano (62 anos para mulheres e 65 para homens). Serve para quem não fecha os requisitos nem só com o tempo rural, nem só com o urbano.",
         ],
       },
     ],
@@ -364,7 +364,7 @@ export const services: Service[] = [
       },
       {
         q: "Moro na cidade hoje. Ainda posso pedir aposentadoria rural?",
-        a: "Pode ser possível pela aposentadoria híbrida, somando o tempo rural antigo com contribuições urbanas. Cada caso precisa ser analisado.",
+        a: "Talvez, pela aposentadoria híbrida, somando o tempo rural antigo às contribuições na cidade. Depende das provas e do tempo de cada período.",
       },
     ],
     related: ["aposentadoria-por-idade", "planejamento-previdenciario", "bpc-loas"],
@@ -386,9 +386,9 @@ export const services: Service[] = [
     image: "/images/pcd.jpg",
     imageAlt: "Homem em cadeira de rodas trabalhando no notebook junto à janela",
     excerpt:
-      "Tempo de contribuição reduzido conforme o grau da deficiência, sem idade mínima na modalidade por tempo. Uma regra que a Reforma manteve.",
+      "Tempo de contribuição menor conforme o grau da deficiência e, na modalidade por tempo, sem idade mínima. A Reforma de 2019 manteve essa regra.",
     lead:
-      "A aposentadoria da pessoa com deficiência foi preservada pela Reforma de 2019 e continua sendo uma das mais vantajosas do sistema. O valor pode chegar a 100% da média e, na modalidade por tempo, não há idade mínima.",
+      "A aposentadoria da pessoa com deficiência passou intacta pela Reforma de 2019 e segue entre as mais vantajosas do INSS. O valor pode chegar a 100% da média e, na modalidade por tempo, não há idade mínima.",
     sections: [
       {
         heading: "Modalidade por tempo de contribuição",
@@ -408,7 +408,7 @@ export const services: Service[] = [
       {
         heading: "A avaliação biopsicossocial",
         body: [
-          "O grau da deficiência é definido por perícia médica e avaliação social, que consideram não só a condição de saúde, mas as barreiras enfrentadas no trabalho e na vida diária. Chegar preparado, com laudos atualizados e relatórios que descrevam essas barreiras, influencia diretamente no resultado.",
+          "O grau da deficiência é definido por perícia médica e avaliação social, que consideram não só a condição de saúde, mas as barreiras enfrentadas no trabalho e na vida diária. Por isso conta muito chegar com laudos atualizados e relatórios que descrevam essas barreiras no dia a dia.",
         ],
       },
     ],
@@ -448,9 +448,9 @@ export const services: Service[] = [
     image: "/images/pensao.jpg",
     imageAlt: "Mãos de uma pessoa idosa tocando a aliança de casamento",
     excerpt:
-      "Proteção para a família que fica. Cuidamos do pedido, inclusive em casos de união estável que o INSS costuma questionar.",
+      "Renda para os dependentes de quem contribuía ou já era aposentado. Cuidamos do pedido, inclusive quando é preciso provar união estável.",
     lead:
-      "A pensão por morte garante renda aos dependentes de quem contribuía para o INSS ou já era aposentado. Num momento já difícil, o pedido costuma esbarrar em exigências burocráticas, principalmente quando é preciso provar união estável ou dependência econômica.",
+      "A pensão por morte garante renda aos dependentes de quem contribuía para o INSS ou já era aposentado. O pedido chega num momento difícil e costuma esbarrar em exigências do INSS, principalmente quando é preciso provar união estável ou dependência econômica.",
     sections: [
       {
         heading: "Quem tem direito",
@@ -484,7 +484,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "Como provar união estável para o INSS?",
-        a: "É preciso apresentar documentos como comprovante de endereço em comum, conta conjunta, declaração de imposto de renda com dependente, filhos em comum ou plano de saúde. Para uniões com mais de dois anos, há exigência de provas materiais.",
+        a: "Com documentos como comprovante de endereço em comum, conta conjunta, declaração de imposto de renda com o companheiro como dependente, filhos em comum ou plano de saúde. Desde 2019, a lei exige pelo menos uma prova documental dos 24 meses anteriores ao óbito. Só testemunhas não bastam.",
       },
       {
         q: "Qual o prazo para pedir a pensão?",
@@ -511,7 +511,7 @@ export const services: Service[] = [
     image: "/images/bpc.jpg",
     imageAlt: "Retrato de uma senhora idosa em ambiente com pouca luz",
     excerpt:
-      "Um salário mínimo por mês para idosos e pessoas com deficiência em situação de baixa renda, mesmo sem nunca ter contribuído.",
+      "Um salário mínimo por mês para idosos e pessoas com deficiência de baixa renda, mesmo sem nunca terem contribuído para o INSS.",
     lead:
       "O BPC é um benefício assistencial, pago pelo INSS, que não exige contribuição. É voltado a quem tem 65 anos ou mais, ou a pessoas com deficiência de qualquer idade, cuja família não tem meios de garantir o próprio sustento.",
     sections: [
@@ -528,13 +528,13 @@ export const services: Service[] = [
       {
         heading: "O critério de renda na prática",
         body: [
-          "O INSS soma a renda das pessoas que vivem na mesma casa e divide pelo número de moradores. Algumas despesas e rendas podem ser desconsideradas, como gastos com medicamentos e tratamentos não oferecidos pelo SUS. A Justiça tem admitido a análise da situação real de vulnerabilidade, e não só o número.",
+          "O INSS soma a renda das pessoas que vivem na mesma casa e divide pelo número de moradores. Algumas despesas e rendas podem ser desconsideradas, como gastos com medicamentos e tratamentos não oferecidos pelo SUS. Na Justiça, também se olha a situação real da família, além da conta.",
         ],
       },
       {
         heading: "O que o BPC não paga",
         body: [
-          "O BPC não dá direito a 13º salário e não gera pensão por morte aos familiares. Por isso, quando há contribuições ao INSS, vale verificar antes se a pessoa já tem direito a alguma aposentadoria, que costuma ser mais vantajosa.",
+          "O BPC não dá direito a 13º salário e não gera pensão por morte aos familiares. Por isso, se a pessoa já contribuiu para o INSS, vale ver antes se ela tem direito a alguma aposentadoria, que costuma ser melhor.",
         ],
       },
     ],
@@ -559,10 +559,10 @@ export const services: Service[] = [
   },
   {
     slug: "beneficios-por-incapacidade",
-    title: "Benefícios por Incapacidade",
+    title: "Auxílio-Doença e Benefícios por Incapacidade",
     short: "Incapacidade",
     index: "09",
-    metaTitle: "Auxílio-Doença e Aposentadoria por Invalidez: Como Garantir",
+    metaTitle: "Auxílio-Doença e Aposentadoria por Invalidez no INSS",
     metaDescription:
       "Auxílio-doença e aposentadoria por invalidez: requisitos, carência, como se preparar para a perícia do INSS e o que fazer se o pedido for negado.",
     keywords: [
@@ -575,9 +575,9 @@ export const services: Service[] = [
     image: "/images/incapacidade.jpg",
     imageAlt: "Pulso enfaixado sendo cuidado",
     excerpt:
-      "Auxílio-doença, aposentadoria por invalidez e auxílio-acidente. Preparação para a perícia e recurso em caso de negativa.",
+      "Auxílio-doença, aposentadoria por invalidez e auxílio-acidente. Ajudamos na preparação para a perícia e no recurso, se o pedido for negado.",
     lead:
-      "Quando uma doença ou acidente impede o trabalho, o INSS deve garantir a renda do segurado. O ponto decisivo é a perícia médica, e é ali que a maior parte dos pedidos é negada.",
+      "Quando uma doença ou um acidente impede o trabalho, o INSS deve garantir a renda do segurado. Quase tudo se decide na perícia médica, que é onde muitos pedidos acabam negados.",
     sections: [
       {
         heading: "Os benefícios",
@@ -597,7 +597,7 @@ export const services: Service[] = [
       {
         heading: "Como se preparar para a perícia",
         body: [
-          "O perito avalia a incapacidade para o seu trabalho, não apenas a doença. Laudos que descrevam limitações concretas (por exemplo, não poder carregar peso ou ficar em pé por longos períodos) e a relação com a sua atividade têm muito mais força do que um atestado genérico.",
+          "O perito avalia a incapacidade para o seu trabalho, não apenas a doença. Um laudo que descreve limitações concretas, como não poder carregar peso ou ficar muito tempo em pé, e explica como isso afeta a sua função pesa muito mais do que um atestado genérico.",
           "Se o pedido for negado, é possível recorrer administrativamente ou entrar com ação judicial, com nova perícia feita por médico nomeado pelo juiz.",
         ],
       },
@@ -611,7 +611,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "Meu auxílio-doença foi cessado, mas ainda não consigo trabalhar. O que fazer?",
-        a: "Você pode pedir a prorrogação antes da data de cessação ou, se já cessou, fazer novo pedido ou recurso. Em muitos casos, a ação judicial é o caminho mais efetivo.",
+        a: "Você pode pedir a prorrogação antes da data de cessação ou, se já cessou, fazer novo pedido ou recurso. Muitas vezes, a ação judicial acaba sendo o caminho mais rápido para uma nova perícia.",
       },
       {
         q: "Quem recebe auxílio-acidente pode trabalhar?",
@@ -638,7 +638,7 @@ export const services: Service[] = [
     image: "/images/maternidade.jpg",
     imageAlt: "Mãos segurando os pés de um bebê recém-nascido",
     excerpt:
-      "120 dias de benefício para mães, inclusive desempregadas, autônomas, MEIs, rurais e em casos de adoção.",
+      "120 dias de benefício para mães com carteira assinada e também para desempregadas, autônomas, MEIs, trabalhadoras rurais e em casos de adoção.",
     lead:
       "Muita gente acha que o salário-maternidade é só para quem tem carteira assinada. Não é. MEIs, autônomas, trabalhadoras rurais e até mulheres desempregadas que ainda mantêm a qualidade de segurada podem ter direito.",
     sections: [
@@ -662,7 +662,7 @@ export const services: Service[] = [
       {
         heading: "Prazo para pedir",
         body: [
-          "O pedido pode ser feito a partir de 28 dias antes do parto e em até cinco anos depois. Quem perdeu o prazo sem saber que tinha direito ainda pode pedir os valores retroativos dentro desse período.",
+          "O pedido pode ser feito a partir de 28 dias antes do parto e em até cinco anos depois. Se você não pediu na época porque não sabia que tinha direito, ainda pode pedir os valores atrasados dentro desse prazo.",
         ],
       },
     ],
@@ -691,7 +691,7 @@ export const services: Service[] = [
     index: "11",
     metaTitle: "Revisão de Aposentadoria e Benefícios do INSS",
     metaDescription:
-      "Seu benefício do INSS pode ter sido calculado com erro. Quando cabe revisão de aposentadoria ou pensão, os erros mais comuns e o prazo de 10 anos.",
+      "Revisão de aposentadoria e pensão do INSS: quando cabe, os erros de cálculo mais comuns e o prazo de 10 anos para pedir. Com advogada previdenciária.",
     keywords: [
       "revisão de aposentadoria",
       "revisão do benefício INSS",
@@ -701,7 +701,7 @@ export const services: Service[] = [
     image: "/images/revisao.jpg",
     imageAlt: "Mãos segurando documentos impressos",
     excerpt:
-      "Conferimos se o INSS calculou certo. Vínculos esquecidos, salários menores e períodos especiais ignorados são erros frequentes.",
+      "Conferimos se o INSS calculou certo. Vínculos esquecidos, salários lançados a menor e períodos especiais ignorados aparecem com frequência.",
     lead:
       "O INSS concede o benefício com base nas informações do próprio sistema, que nem sempre estão completas. Um vínculo que ficou de fora ou um período especial não reconhecido podem reduzir o valor da aposentadoria por toda a vida.",
     sections: [
@@ -719,13 +719,13 @@ export const services: Service[] = [
       {
         heading: "Prazo para revisar",
         body: [
-          "Em regra, o prazo é de dez anos contados a partir do mês seguinte ao primeiro pagamento. Passado esse prazo, o direito de revisar o ato de concessão se perde. Por isso, vale fazer a análise o quanto antes.",
+          "Em regra, o prazo é de dez anos contados a partir do mês seguinte ao primeiro pagamento. Depois disso, não é mais possível revisar a concessão. Quanto antes a análise for feita, melhor.",
         ],
       },
       {
         heading: "Como funciona a análise",
         body: [
-          "Pedimos a carta de concessão e o processo administrativo, refazemos o cálculo e comparamos com o valor pago. Só indicamos a revisão quando há diferença concreta e fundamentada, explicando os riscos de cada caminho.",
+          "Pedimos a carta de concessão e o processo administrativo, refazemos o cálculo e comparamos com o valor pago. Só recomendamos entrar com a revisão quando a diferença é concreta e tem base legal, e explicamos os riscos de cada caminho.",
         ],
       },
     ],
@@ -738,7 +738,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "A revisão pode diminuir o valor do meu benefício?",
-        a: "Em alguns casos existe esse risco, por isso o cálculo prévio é indispensável. Nenhum pedido é feito sem antes medir esse cenário com você.",
+        a: "Em alguns casos, sim. Por isso o cálculo vem antes de tudo, e nenhum pedido é feito sem conversar com você sobre esse risco.",
       },
       {
         q: "Recebo os valores atrasados?",
@@ -765,9 +765,9 @@ export const services: Service[] = [
     image: "/images/calculos.jpg",
     imageAlt: "Dedo digitando em uma calculadora sobre uma planilha",
     excerpt:
-      "Tempo de contribuição, RMI e simulações em todas as regras, com relatório claro. Também atendemos colegas advogados.",
+      "Tempo de contribuição, RMI e simulação de aposentadoria em todas as regras, com relatório fácil de ler. Também atendemos colegas advogados.",
     lead:
-      "Um cálculo bem feito responde às perguntas que importam: quando posso me aposentar, quanto vou receber e o que muda se eu esperar. É a base técnica de todo planejamento, pedido ou revisão.",
+      "Um bom cálculo responde a três perguntas: quando posso me aposentar, quanto vou receber e o que muda se eu esperar. Todo planejamento, pedido ou revisão começa por ele.",
     sections: [
       {
         heading: "O que calculamos",
@@ -791,7 +791,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "O simulador do Meu INSS não basta?",
-        a: "O simulador usa apenas os dados que constam no sistema e não considera períodos ainda não reconhecidos, como tempo especial ou rural. Ele é um ponto de partida, mas costuma ficar incompleto.",
+        a: "O simulador usa só os dados que já estão no sistema e ignora períodos ainda não reconhecidos, como tempo especial ou rural. Serve como ponto de partida, mas costuma ficar incompleto.",
       },
     ],
     related: ["planejamento-previdenciario", "revisao-de-beneficios", "aposentadoria-por-tempo-de-contribuicao"],

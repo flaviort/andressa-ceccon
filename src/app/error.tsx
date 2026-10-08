@@ -10,7 +10,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 
   return (
     <main id="conteudo" className="container-x flex min-h-svh flex-col justify-end pt-[var(--header-h)] pb-16">
-      <p className="label-mono text-bronze">Erro inesperado</p>
+      <p className="label-mono text-ash">Erro inesperado</p>
       <h1 className="display-lg mt-6 max-w-[12ch]">Algo não saiu como esperado.</h1>
       <p className="body-lg mt-8 max-w-[44ch] text-ash">
         Tente carregar a página de novo. Se o problema continuar, fale com a gente pelo WhatsApp.

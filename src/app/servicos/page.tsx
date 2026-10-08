@@ -12,7 +12,7 @@ import { absoluteUrl, pageMetadata } from "@/lib/seo";
 const meta = {
   title: "Serviços de Direito Previdenciário",
   description:
-    "Planejamento previdenciário, aposentadorias, pensão por morte, BPC/LOAS, auxílio-doença, salário-maternidade e revisões de benefícios do INSS.",
+    "Advogada previdenciária em Curitiba: planejamento, aposentadorias, pensão por morte, BPC/LOAS, auxílio-doença, salário-maternidade e revisão do INSS.",
   path: "/servicos",
 };
 
@@ -43,8 +43,8 @@ export default function ServicosPage() {
       />
       <PageHeader
         crumbs={[{ label: "Início", href: "/" }, { label: "Serviços" }]}
-        title="Serviços"
-        lead="Atuamos em todas as etapas da vida previdenciária: do planejamento que antecede a aposentadoria até a revisão de benefícios já concedidos."
+        title="Serviços previdenciários"
+        lead="Do planejamento antes da aposentadoria à revisão de um benefício já concedido, cuidamos de pedidos ao INSS para trabalhadores, aposentados e suas famílias."
       />
 
       <section className="container-x pb-24 md:pb-40" aria-label="Lista de serviços">
@@ -57,7 +57,7 @@ export default function ServicosPage() {
                 className="group grid grid-cols-12 items-center gap-x-[var(--grid-gutter)] gap-y-3 py-6 md:py-8"
               >
                 <span className="label-mono col-span-2 text-bronze md:col-span-1">{s.index}</span>
-                <h2 className="heading-sm col-span-10 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:translate-x-3 md:col-span-5">
+                <h2 className="heading-sm col-span-10 transition-transform duration-700 ease-[var(--ease-out-expo)] text-balance group-hover:translate-x-3 md:col-span-5 md:pr-12">
                   {s.title}
                 </h2>
                 <p className="body-sm col-span-10 col-start-3 text-ash md:col-span-4 md:col-start-auto">{s.excerpt}</p>

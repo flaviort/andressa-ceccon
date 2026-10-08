@@ -27,12 +27,16 @@ export const metadata: Metadata = {
   authors: [{ name: site.lawyer }],
   keywords: [
     "advogada previdenciária",
+    "advogada previdenciária Curitiba",
+    "advogado previdenciário Curitiba",
     "advogado INSS Curitiba",
     "planejamento previdenciário",
     "aposentadoria",
     "direito previdenciário",
     "BPC LOAS",
     "pensão por morte",
+    "auxílio-doença",
+    "revisão de aposentadoria",
   ],
   alternates: { canonical: "/" },
   openGraph: {

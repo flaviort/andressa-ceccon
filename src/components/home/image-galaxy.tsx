@@ -63,11 +63,12 @@ export function ImageGalaxy() {
 
       <div className="container-x relative flex flex-col items-center text-center">
         <ScrubText as="h2" className="heading-lg max-w-[13ch] md:display-lg md:max-w-[13ch]">
-          <span id="galaxy-title">Um direito para cada <em>etapa da vida.</em></span>
+          <span id="galaxy-title">Benefícios do INSS para <em>cada fase da vida.</em></span>
         </ScrubText>
         <p className="body-lg mt-8 max-w-[44ch] text-ash md:mt-10">
-          Aposentadoria, pensão, maternidade, incapacidade, assistência. A Previdência acompanha você em momentos
-          muito diferentes, e cada um pede uma estratégia própria.
+          O INSS entra em cena em momentos bem diferentes: o nascimento de um filho, uma doença que afasta do trabalho,
+          a perda de alguém da família, a aposentadoria. Cada situação tem regras próprias, e vale conhecer as suas antes
+          de fazer o pedido.
         </p>
         <Button href="/servicos" className="mt-8">
           Conheça os serviços

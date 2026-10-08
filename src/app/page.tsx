@@ -20,7 +20,7 @@ import { JsonLd } from "@/components/ui/json-ld";
 const meta = {
   title: "Andressa Ceccon | Advogada Previdenciária em Curitiba",
   description:
-    "Advocacia previdenciária em Curitiba, presencial e online para todo o Brasil. Planejamento, aposentadorias, pensão, BPC/LOAS e benefícios do INSS.",
+    "Advogada previdenciária em Curitiba. Planejamento de aposentadoria, pensão por morte, BPC/LOAS, auxílio-doença e revisão do INSS, presencial ou online.",
   path: "/",
 };
 
@@ -56,13 +56,12 @@ export default function HomePage() {
       {/* Intro: two columns, small bold lead + scroll-filled statement */}
       <section className="container-x relative z-[1] grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 py-24 md:py-40">
         <SplitReveal as="h2" className="heading-xs col-span-12 md:col-span-4">
-          Advocacia previdenciária, do pedido ao primeiro pagamento.
+          Advocacia previdenciária em Curitiba, do planejamento ao benefício.
         </SplitReveal>
         <div className="col-span-12 md:col-span-7 md:col-start-6">
           <ScrubText className="heading-sm">
-            Há 10 anos ajudamos pessoas a entender seus direitos junto ao INSS e a escolher, com segurança, o caminho
-            certo para a aposentadoria. Cada caso recebe estratégia própria, conduzida de perto pela advogada
-            responsável.
+            Há 10 anos a Dra. Andressa Ceccon orienta trabalhadores e aposentados sobre os seus direitos no INSS. Ela
+            analisa cada caso pessoalmente e acompanha o pedido até a decisão.
           </ScrubText>
           <Button href="/sobre" className="mt-10">
             Conheça o escritório
@@ -81,24 +80,24 @@ export default function HomePage() {
           </Parallax>
           <div className="flex flex-col justify-between gap-12 p-6 md:col-span-5 md:p-10">
             <div>
-              <p className="label-mono text-gold">Em destaque</p>
+              <p className="label-mono text-paper/65">Em destaque</p>
               <SplitReveal as="h2" className="heading-md mt-6">
                 <span id="destaque-title">Planejamento Previdenciário</span>
               </SplitReveal>
               <p className="body-md mt-6 max-w-[38ch] text-white/75">
-                Depois que o INSS concede a aposentadoria, não dá para trocar de regra. O planejamento compara todas as
-                opções antes do pedido, com datas e valores, para que a escolha seja sua.
+                Depois que o INSS concede a aposentadoria, não dá mais para trocar de regra. O planejamento compara as
+                opções antes do pedido, com datas e valores estimados, e você escolhe sabendo o que cada uma paga.
               </p>
             </div>
             <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-end lg:justify-between">
-              <Button href={`/servicos/${planning.slug}`} variant="glass" className="shrink-0">
+              <Button href={`/servicos/${planning.slug}`} variant="outline-light" className="shrink-0">
                 Saiba mais
               </Button>
               <Link
                 href="/pre-analise"
                 className="group relative flex h-40 w-full flex-col justify-between rounded-[6px] bg-white/10 p-4 transition-colors hover:bg-white/20 lg:w-52"
               >
-                <span className="label-mono text-gold">5 perguntas</span>
+                <span className="label-mono text-paper/65">5 perguntas</span>
                 <span className="text-[21px] leading-tight font-medium tracking-[-0.02em]">
                   Fazer a pré-análise <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
                 </span>
@@ -115,8 +114,9 @@ export default function HomePage() {
         </SplitReveal>
         <div className="col-span-12 md:col-span-7 md:col-start-6">
           <ScrubText className="heading-sm">
-            Sede em Curitiba, clientes em todo o país. Você envia os documentos pelo celular, acompanha cada etapa pela
-            área do cliente e fala direto com quem cuida do seu processo.
+            Quem mora em Curitiba pode vir ao escritório, no Centro. Quem está em outra cidade resolve tudo a distância:
+            manda os documentos pelo celular, acompanha o processo pela área do cliente e conversa direto com a
+            advogada.
           </ScrubText>
           <div className="mt-10 flex flex-wrap gap-2">
             <Button href={whatsappLink("Olá! Gostaria de agendar um atendimento.")} variant="dark">
@@ -135,14 +135,14 @@ export default function HomePage() {
           <Image src="/images/andressa.jpg" alt="Dra. Andressa Ceccon sorrindo, de blazer claro, em seu escritório" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover object-top" />
         </ClipReveal>
         <div className="col-span-12 md:col-span-6 md:col-start-7">
-          <p className="label-mono text-bronze">Quem conduz o seu caso</p>
+          <p className="label-mono text-ash">Quem conduz o seu caso</p>
           <SplitReveal as="h2" className="heading-lg mt-5">
             <span id="advogada-title">Dra. Andressa Ceccon</span>
           </SplitReveal>
           <p className="body-lg mt-8 max-w-[48ch] text-[#3a4257]">
-            Bacharela em Direito pela PUC/PR e pós-graduada em Direito e Processo do Trabalho e Direito Previdenciário
-            pela EMATRA IX. Atua há 10 anos com foco em planejamento previdenciário e na concessão de benefícios junto
-            ao INSS.
+            Advogada previdenciária há 10 anos, formada em Direito pela PUC/PR e pós-graduada em Direito e Processo do
+            Trabalho e Direito Previdenciário pela EMATRA IX. Trabalha principalmente com planejamento previdenciário e
+            pedidos de aposentadoria e outros benefícios do INSS.
           </p>
           <Button href="/sobre" className="mt-8">
             Sobre o escritório
@@ -163,10 +163,10 @@ export default function HomePage() {
           </div>
           <div className="col-span-12 border-ink/10 py-12 md:col-span-7 md:border-l md:py-16 md:pl-10">
             <div className="flex items-end justify-between gap-6">
-              <p className="label-mono text-bronze">Anos de atuação no previdenciário</p>
+              <p className="label-mono text-ash">Anos de atuação no previdenciário</p>
               <p className="text-[clamp(110px,13vw,210px)] leading-[0.8] font-semibold tracking-[-0.06em]">
                 <Counter to={10} />
-                <span className="text-bronze">.</span>
+                <span className="text-ink">.</span>
               </p>
             </div>
             <Reveal as="dl" className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-ink/10 pt-6 md:grid-cols-4">
@@ -177,7 +177,7 @@ export default function HomePage() {
                 ["Registro", site.oab],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <dt className="label-mono text-bronze">{k}</dt>
+                  <dt className="label-mono text-ash">{k}</dt>
                   <dd className="body-md mt-2 font-medium">{v}</dd>
                 </div>
               ))}

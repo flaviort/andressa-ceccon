@@ -22,7 +22,7 @@ export function Hero() {
       <div className="container-x relative flex h-full flex-col justify-end pb-10 md:pb-14">
         <div className="grid items-end gap-y-10 lg:grid-cols-12 lg:gap-x-[var(--grid-gutter)]">
           <div className="lg:col-span-8">
-            <p className="label-mono text-gold">Advocacia previdenciária · {site.oab}</p>
+            <p className="label-mono text-paper">Advogada previdenciária em Curitiba · {site.oab}</p>
             <SplitReveal as="h1" trigger="load" className="display-xl mt-6 text-paper md:mt-8" stagger={0.1}>
               <span id="hero-title" className="block">Seu direito,</span>
               <span className="block">
@@ -30,14 +30,14 @@ export function Hero() {
               </span>
             </SplitReveal>
             <p className="body-lg mt-6 max-w-[46ch] text-paper/80 md:mt-8">
-              Planejamento de aposentadoria e benefícios do INSS com a Dra. Andressa Ceccon. No escritório em Curitiba
-              ou online, em todo o Brasil.
+              Planejamento de aposentadoria e pedidos de benefício ao INSS com a Dra. Andressa Ceccon. Atendimento no
+              escritório, em Curitiba, ou online para todo o Brasil.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
-              <Button href="/pre-analise" variant="gold">
+              <Button href="/pre-analise" variant="light">
                 Solicitar pré-análise
               </Button>
-              <Button href="/servicos" variant="glass">
+              <Button href="/servicos" variant="outline-light">
                 Conheça os serviços
               </Button>
             </div>
@@ -57,8 +57,10 @@ export function Hero() {
               />
             </span>
             <span className="flex flex-col justify-between py-1 pr-2">
-              <span className="label-mono text-gold">O escritório</span>
-              <span className="text-[19px] leading-snug font-medium tracking-[-0.015em]">Dra. Andressa Ceccon, 10 anos no Direito Previdenciário</span>
+              <span className="flex flex-col gap-2">
+                <span className="label-mono text-[11px] text-paper/65">O escritório</span>
+                <span className="text-[19px] leading-snug font-medium tracking-[-0.015em]">Dra. Andressa Ceccon, 10 anos no Direito Previdenciário</span>
+              </span>
               <span className="body-sm text-paper/70">
                 Conhecer <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
               </span>
