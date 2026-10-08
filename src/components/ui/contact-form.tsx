@@ -6,6 +6,8 @@ import { whatsappLink } from "@/lib/site";
 
 const field =
   "w-full rounded-btn bg-white/10 px-4 py-4 text-[1.125rem] tracking-[-0.01em] text-paper outline-none transition placeholder:text-white/50 focus:bg-white/15 focus:ring-2 focus:ring-paper";
+// Visible labels: a placeholder disappears once someone types.
+const labelText = "body-sm font-medium text-white/80";
 
 export function ContactForm() {
   const [state, action, pending] = useActionState<ContactState, FormData>(sendContact, { status: "idle" });
@@ -30,17 +32,29 @@ export function ContactForm() {
   const v = state.status === "error" ? state.values : undefined;
 
   return (
-    <form action={action} className="grid gap-3">
-      <label htmlFor="c-nome" className="sr-only">Nome</label>
-      <input id="c-nome" name="nome" required maxLength={120} autoComplete="name" placeholder="Nome" defaultValue={v?.nome} className={field} />
-      <div className="grid gap-3 sm:grid-cols-2">
-        <label htmlFor="c-email" className="sr-only">E-mail (opcional)</label>
-        <input id="c-email" name="email" type="email" maxLength={200} autoComplete="email" placeholder="E-mail (opcional)" defaultValue={v?.email} className={field} />
-        <label htmlFor="c-tel" className="sr-only">Telefone com DDD (opcional)</label>
-        <input id="c-tel" name="telefone" type="tel" maxLength={40} autoComplete="tel" placeholder="Telefone (opcional)" defaultValue={v?.telefone} className={field} />
+    <form action={action} className="grid gap-5">
+      <label className="grid gap-2">
+        <span className={labelText}>Nome</span>
+        <input name="nome" required maxLength={120} autoComplete="name" defaultValue={v?.nome} className={field} />
+      </label>
+      <div className="grid gap-5 sm:grid-cols-2 sm:gap-3">
+        <label className="grid gap-2">
+          <span className={labelText}>
+            E-mail <span className="text-white/50">(opcional)</span>
+          </span>
+          <input name="email" type="email" maxLength={200} autoComplete="email" defaultValue={v?.email} className={field} />
+        </label>
+        <label className="grid gap-2">
+          <span className={labelText}>
+            Telefone com DDD <span className="text-white/50">(opcional)</span>
+          </span>
+          <input name="telefone" type="tel" maxLength={40} autoComplete="tel" placeholder="(41) 99999-9999" defaultValue={v?.telefone} className={field} />
+        </label>
       </div>
-      <label htmlFor="c-msg" className="sr-only">Mensagem</label>
-      <textarea id="c-msg" name="mensagem" required maxLength={5000} rows={5} placeholder="Conte brevemente a sua situação" defaultValue={v?.mensagem} className={`${field} resize-none`} />
+      <label className="grid gap-2">
+        <span className={labelText}>Mensagem</span>
+        <textarea name="mensagem" required maxLength={5000} rows={5} placeholder="Conte brevemente a sua situação" defaultValue={v?.mensagem} className={`${field} resize-none`} />
+      </label>
       {/* Honeypot: off-screen and skipped by keyboard and screen readers. */}
       <input name="empresa" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] size-px opacity-0" />
       <label className="body-sm mt-2 flex items-start gap-3 text-white/60">

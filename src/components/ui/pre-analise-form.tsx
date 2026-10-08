@@ -21,6 +21,9 @@ const questions = [
 
 const field =
   "w-full rounded-btn bg-fog px-4 py-4 text-[1.125rem] tracking-[-0.01em] outline-none transition placeholder:text-ash focus:bg-mist focus:ring-2 focus:ring-ink";
+// Labels stay visible above the fields: a placeholder disappears as soon as
+// someone types, and then nothing says what the field was.
+const labelText = "body-sm font-medium";
 
 /**
  * There is no backend: the answers are assembled into a WhatsApp message the
@@ -52,15 +55,21 @@ export function PreAnaliseForm() {
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-12">
-      <fieldset className="grid gap-3">
+      <fieldset className="grid gap-5">
         <legend className="label-mono mb-4 text-bronze">01 · Seus dados</legend>
-        <label className="sr-only" htmlFor="nome">Nome completo</label>
-        <input id="nome" name="nome" required autoComplete="name" placeholder="Nome completo" className={field} />
-        <div className="grid gap-3 md:grid-cols-2">
-          <label className="sr-only" htmlFor="email">E-mail</label>
-          <input id="email" name="email" type="email" required autoComplete="email" placeholder="E-mail" className={field} />
-          <label className="sr-only" htmlFor="telefone">WhatsApp com DDD</label>
-          <input id="telefone" name="telefone" type="tel" required autoComplete="tel" placeholder="WhatsApp com DDD" className={field} />
+        <label className="grid gap-2">
+          <span className={labelText}>Nome completo</span>
+          <input name="nome" required autoComplete="name" className={field} />
+        </label>
+        <div className="grid gap-5 md:grid-cols-2 md:gap-3">
+          <label className="grid gap-2">
+            <span className={labelText}>E-mail</span>
+            <input name="email" type="email" required autoComplete="email" className={field} />
+          </label>
+          <label className="grid gap-2">
+            <span className={labelText}>WhatsApp com DDD</span>
+            <input name="telefone" type="tel" required autoComplete="tel" placeholder="(41) 99999-9999" className={field} />
+          </label>
         </div>
       </fieldset>
 
