@@ -79,7 +79,7 @@ export async function Footer() {
         <FooterWordmark />
       </div>
 
-      <div className="container-x label-mono flex flex-col gap-3 border-t border-white/10 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-paper/50 md:flex-row md:items-center md:justify-between">
+      <div className="container-x flex flex-col gap-3 border-t border-white/10 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-[0.8125rem] leading-snug text-paper/50 md:label-mono md:flex-row md:items-center md:justify-between">
         <span>
           © {year} {site.name} · {site.oab}
         </span>
