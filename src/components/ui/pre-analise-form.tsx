@@ -24,6 +24,9 @@ const field =
 // Labels stay visible above the fields: a placeholder disappears as soon as
 // someone types, and then nothing says what the field was.
 const labelText = "body-sm font-medium";
+// Side-by-side fields sit at the bottom of their column at their own height,
+// so they line up even when one label wraps.
+const fieldWrap = "flex flex-col justify-end gap-2";
 
 /**
  * There is no backend: the answers are assembled into a WhatsApp message the
@@ -57,16 +60,16 @@ export function PreAnaliseForm() {
     <form onSubmit={onSubmit} className="flex flex-col gap-12">
       <fieldset className="grid gap-5">
         <legend className="label-mono mb-4 text-bronze">01 · Seus dados</legend>
-        <label className="grid gap-2">
+        <label className={fieldWrap}>
           <span className={labelText}>Nome completo</span>
           <input name="nome" required autoComplete="name" className={field} />
         </label>
         <div className="grid gap-5 md:grid-cols-2 md:gap-3">
-          <label className="grid gap-2">
+          <label className={fieldWrap}>
             <span className={labelText}>E-mail</span>
             <input name="email" type="email" required autoComplete="email" className={field} />
           </label>
-          <label className="grid gap-2">
+          <label className={fieldWrap}>
             <span className={labelText}>WhatsApp com DDD</span>
             <input name="telefone" type="tel" required autoComplete="tel" placeholder="(41) 99999-9999" className={field} />
           </label>
