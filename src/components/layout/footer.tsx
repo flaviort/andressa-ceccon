@@ -2,6 +2,7 @@ import Link from "next/link";
 import { services } from "@/content/services";
 import { FooterOverscroll } from "@/components/layout/footer-overscroll";
 import { FooterWordmark } from "@/components/motion/footer-wordmark";
+import { SocialLinks } from "@/components/ui/social-links";
 import { mainNav, site, whatsappLink } from "@/lib/site";
 
 // Cached at build time; the copyright year refreshes on the next deploy.
@@ -54,23 +55,12 @@ export async function Footer() {
               WhatsApp {site.phoneDisplay}
             </a>
           </address>
-          <ul className="body-sm flex flex-wrap gap-x-5 gap-y-1">
-            <li>
-              <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" className="link-u">
-                @andressacecconadvocacia
-              </a>
-            </li>
-            <li>
-              <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" className="link-u">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href={site.clientArea} target="_blank" rel="noopener noreferrer" className="link-u">
-                Área do cliente
-              </a>
-            </li>
-          </ul>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+            <SocialLinks />
+            <a href={site.clientArea} target="_blank" rel="noopener noreferrer" className="body-sm link-u">
+              Área do cliente
+            </a>
+          </div>
         </div>
       </div>
 

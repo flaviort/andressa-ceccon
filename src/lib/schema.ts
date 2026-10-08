@@ -48,7 +48,7 @@ const firm = {
     availableLanguage: "Portuguese",
     areaServed: "BR",
   },
-  sameAs: [site.social.instagram, site.social.facebook],
+  sameAs: Object.values(site.social).filter(Boolean),
   founder: { "@id": ids.lawyer },
   employee: { "@id": ids.lawyer },
   knowsAbout: services.map((s) => s.title),

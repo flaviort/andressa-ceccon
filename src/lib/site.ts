@@ -20,10 +20,13 @@ export const site = {
     zip: "80020-240",
     country: "BR",
   },
+  // Leave a network as null to hide its icon in the footer. Facebook is paused
+  // by the client for now; TikTok is waiting on the address.
   social: {
     instagram: "https://www.instagram.com/andressacecconadvocacia",
-    facebook: "https://www.facebook.com/andressacecconadvocacia",
-  },
+    facebook: null,
+    tiktok: null,
+  } as { instagram: string; facebook: string | null; tiktok: string | null },
   clientArea: "https://astreasoftware.appspot.com",
 } as const;
 
