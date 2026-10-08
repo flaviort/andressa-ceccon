@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "@/content/services";
+import { FooterOverscroll } from "@/components/layout/footer-overscroll";
 import { FooterWordmark } from "@/components/motion/footer-wordmark";
 import { mainNav, site, whatsappLink } from "@/lib/site";
 
@@ -13,6 +14,7 @@ export async function Footer() {
   const year = await currentYear();
   return (
     <footer data-theme="dark" className="relative overflow-hidden bg-ink-deep text-paper">
+      <FooterOverscroll />
       <div className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-12 pt-20 pb-10 md:pt-28">
         <nav aria-label="Rodapé" className="col-span-12 md:col-span-3">
           <ul className="flex flex-col gap-1">
