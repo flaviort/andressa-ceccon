@@ -4,9 +4,20 @@
 
 - [x] Licenciar as fotos de banco (15 no Shutterstock, ver `_docs/imagery.md`)
 - [ ] Guardar os registros de licença do Shutterstock onde a cliente possa encontrar
-- [ ] Revisão jurídica dos 12 serviços pela Dra. Andressa (idades, pontos de 2026, prazos)
+- [ ] Revisão jurídica dos 12 serviços e dos 2 posts de exemplo do blog pela Dra. Andressa (idades, pontos de 2026, prazos)
 - [ ] Confirmar telefone, endereço e redes em `src/lib/site.ts`
 - [ ] Decidir sobre analytics e, se houver cookies não essenciais, banner de consentimento (LGPD)
+
+## Transferência para o escritório
+
+- [ ] GitHub: transferir o repositório para a conta do escritório ou adicioná-la como colaboradora com permissão de escrita. Os desenvolvedores mantêm acesso.
+- [ ] GitHub: no `main`, ativar "Require a pull request before merging" (Settings, Branches) para reforçar o fluxo de publicação.
+- [ ] Vercel: transferir o projeto para a conta do escritório, ou recriá-lo lá ligado ao repositório.
+- [ ] Vercel: conferir que cada branch gera uma prévia (Preview Deployments).
+- [ ] Vercel: em Settings, Deployment Protection, desligar "Vercel Authentication" para as prévias. Ligada, a prévia pede login da Vercel no celular da cliente e no navegador do Claude.
+- [ ] Vercel: recriar `RESEND_API_KEY`, `RESEND_FROM`, `CONTACT_TO` e `GOOGLE_SITE_VERIFICATION` e mover o domínio.
+- [ ] Call de entrega seguindo `_docs/instalacao.md`, incluindo o teste de ponta a ponta.
+- [ ] Ativar notificações de pull request no GitHub para os desenvolvedores acompanharem o que é publicado.
 
 ## Domínio e deploy
 

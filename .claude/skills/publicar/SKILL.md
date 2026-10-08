@@ -61,6 +61,15 @@ Se o texto cita idade, prazo, valor ou percentual, ou se quem pediu não é a Dr
 
 Só siga com um "sim" claro. Qualquer outra resposta é ajuste: faça, volte ao passo 2 e mande a prévia nova.
 
+Se a pessoa desistir ("não publica", "pode descartar"), feche sem publicar:
+
+```bash
+git switch main
+gh pr close <número> --delete-branch
+```
+
+Confirme que o `main` local não mudou (`git status`) e avise que nada foi ao ar.
+
 ## 5. Publicar
 
 ```bash
