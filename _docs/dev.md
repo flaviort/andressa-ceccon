@@ -8,7 +8,7 @@ Para quem vai mexer na estrutura do site. O dia a dia (posts, ajustes de texto, 
 - React 19.3, com `<ViewTransition>` para a transição de página
 - Tailwind CSS 4 (tokens no `@theme` de `src/app/globals.css`, utilitários com `@utility`)
 - GSAP 3 (ScrollTrigger, SplitText) via `src/lib/gsap.ts`, e Lenis para a rolagem suave
-- Resend para o formulário de contato
+- Resend para os formulários de contato e de pré-análise
 - `marked` e `yaml` para o blog
 
 **Este não é o Next que você conhece.** A versão 16 mudou APIs e convenções. Antes de escrever código que use uma API do Next, leia o guia correspondente em `node_modules/next/dist/docs/` (é a regra do `AGENTS.md`).
@@ -57,7 +57,8 @@ O `PageTransition` fica na página, e não no layout, porque o layout persiste e
 ## Formulários
 
 - **Contato** (`src/app/contato/actions.ts`): Server Action que envia por e-mail com o Resend. Sem `RESEND_API_KEY`, em desenvolvimento a mensagem só aparece no terminal; em produção mostra erro e sugere o WhatsApp. Variáveis em `.env.example`.
-- **Pré-análise** (`src/components/ui/pre-analise-form.tsx`): sem backend. Monta as respostas numa mensagem de WhatsApp que o visitante envia.
+- **Pré-análise** (`src/app/pre-analise/actions.ts`, perguntas em `src/content/pre-analise.ts`): Server Action que envia as respostas por e-mail com o Resend e depois oferece o botão do WhatsApp com as mesmas respostas. Se o e-mail falhar, o botão do WhatsApp aparece junto com o erro.
+- O envio pelo Resend dos dois formulários fica em `src/lib/mail.ts`.
 
 ## Variáveis de ambiente
 

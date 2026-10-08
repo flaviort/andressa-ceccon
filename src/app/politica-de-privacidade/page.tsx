@@ -22,7 +22,8 @@ export default function PrivacidadePage() {
         <p>
           O site não possui banco de dados nem armazena informações enviadas pelos formulários. O formulário de
           contato envia a sua mensagem por e-mail ao escritório, por meio de um serviço de envio de e-mails (Resend). O
-          formulário de pré-análise apenas monta uma mensagem que você mesmo envia pelo WhatsApp. A partir desse envio,
+          formulário de pré-análise envia as suas respostas ao escritório da mesma forma e, se você quiser, também monta
+          uma mensagem para você enviar pelo WhatsApp. A partir desse envio,
           os dados passam a ser tratados no atendimento, exclusivamente para analisar e responder à sua solicitação.
         </p>
         <h2>Uso dos dados no atendimento</h2>

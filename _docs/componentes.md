@@ -84,7 +84,7 @@ Imprime dados estruturados. Sempre com o resultado de `pageGraph()`.
 
 ### Formulários
 
-`ContactForm` (envia por e-mail via Resend) e `PreAnaliseForm` (monta uma mensagem de WhatsApp). São específicos das páginas `/contato` e `/pre-analise`. Mexer neles é mudança estrutural.
+`ContactForm` (envia por e-mail via Resend) e `PreAnaliseForm` (envia por e-mail via Resend e oferece o WhatsApp em seguida). São específicos das páginas `/contato` e `/pre-analise`. Mexer neles é mudança estrutural.
 
 ### Logo
 
