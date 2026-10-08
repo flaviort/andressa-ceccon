@@ -2,9 +2,9 @@
 title: Regras de transição da aposentadoria, explicadas sem juridiquês
 description: Quem já contribuía antes da Reforma de 2019 pode se aposentar por regras de transição. Veja quais são e como saber qual vale para você.
 date: 2026-10-08
-cover: /images/transicao.jpg
-coverAlt: Mão escrevendo em um caderno aberto sobre a mesa
-coverSource: Shutterstock 2633039561
+cover: /images/blog/regras-de-transicao-da-aposentadoria.jpg
+coverAlt: Senhora de costas revendo papéis na mesa da sala
+coverSource: Pexels 6918494
 services: [planejamento-previdenciario, aposentadoria-por-tempo-de-contribuicao, aposentadoria-por-idade]
 ---
 

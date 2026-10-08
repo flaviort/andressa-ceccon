@@ -14,12 +14,12 @@ ffmpeg -i shutterstock_<id>.jpg -vf "scale='min(2400,iw)':-2:flags=lanczos" -q:v
 | --- | --- | --- |
 | `planejamento.jpg` | Planejamento previdenciário, card de destaque da home | 2706461347 |
 | `idade.jpg` | Aposentadoria por idade, galáxia, CTA da página Sobre, OG de /servicos | 2699568907 |
-| `transicao.jpg` | Regras de transição, OG de /contato, post regras de transição | 2633039561 |
+| `transicao.jpg` | Regras de transição, OG de /contato | 2633039561 |
 | `especial.jpg` | Aposentadoria especial, galáxia | 2758900805 |
 | `rural.jpg` | Aposentadoria rural, galáxia | 2710106783 |
 | `pcd.jpg` | Pessoa com deficiência, galáxia | 2727319989 |
 | `pensao.jpg` | Pensão por morte, galáxia | 2738114549 |
-| `bpc.jpg` | BPC/LOAS, galáxia, post BPC/LOAS | 2699270509 |
+| `bpc.jpg` | BPC/LOAS, galáxia | 2699270509 |
 | `incapacidade.jpg` | Benefícios por incapacidade, galáxia | 2762332177 |
 | `maternidade.jpg` | Salário-maternidade, galáxia | 2688637561 |
 | `revisao.jpg` | Revisão de benefícios | 2738502725 |
@@ -78,9 +78,13 @@ Nunca use imagem gerada por IA representando pessoas reais ou cenas jurídicas, 
    O nome do arquivo entre crases é o que o `npm run check` procura.
 6. Rode `npm run check`. Ele acusa imagem sem registro ou sem origem gravada.
 
+Cada post tem a sua própria capa em `public/images/blog/`. Não reaproveite as fotos das páginas de serviço (a tabela de licenças acima): o leitor que passa do serviço para o post veria a mesma imagem duas vezes.
+
 A capa do post aparece em 21/9 no topo e em 4/3 na listagem, então prefira fotos horizontais com o assunto no centro.
 
 ## Imagens do blog
 
 | Arquivo | Onde aparece | Origem | Link |
 | --- | --- | --- | --- |
+| `blog/regras-de-transicao-da-aposentadoria.jpg` | post regras de transição | Pexels 6918494 | https://www.pexels.com/photo/6918494/ |
+| `blog/bpc-loas-quem-tem-direito.jpg` | post BPC/LOAS | Pexels 17408384 | https://www.pexels.com/photo/17408384/ |

@@ -338,16 +338,19 @@ html.lenis body {
   gap: 0.6em;
 }
 .prose-legal li {
-  position: relative;
   padding-left: 1.4em;
 }
+/* The marker sits inline at the start of the first line, hung into the
+   padding. `vertical-align: middle` centres it on the text's x-height, so it
+   lines up at every font size. */
 .prose-legal li::before {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 0.68em;
+  display: inline-block;
+  vertical-align: middle;
   width: 0.6em;
   height: 1px;
+  margin-left: -1.4em;
+  margin-right: 0.8em;
   background: currentColor;
 }
 .prose-legal strong {
@@ -365,17 +368,23 @@ html.lenis body {
 }
 .prose-legal ol > li {
   counter-increment: item;
-  padding-left: 2em;
+  padding-left: 2.5rem;
 }
-/* Numbered lists use the 01, 02 numbering in bronze, like the rest of the site. */
+/* Numbered lists use the 01, 02 numbering in bronze, like the rest of the site.
+   With line-height 1 the digits fill the middle of their box, so
+   `vertical-align: middle` (inherited from the rule above) centres them on
+   the text's x-height. */
 .prose-legal ol > li::before {
   content: counter(item, decimal-leading-zero);
-  top: 0.35em;
-  width: auto;
+  width: 2.5rem;
   height: auto;
+  margin-left: -2.5rem;
+  margin-right: 0;
   background: none;
   font-size: 0.75rem;
+  line-height: 1;
   letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
   color: var(--color-bronze);
 }
 .prose-legal a {
