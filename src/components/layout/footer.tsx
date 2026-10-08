@@ -2,6 +2,7 @@ import Link from "next/link";
 import { services } from "@/content/services";
 import { FooterOverscroll } from "@/components/layout/footer-overscroll";
 import { FooterWordmark } from "@/components/motion/footer-wordmark";
+import { SocialLinks } from "@/components/ui/social-links";
 import { mainNav, site, whatsappLink } from "@/lib/site";
 
 // Cached at build time; the copyright year refreshes on the next deploy.
@@ -54,23 +55,12 @@ export async function Footer() {
               WhatsApp {site.phoneDisplay}
             </a>
           </address>
-          <ul className="body-sm flex flex-wrap gap-x-5 gap-y-1">
-            <li>
-              <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" className="link-u">
-                @andressacecconadvocacia
-              </a>
-            </li>
-            <li>
-              <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" className="link-u">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href={site.clientArea} target="_blank" rel="noopener noreferrer" className="link-u">
-                Área do cliente
-              </a>
-            </li>
-          </ul>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+            <SocialLinks />
+            <a href={site.clientArea} target="_blank" rel="noopener noreferrer" className="body-sm link-u">
+              Área do cliente
+            </a>
+          </div>
         </div>
       </div>
 
@@ -79,7 +69,7 @@ export async function Footer() {
         <FooterWordmark />
       </div>
 
-      <div className="container-x label-mono flex flex-col gap-3 border-t border-white/10 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-paper/50 md:flex-row md:items-center md:justify-between">
+      <div className="container-x flex flex-col gap-3 border-t border-white/10 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-[0.8125rem] leading-snug text-paper/50 md:label-mono md:flex-row md:items-center md:justify-between">
         <span>
           © {year} {site.name} · {site.oab}
         </span>

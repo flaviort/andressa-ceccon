@@ -1,23 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState } from "react";
+import { sendPreAnalise, type PreAnaliseState } from "@/app/pre-analise/actions";
+import { preAnaliseQuestions } from "@/content/pre-analise";
 import { whatsappLink } from "@/lib/site";
 
-const questions = [
-  {
-    name: "contribuicao",
-    label: "Quanto tempo de contribuição você tem, aproximadamente?",
-    options: ["Homem, menos de 35 anos", "Homem, 35 anos ou mais", "Mulher, menos de 30 anos", "Mulher, 30 anos ou mais"],
-  },
-  {
-    name: "idade",
-    label: "Qual a sua idade?",
-    options: ["Homem, menos de 65 anos", "Homem, 65 anos ou mais", "Mulher, menos de 62 anos", "Mulher, 62 anos ou mais"],
-  },
-  { name: "rural", label: "Já trabalhou em atividade rural?", options: ["Sim", "Não"] },
-  { name: "especial", label: "Já trabalhou exposto a algum agente nocivo à saúde?", options: ["Sim", "Não"] },
-  { name: "deficiencia", label: "Já trabalhou com alguma deficiência?", options: ["Sim", "Não"] },
-] as const;
+const questions = preAnaliseQuestions;
 
 const field =
   "w-full rounded-btn bg-fog px-4 py-4 text-[1.125rem] tracking-[-0.01em] outline-none transition placeholder:text-ash focus:bg-mist focus:ring-2 focus:ring-ink";
@@ -28,50 +16,61 @@ const labelText = "body-sm font-medium";
 // so they line up even when one label wraps.
 const fieldWrap = "flex flex-col justify-end gap-2";
 
+function WhatsAppButton({ message, dark = true }: { message: string; dark?: boolean }) {
+  return (
+    <a href={whatsappLink(message)} target="_blank" rel="noopener noreferrer" className={`btn ${dark ? "btn--dark" : "btn--outline"} w-fit`}>
+      <span className="btn__inner">
+        <span className="btn__icon btn__icon--lead" aria-hidden="true">→</span>
+        <span>Enviar pelo WhatsApp</span>
+        <span className="btn__icon btn__icon--trail" aria-hidden="true">→</span>
+      </span>
+    </a>
+  );
+}
+
 /**
- * There is no backend: the answers are assembled into a WhatsApp message the
- * visitor sends themselves, so nothing is stored by the site.
+ * The answers go to the firm by e-mail (see actions.ts). Afterwards the visitor
+ * can also send them by WhatsApp, which is also the way out when the e-mail
+ * fails. Nothing is stored by the site.
  */
 export function PreAnaliseForm() {
-  const [error, setError] = useState<string | null>(null);
+  const [state, action, pending] = useActionState<PreAnaliseState, FormData>(sendPreAnalise, { status: "idle" });
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const missing = questions.find((q) => !data.get(q.name));
-    if (missing) {
-      setError(`Responda: ${missing.label}`);
-      return;
-    }
-    setError(null);
-    const lines = [
-      "Olá! Gostaria de uma pré-análise previdenciária.",
-      "",
-      `Nome: ${data.get("nome")}`,
-      `E-mail: ${data.get("email")}`,
-      `WhatsApp: ${data.get("telefone")}`,
-      "",
-      ...questions.map((q) => `${q.label} ${data.get(q.name)}`),
-    ];
-    window.open(whatsappLink(lines.join("\n")), "_blank", "noopener,noreferrer");
+  if (state.status === "ok") {
+    return (
+      <div role="status" className="flex flex-col gap-6 rounded-btn bg-fog p-6 md:p-8">
+        <div>
+          <p className="heading-xs">Respostas enviadas.</p>
+          <p className="body-md mt-3 text-ash">
+            Obrigada. A Dra. Andressa vai ler as suas respostas e retornar pelo WhatsApp ou pelo e-mail que você
+            informou. Se quiser adiantar a conversa, mande também pelo WhatsApp.
+          </p>
+        </div>
+        {state.whatsapp && <WhatsAppButton message={state.whatsapp} />}
+      </div>
+    );
   }
 
+  // React resets the form after the action; the default values put the
+  // answers back when it comes back with an error.
+  const v = state.status === "error" ? state.values : undefined;
+
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-12">
+    <form action={action} className="flex flex-col gap-12">
       <fieldset className="grid gap-5">
         <legend className="label-mono mb-4 text-bronze">01 · Seus dados</legend>
         <label className={fieldWrap}>
           <span className={labelText}>Nome completo</span>
-          <input name="nome" required autoComplete="name" className={field} />
+          <input name="nome" required maxLength={120} autoComplete="name" defaultValue={v?.nome} className={field} />
         </label>
         <div className="grid gap-5 md:grid-cols-2 md:gap-3">
           <label className={fieldWrap}>
             <span className={labelText}>E-mail</span>
-            <input name="email" type="email" required autoComplete="email" className={field} />
+            <input name="email" type="email" required maxLength={200} autoComplete="email" defaultValue={v?.email} className={field} />
           </label>
           <label className={fieldWrap}>
             <span className={labelText}>WhatsApp com DDD</span>
-            <input name="telefone" type="tel" required autoComplete="tel" placeholder="(41) 99999-9999" className={field} />
+            <input name="telefone" type="tel" required autoComplete="tel" placeholder="(41) 99999-9999" maxLength={40} defaultValue={v?.telefone} className={field} />
           </label>
         </div>
       </fieldset>
@@ -86,7 +85,7 @@ export function PreAnaliseForm() {
           <div className={`grid gap-2 md:flex md:flex-wrap ${q.options.length === 2 ? "grid-cols-2" : ""}`}>
             {q.options.map((opt) => (
               <label key={opt} className="cursor-pointer">
-                <input type="radio" name={q.name} value={opt} className="peer sr-only" />
+                <input type="radio" name={q.name} value={opt} defaultChecked={v?.[q.name] === opt} className="peer sr-only" />
                 <span className="group/opt body-md flex min-h-12 items-center py-2 gap-3 rounded-btn bg-fog pr-5 pl-4 transition hover:bg-mist peer-checked:bg-ink peer-checked:text-paper peer-checked:hover:bg-ink-deep peer-focus-visible:ring-2 peer-focus-visible:ring-ink peer-focus-visible:ring-offset-2">
                   {/* Radio marker: an empty ring, filled with a gold dot once chosen. */}
                   <span
@@ -103,6 +102,9 @@ export function PreAnaliseForm() {
         </fieldset>
       ))}
 
+      {/* Honeypot: off-screen and skipped by keyboard and screen readers. */}
+      <input name="empresa" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px] size-px opacity-0" />
+
       <div className="flex flex-col gap-4 border-t border-ink/10 pt-8">
         <label className="body-sm flex items-start gap-3 text-ash">
           <input type="checkbox" required className="mt-0.5 size-4 accent-ink" />
@@ -111,18 +113,19 @@ export function PreAnaliseForm() {
             <a href="/politica-de-privacidade" className="text-ink underline">
               política de privacidade
             </a>{" "}
-            e com o envio destas informações pelo WhatsApp.
+            e com o envio destas informações ao escritório.
           </span>
         </label>
-        {error && (
-          <p role="alert" className="body-sm text-ink">
-            {error}
-          </p>
+        {state.status === "error" && (
+          <div role="alert" className="flex flex-col gap-4">
+            <p className="body-sm text-ink">{state.message}</p>
+            {state.whatsapp && <WhatsAppButton message={state.whatsapp} dark={false} />}
+          </div>
         )}
-        <button type="submit" className="btn btn--dark w-fit">
+        <button type="submit" disabled={pending} className="btn btn--dark w-fit disabled:opacity-60">
           <span className="btn__inner">
             <span className="btn__icon btn__icon--lead" aria-hidden="true">→</span>
-            <span>Enviar pelo WhatsApp</span>
+            <span>{pending ? "Enviando" : "Enviar respostas"}</span>
             <span className="btn__icon btn__icon--trail" aria-hidden="true">→</span>
           </span>
         </button>

@@ -43,7 +43,7 @@ export default function PreAnalisePage() {
               </li>
             </ol>
             <p className="body-sm mt-10 text-ash">
-              Você mesmo envia as respostas pelo WhatsApp. O site não guarda nenhum dado.
+              As respostas vão por e-mail direto para o escritório. O site não guarda nenhum dado.
             </p>
           </div>
         </div>

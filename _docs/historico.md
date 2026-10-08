@@ -32,7 +32,7 @@ A navegação completa aparece a partir de 1024px. Entre 768 e 1023px os links n
 
 ## Formulários
 
-O formulário de contato envia e-mail pelo Resend. A pré-análise não guarda nada: monta as respostas numa mensagem de WhatsApp que o próprio visitante envia, o que evita armazenar dados pessoais de saúde e renda.
+O formulário de contato envia e-mail pelo Resend. A pré-análise começou só com WhatsApp (o visitante enviava a mensagem montada), para o site não guardar dados de saúde e renda. Em outubro de 2026 passou a enviar também por e-mail, para o escritório receber as respostas mesmo quando a pessoa não completa o envio pelo WhatsApp. O site continua sem banco de dados: as respostas só passam pelo Resend até a caixa do escritório.
 
 ## URLs antigas
 

@@ -1,7 +1,6 @@
 "use server";
 
-import { Resend } from "resend";
-import { site } from "@/lib/site";
+import { sendToInbox } from "@/lib/mail";
 
 export type ContactValues = { nome: string; email: string; telefone: string; mensagem: string };
 
@@ -38,28 +37,12 @@ export async function sendContact(_prev: ContactState, data: FormData): Promise<
     values.mensagem,
   ].join("\n");
 
-  const key = process.env.RESEND_API_KEY;
-  if (!key) {
-    // Lets the form be tested locally before the key exists.
-    if (process.env.NODE_ENV !== "production") {
-      console.info(`[contato] RESEND_API_KEY ausente, mensagem não enviada:\n${body}`);
-      return { status: "ok" };
-    }
-    console.error("[contato] RESEND_API_KEY ausente");
-    return fail("Não foi possível enviar agora. Tente pelo WhatsApp.");
-  }
-
-  const { error } = await new Resend(key).emails.send({
-    from: process.env.RESEND_FROM ?? `Site ${site.shortName} <onboarding@resend.dev>`,
-    to: process.env.CONTACT_TO ?? site.contactInbox,
-    replyTo: values.email || undefined,
+  const sent = await sendToInbox({
+    tag: "contato",
     subject: `Contato pelo site: ${values.nome}`,
     text: body,
+    replyTo: values.email,
   });
-
-  if (error) {
-    console.error("[contato] Resend:", error);
-    return fail("Não foi possível enviar agora. Tente de novo em alguns minutos ou fale pelo WhatsApp.");
-  }
+  if (!sent) return fail("Não foi possível enviar agora. Tente de novo em alguns minutos ou fale pelo WhatsApp.");
   return { status: "ok" };
 }
