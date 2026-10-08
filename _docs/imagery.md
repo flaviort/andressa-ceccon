@@ -88,3 +88,5 @@ A capa do post aparece em 21/9 no topo e em 4/3 na listagem, então prefira foto
 | --- | --- | --- | --- |
 | `blog/regras-de-transicao-da-aposentadoria.jpg` | post regras de transição | Pexels 6918494 | https://www.pexels.com/photo/6918494/ |
 | `blog/bpc-loas-quem-tem-direito.jpg` | post BPC/LOAS | Pexels 17408384 | https://www.pexels.com/photo/17408384/ |
+| `blog/auxilio-acidente-depois-de-voltar-ao-trabalho.jpg` | post auxílio-acidente | Pexels 20860594 | https://www.pexels.com/photo/20860594/ |
+| `blog/aposentadoria-pcd-como-se-preparar.jpg` | post aposentadoria da pessoa com deficiência | Pexels 8437063 | https://www.pexels.com/photo/8437063/ |
