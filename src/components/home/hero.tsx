@@ -1,52 +1,69 @@
 import Image from "next/image";
 import Link from "next/link";
+import { preload } from "react-dom";
 import { HeroVideo } from "@/components/home/hero-video";
 import { SplitReveal } from "@/components/motion/split-reveal";
-import { preload } from "react-dom";
+import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
 export function Hero() {
   // The poster is the LCP element until the video starts, so fetch it first.
-  preload("/video/hero-poster.jpg", { as: "image", fetchPriority: "high" });
+  preload("/video/balanca-justica.jpg", { as: "image", fetchPriority: "high" });
   return (
-    <section data-theme="dark" className="relative h-svh min-h-[600px] md:p-2" aria-labelledby="hero-title">
-      <div className="relative h-full w-full overflow-hidden bg-ink md:rounded-card">
-        <HeroVideo src="/video/hero.mp4" poster="/video/hero-poster.jpg" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/70" aria-hidden="true" />
+    <section data-theme="dark" className="relative h-svh min-h-[640px] overflow-hidden bg-ink" aria-labelledby="hero-title">
+      <HeroVideo src="/video/balanca-justica.mp4" poster="/video/balanca-justica.jpg" />
+      {/* Navy wash: heavier on the left where the headline sits, lighter on the right. */}
+      <div
+        className="absolute inset-0 bg-[linear-gradient(90deg,rgba(18,27,51,0.88)_0%,rgba(27,40,72,0.6)_45%,rgba(27,40,72,0.15)_100%)]"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink-deep/80 to-transparent" aria-hidden="true" />
 
-        <div className="relative flex h-full flex-col justify-end px-[calc(var(--grid-margin)-4px)] pb-6 md:px-[calc(var(--grid-margin)+4px)] md:pb-10">
-          <div className="grid gap-y-6 lg:grid-cols-[1fr_auto] lg:gap-y-8">
-            <p className="label-mono self-end text-white/70 lg:col-start-1 lg:row-start-1">
-              Advocacia previdenciária · {site.oab}
-            </p>
-
-            <SplitReveal as="h1" trigger="load" className="display-xl text-paper lg:col-span-2 lg:row-start-2" stagger={0.1}>
-              <span id="hero-title" className="block">Seu direito.</span>
-              <span className="block">Bem planejado.</span>
+      <div className="container-x relative flex h-full flex-col justify-end pb-10 md:pb-14">
+        <div className="grid items-end gap-y-10 lg:grid-cols-12 lg:gap-x-[var(--grid-gutter)]">
+          <div className="lg:col-span-8">
+            <p className="label-mono text-gold">Advocacia previdenciária · {site.oab}</p>
+            <SplitReveal as="h1" trigger="load" className="display-xl mt-6 text-paper md:mt-8" stagger={0.1}>
+              <span id="hero-title" className="block">Seu direito,</span>
+              <span className="block">
+                <em>bem planejado.</em>
+              </span>
             </SplitReveal>
-
-            <Link
-              href="/pre-analise"
-              className="group mt-2 flex w-full max-w-[400px] items-stretch gap-[var(--grid-gutter)] rounded-[14px] bg-white/10 p-2 text-paper backdrop-blur-xl transition-colors hover:bg-white/20 lg:col-start-2 lg:row-start-1 lg:mt-0"
-            >
-              <span className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-[10px] md:w-28">
-                <Image
-                  src="/images/maos.jpg"
-                  alt=""
-                  fill
-                  sizes="112px"
-                  className="object-cover transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-110"
-                />
-              </span>
-              <span className="flex flex-col justify-between py-1 pr-2">
-                <span className="label-mono text-white/60">Pré-análise</span>
-                <span className="body-lg font-medium">Descubra quais regras de aposentadoria se aplicam a você</span>
-                <span className="body-sm text-white/70">
-                  Começar <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-                </span>
-              </span>
-            </Link>
+            <p className="body-lg mt-6 max-w-[46ch] text-paper/80 md:mt-8">
+              Planejamento de aposentadoria e benefícios do INSS com a Dra. Andressa Ceccon. No escritório em Curitiba
+              ou online, em todo o Brasil.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-2">
+              <Button href="/pre-analise" variant="gold">
+                Solicitar pré-análise
+              </Button>
+              <Button href="/servicos" variant="glass">
+                Conheça os serviços
+              </Button>
+            </div>
           </div>
+
+          <Link
+            href="/sobre"
+            className="group hidden w-full max-w-[360px] items-stretch gap-[var(--grid-gutter)] justify-self-end rounded-[6px] bg-ink/40 p-2 text-paper ring-1 ring-paper/10 backdrop-blur-xl transition-colors hover:bg-ink/60 lg:col-span-4 lg:flex"
+          >
+            <span className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-[4px]">
+              <Image
+                src="/images/andressa.jpg"
+                alt=""
+                fill
+                sizes="96px"
+                className="object-cover object-top transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-110"
+              />
+            </span>
+            <span className="flex flex-col justify-between py-1 pr-2">
+              <span className="label-mono text-gold">O escritório</span>
+              <span className="text-[19px] leading-snug font-medium tracking-[-0.015em]">Dra. Andressa Ceccon, 10 anos no Direito Previdenciário</span>
+              <span className="body-sm text-paper/70">
+                Conhecer <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+              </span>
+            </span>
+          </Link>
         </div>
       </div>
     </section>

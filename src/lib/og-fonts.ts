@@ -13,12 +13,12 @@ export async function readAsset(path: string) {
 }
 
 export async function ogFonts() {
-  const [regular, bold] = await Promise.all([
+  const [regular, semibold] = await Promise.all([
     readAsset(join(dir, "inter-tight-latin-400.woff")),
-    readAsset(join(dir, "inter-tight-latin-700.woff")),
+    readAsset(join(dir, "inter-tight-latin-600.woff")),
   ]);
   return [
     { name: "Inter Tight", data: Buffer.from(regular, "base64"), weight: 400 as const, style: "normal" as const },
-    { name: "Inter Tight", data: Buffer.from(bold, "base64"), weight: 700 as const, style: "normal" as const },
+    { name: "Inter Tight", data: Buffer.from(semibold, "base64"), weight: 600 as const, style: "normal" as const },
   ];
 }

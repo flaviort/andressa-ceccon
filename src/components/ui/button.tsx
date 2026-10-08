@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type Variant = "default" | "dark" | "light" | "glass" | "outline";
+type Variant = "default" | "dark" | "light" | "glass" | "outline" | "gold";
 
 type Props = {
   href: string;

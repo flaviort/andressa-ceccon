@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Inter_Tight } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -7,19 +7,12 @@ import { siteGraph } from "@/lib/schema";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-// ABC Diatype (the reference typeface) is a paid Dinamo license. Inter Tight
-// at bold weights with tight tracking is the closest free match.
+// Inter Tight is the closest free match to the reference's ABC Diatype (a paid
+// Dinamo face). Headlines use 500/600 instead of the reference's 700.
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -67,7 +60,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#010101",
+  themeColor: "#1b2848",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -75,7 +68,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${interTight.variable} ${geistMono.variable}`} suppressHydrationWarning>
+    <html lang="pt-BR" className={interTight.variable} suppressHydrationWarning>
       <head>
         <noscript>
           <style>{'[data-split="load"]{visibility:visible!important}'}</style>

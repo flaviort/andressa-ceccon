@@ -46,7 +46,7 @@ export function ImageGalaxy() {
   );
 
   return (
-    <section ref={ref} className="relative overflow-hidden py-28 md:py-48" aria-labelledby="galaxy-title">
+    <section ref={ref} className="relative py-28 md:py-48" aria-labelledby="galaxy-title">
       <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
         {tiles.map((t) => (
           <div
@@ -62,8 +62,8 @@ export function ImageGalaxy() {
       </div>
 
       <div className="container-x relative flex flex-col items-center text-center">
-        <ScrubText as="h2" className="heading-lg max-w-[12ch] md:display-lg md:max-w-[11ch]">
-          <span id="galaxy-title">Um direito para cada etapa da vida.</span>
+        <ScrubText as="h2" className="heading-lg max-w-[13ch] md:display-lg md:max-w-[13ch]">
+          <span id="galaxy-title">Um direito para cada <em>etapa da vida.</em></span>
         </ScrubText>
         <p className="body-lg mt-8 max-w-[44ch] text-ash md:mt-10">
           Aposentadoria, pensão, maternidade, incapacidade, assistência. A Previdência acompanha você em momentos

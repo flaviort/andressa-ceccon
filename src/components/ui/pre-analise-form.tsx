@@ -20,7 +20,7 @@ const questions = [
 ] as const;
 
 const field =
-  "w-full rounded-btn bg-fog px-4 py-4 text-[17px] tracking-[-0.01em] outline-none transition placeholder:text-ash focus:bg-mist focus:ring-2 focus:ring-ink";
+  "w-full rounded-btn bg-fog px-4 py-4 text-[18px] tracking-[-0.01em] outline-none transition placeholder:text-ash focus:bg-mist focus:ring-2 focus:ring-ink";
 
 /**
  * There is no backend: the answers are assembled into a WhatsApp message the
@@ -53,7 +53,7 @@ export function PreAnaliseForm() {
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-12">
       <fieldset className="grid gap-3">
-        <legend className="label-mono mb-4 text-ash">01 · Seus dados</legend>
+        <legend className="label-mono mb-4 text-bronze">01 · Seus dados</legend>
         <label className="sr-only" htmlFor="nome">Nome completo</label>
         <input id="nome" name="nome" required autoComplete="name" placeholder="Nome completo" className={field} />
         <div className="grid gap-3 md:grid-cols-2">
@@ -67,14 +67,21 @@ export function PreAnaliseForm() {
       {questions.map((q, i) => (
         <fieldset key={q.name}>
           <legend className="mb-5">
-            <span className="label-mono block text-ash">0{i + 2}</span>
+            <span className="label-mono block text-bronze">0{i + 2}</span>
             <span className="heading-xs mt-2 block">{q.label}</span>
           </legend>
           <div className="flex flex-wrap gap-2">
             {q.options.map((opt) => (
               <label key={opt} className="cursor-pointer">
                 <input type="radio" name={q.name} value={opt} className="peer sr-only" />
-                <span className="body-md inline-flex h-12 items-center rounded-btn bg-fog px-5 transition peer-checked:bg-ink peer-checked:text-paper peer-focus-visible:ring-2 peer-focus-visible:ring-ink peer-focus-visible:ring-offset-2 hover:bg-mist">
+                <span className="group/opt body-md inline-flex h-12 items-center gap-3 rounded-btn bg-fog pr-5 pl-4 transition hover:bg-mist peer-checked:bg-ink peer-checked:text-paper peer-checked:hover:bg-ink-deep peer-focus-visible:ring-2 peer-focus-visible:ring-ink peer-focus-visible:ring-offset-2">
+                  {/* Radio marker: an empty ring, filled with a gold dot once chosen. */}
+                  <span
+                    aria-hidden="true"
+                    className="grid size-[18px] shrink-0 place-items-center rounded-full ring-[1.5px] ring-ink/35 transition group-hover/opt:ring-ink/60 [:checked+*_&]:ring-gold"
+                  >
+                    <span className="size-2 scale-0 rounded-full bg-gold transition-transform [:checked+*_&]:scale-100" />
+                  </span>
                   {opt}
                 </span>
               </label>
@@ -83,7 +90,7 @@ export function PreAnaliseForm() {
         </fieldset>
       ))}
 
-      <div className="flex flex-col gap-4 border-t border-black/10 pt-8">
+      <div className="flex flex-col gap-4 border-t border-ink/10 pt-8">
         <label className="body-sm flex items-start gap-3 text-ash">
           <input type="checkbox" required className="mt-0.5 size-4 accent-ink" />
           <span>

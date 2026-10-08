@@ -11,24 +11,20 @@ import { useLenis } from "@/components/motion/smooth-scroll";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [dark, setDark] = useState(pathname === "/");
   const [scrolled, setScrolled] = useState(false);
-  const lastY = useRef(0);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const lenis = useLenis();
 
-  // Hide on scroll down, show on scroll up. The text color follows whatever
-  // section sits under the bar: sections marked data-theme="dark" get white.
-  // (mix-blend-difference can't be used: view-transition-name isolates the header.)
+  // The bar never hides: past 80px it condenses into the navy pill and stays.
+  // At the top of the page the text colour follows the section under the bar
+  // (data-theme="dark" gets ivory).
   useEffect(() => {
     let frame = 0;
     const sample = () => {
       frame = 0;
       const y = window.scrollY;
-      setHidden(y > 160 && y > lastY.current);
       setScrolled(y > 80);
-      lastY.current = y;
       const under = document
         .elementsFromPoint(window.innerWidth / 2, 36)
         .find((el) => !el.closest("header"));
@@ -37,23 +33,26 @@ export function Header() {
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(sample);
     };
-    const t = setTimeout(sample, 60);
+    // After a route change the new page may still be streaming in or sitting
+    // under the view transition overlay, so sample again once it settles.
+    const timers = [60, 350, 800, 1400].map((ms) => setTimeout(sample, ms));
+    const vt = (document as Document & { activeViewTransition?: ViewTransition | null }).activeViewTransition;
+    vt?.finished.then(sample, sample);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
     return () => {
-      clearTimeout(t);
+      timers.forEach(clearTimeout);
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
   }, [pathname]);
 
-  // Close the menu and reveal the bar whenever the route changes.
+  // Close the menu whenever the route changes.
   const [prevPath, setPrevPath] = useState(pathname);
   if (prevPath !== pathname) {
     setPrevPath(pathname);
     setOpen(false);
-    setHidden(false);
   }
 
   useEffect(() => {
@@ -83,47 +82,57 @@ export function Header() {
         Pular para o conteúdo
       </a>
 
+      {/* Mirrors the reference header: a full-width bar at the top of the page
+          that condenses into a centred navy pill once the page scrolls. The
+          wordmark collapses into the "AC" monogram instead of disappearing. */}
       <div
-        className={`flex h-[var(--header-h)] items-center justify-between px-[calc(var(--grid-margin)+4px)] transition-[transform,color,background-color] duration-700 ease-[var(--ease-out-expo)] md:px-[calc(var(--grid-margin)+12px)] ${dark ? "text-paper" : "text-ink"} ${
-          scrolled ? (dark ? "bg-black/25 backdrop-blur-xl" : "bg-white/80 backdrop-blur-xl") : "bg-transparent"
-        } ${
-          hidden && !open ? "-translate-y-full" : "translate-y-0"
-        }`}
+        data-compact={scrolled || undefined}
+        className="site-header__bar"
       >
-        <Link href="/" className="pointer-events-auto" aria-label={`${site.name}, página inicial`}>
-          <Logo />
-        </Link>
-
-        <nav aria-label="Principal" className="pointer-events-auto hidden items-center gap-7 md:flex">
-          {mainNav.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                prefetch
-                aria-current={active ? "page" : undefined}
-                className={`body-sm link-u ${active ? "bg-[length:100%_1px]" : ""}`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <Link href="/pre-analise" className={`body-sm rounded-[10px] px-3.5 py-2 transition-[background-color,color,opacity] duration-700 hover:opacity-80 ${dark ? "bg-paper text-ink" : "bg-ink text-paper"}`}>
-            Pré-análise
-          </Link>
-        </nav>
-
-        <button
-          type="button"
-          className="pointer-events-auto body-sm flex items-center gap-2 md:hidden"
-          aria-expanded={open}
-          aria-controls="menu-mobile"
-          ref={toggleRef}
-          onClick={() => setOpen(true)}
+        <div
+          className={`site-header__inner pointer-events-auto ${scrolled || dark ? "text-paper [--accent:var(--color-gold)]" : "text-ink"}`}
         >
-          Menu <span className="text-lg leading-none">+</span>
-        </button>
+          <span className="site-header__bg" aria-hidden="true" />
+          <Link href="/" className="relative" aria-label={`${site.name}, página inicial`}>
+            <Logo />
+          </Link>
+
+          <nav aria-label="Principal" className="site-header__nav relative hidden items-center md:flex">
+            {mainNav.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  prefetch
+                  aria-current={active ? "page" : undefined}
+                  className={`body-sm link-u ${active ? "bg-[length:100%_1px]" : ""}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <Link
+              href="/pre-analise"
+              className={`body-sm rounded-[4px] px-3.5 py-1.5 transition-[background-color,color] duration-500 hover:opacity-85 ${
+                scrolled || dark ? "bg-gold text-ink" : "bg-ink text-paper"
+              }`}
+            >
+              Pré-análise
+            </Link>
+          </nav>
+
+          <button
+            type="button"
+            className="relative body-sm flex items-center gap-2 md:hidden"
+            aria-expanded={open}
+            aria-controls="menu-mobile"
+            ref={toggleRef}
+            onClick={() => setOpen(true)}
+          >
+            Menu <span className="text-lg leading-none">+</span>
+          </button>
+        </div>
       </div>
 
       <MobileMenu
@@ -195,17 +204,17 @@ function MobileMenu({ open, onClose, pathname }: { open: boolean; onClose: () =>
                 href={item.href}
                 onClick={onClose}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className="flex items-baseline justify-between py-3 text-[34px] leading-none font-bold tracking-[-0.04em]"
+                className="flex items-baseline justify-between py-3 text-[34px] leading-none font-semibold tracking-[-0.04em]"
                 style={{ transitionDelay: open ? `${120 + i * 40}ms` : "0ms" }}
               >
                 {item.label}
-                <span className="label-mono text-white/40">0{i + 1}</span>
+                <span className="label-mono text-gold">0{i + 1}</span>
               </Link>
             </li>
           ))}
         </ul>
 
-        <p className="label-mono mt-10 text-white/50">Serviços</p>
+        <p className="label-mono mt-10 text-gold">Serviços</p>
         <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
           {services.map((s) => (
             <li key={s.slug}>

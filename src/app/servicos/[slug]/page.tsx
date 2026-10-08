@@ -113,8 +113,8 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
       <div className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-12 py-20 md:py-32">
         <aside className="col-span-12 md:col-span-4 lg:col-span-3">
           <div className="md:sticky md:top-28">
-            <p className="label-mono text-ash">Nesta página</p>
-            <ul className="mt-4 flex flex-col gap-2 border-l border-black/10 pl-4">
+            <p className="label-mono text-bronze">Nesta página</p>
+            <ul className="mt-4 flex flex-col gap-2 border-l border-ink/10 pl-4">
               {service.sections.map((s) => (
                 <li key={s.heading}>
                   <a href={`#${anchor(s.heading)}`} className="body-sm link-u">
@@ -135,7 +135,7 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
             </ul>
 
             <div className="mt-10 rounded-card bg-ink p-6 text-paper">
-              <p className="label-mono text-white/50">Seu caso</p>
+              <p className="label-mono text-gold">Seu caso</p>
               <p className="heading-xs mt-4">Quer saber se tem direito?</p>
               <p className="body-sm mt-3 text-white/70">Fale com a advogada e receba uma orientação inicial.</p>
               <div className="mt-6 flex flex-col gap-2">
@@ -174,7 +174,7 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
                 <li key={d}>{d}</li>
               ))}
             </ul>
-            <p className="!text-[15px] text-ash">
+            <p className="!text-[16px] text-ash">
               A lista varia conforme o caso. Na primeira conversa indicamos exatamente o que reunir.
             </p>
           </section>
@@ -183,7 +183,8 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
 
       <section id="perguntas" className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 scroll-mt-28 pb-24 md:pb-36">
         <SplitReveal as="h2" className="heading-md col-span-12 md:col-span-4">
-          Perguntas frequentes
+          Perguntas <br />
+          frequentes
         </SplitReveal>
         <div className="col-span-12 md:col-span-8">
           <Faq items={service.faq} />
@@ -207,9 +208,9 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
                   <Image src={r.image} alt={r.imageAlt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover transition-transform duration-1000 ease-[var(--ease-out-expo)] group-hover:scale-105" />
                 </div>
                 <div className="mt-4 flex gap-4">
-                  <span className="label-mono pt-1 text-ash">{r.index}</span>
+                  <span className="label-mono pt-1 text-bronze">{r.index}</span>
                   <div>
-                    <h3 className="text-[19px] leading-[1.2] font-medium tracking-[-0.02em]">{r.title}</h3>
+                    <h3 className="text-[21px] leading-[1.2] font-medium tracking-[-0.02em]">{r.title}</h3>
                     <p className="body-sm mt-2 text-ash">{r.excerpt}</p>
                   </div>
                 </div>

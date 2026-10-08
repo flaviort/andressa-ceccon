@@ -15,7 +15,7 @@ export function PageHeader({
   return (
     <section className="container-x pt-[calc(var(--header-h)+56px)] pb-14 md:pt-[calc(var(--header-h)+96px)] md:pb-20">
       {crumbs && (
-        <nav aria-label="Trilha de navegação" className="label-mono mb-8 text-ash md:mb-12">
+        <nav aria-label="Trilha de navegação" className="label-mono mb-8 text-bronze md:mb-12">
           <ol className="flex flex-wrap items-center gap-2">
             {crumbs.map((c, i) => (
               <li key={c.label} className="flex items-center gap-2">

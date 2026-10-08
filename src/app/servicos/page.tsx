@@ -48,20 +48,20 @@ export default function ServicosPage() {
       />
 
       <section className="container-x pb-24 md:pb-40" aria-label="Lista de serviços">
-        <Reveal as="ul" className="border-t border-black/10" stagger={0.04}>
+        <Reveal as="ul" className="border-t border-ink/10" stagger={0.04}>
           {services.map((s) => (
-            <li key={s.slug} className="border-b border-black/10">
+            <li key={s.slug} className="border-b border-ink/10">
               <Link
                 href={`/servicos/${s.slug}`}
                 prefetch
                 className="group grid grid-cols-12 items-center gap-x-[var(--grid-gutter)] gap-y-3 py-6 md:py-8"
               >
-                <span className="label-mono col-span-2 text-ash md:col-span-1">{s.index}</span>
+                <span className="label-mono col-span-2 text-bronze md:col-span-1">{s.index}</span>
                 <h2 className="heading-sm col-span-10 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:translate-x-3 md:col-span-5">
                   {s.title}
                 </h2>
                 <p className="body-sm col-span-10 col-start-3 text-ash md:col-span-4 md:col-start-auto">{s.excerpt}</p>
-                <span className="relative col-span-2 hidden aspect-[4/3] overflow-hidden rounded-[10px] md:block">
+                <span className="relative col-span-2 hidden aspect-[4/3] overflow-hidden rounded-[4px] md:block">
                   <Image
                     src={s.image}
                     alt=""
@@ -79,7 +79,7 @@ export default function ServicosPage() {
         </Reveal>
       </section>
 
-      <PushCta title={["Não sabe", "por onde", "começar?"]} text="Responda cinco perguntas rápidas e receba uma orientação inicial sobre o seu caso." />
+      <PushCta title={["Não sabe", "por onde começar?"]} text="Responda cinco perguntas rápidas e receba uma orientação inicial sobre o seu caso." />
     </PageTransition>
   );
 }

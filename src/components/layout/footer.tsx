@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "@/content/services";
+import { Wordmark } from "@/components/ui/logo";
 import { mainNav, site, whatsappLink } from "@/lib/site";
 
 // Cached at build time; the copyright year refreshes on the next deploy.
@@ -11,13 +12,13 @@ async function currentYear() {
 export async function Footer() {
   const year = await currentYear();
   return (
-    <footer data-theme="dark" className="relative overflow-hidden bg-ink text-paper">
+    <footer data-theme="dark" className="relative overflow-hidden bg-ink-deep text-paper">
       <div className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-12 pt-20 pb-10 md:pt-28">
         <nav aria-label="Rodapé" className="col-span-12 md:col-span-3">
           <ul className="flex flex-col gap-1">
             {[{ label: "Início", href: "/" }, ...mainNav, { label: "Pré-análise", href: "/pre-analise" }].map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="heading-xs link-u">
+                <Link href={item.href} className="text-[22px] leading-tight font-medium tracking-[-0.02em] link-u">
                   {item.label}
                 </Link>
               </li>
@@ -26,7 +27,7 @@ export async function Footer() {
         </nav>
 
         <div className="col-span-12 md:col-span-4">
-          <p className="label-mono mb-4 text-white/50">Serviços</p>
+          <p className="label-mono mb-4 text-gold">Serviços</p>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-1.5">
             {services.map((s) => (
               <li key={s.slug}>
@@ -40,7 +41,7 @@ export async function Footer() {
 
         <div className="col-span-12 flex flex-col gap-8 md:col-span-4 md:col-start-9">
           <p className="body-lg text-white/80">
-            Escritório especializado em Direito Previdenciário. Sede em Curitiba, atendimento online para todo o Brasil.
+            Escritório especializado em Direito Previdenciário. Atendimento presencial em Curitiba e online para todo o Brasil.
           </p>
           <address className="body-sm flex flex-col gap-1 text-white/60 not-italic">
             <span>{site.address.street}</span>
@@ -71,14 +72,12 @@ export async function Footer() {
         </div>
       </div>
 
-      <div className="container-x" aria-hidden="true">
-        {/* The wordmark measures ~6.75em wide, so this fills the container exactly. */}
-        <p className="w-full text-[calc((100vw-2*var(--grid-margin))/6.85)] leading-[0.78] font-bold tracking-[-0.065em] whitespace-nowrap select-none">
-          andressa<span className="text-white/35">ceccon</span>
-        </p>
+      <div className="container-x pb-8 md:pb-12" aria-hidden="true">
+        {/* The firm's logotype, full width, in a single solid colour. */}
+        <Wordmark className="block h-auto w-full select-none" />
       </div>
 
-      <div className="container-x label-mono flex flex-col gap-3 border-t border-white/10 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-white/50 md:flex-row md:items-center md:justify-between">
+      <div className="container-x label-mono flex flex-col gap-3 border-t border-white/10 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-paper/50 md:flex-row md:items-center md:justify-between">
         <span>
           © {year} {site.name} · {site.oab}
         </span>

@@ -3,7 +3,7 @@
 import { whatsappLink } from "@/lib/site";
 
 const field =
-  "w-full rounded-btn bg-white/10 px-4 py-4 text-[17px] tracking-[-0.01em] text-paper outline-none transition placeholder:text-white/50 focus:bg-white/15 focus:ring-2 focus:ring-paper";
+  "w-full rounded-btn bg-white/10 px-4 py-4 text-[18px] tracking-[-0.01em] text-paper outline-none transition placeholder:text-white/50 focus:bg-white/15 focus:ring-2 focus:ring-paper";
 
 export function ContactForm() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {

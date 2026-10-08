@@ -23,9 +23,9 @@ npm run dev
 
 ## Referência visual
 
-Baseado em wolverineworldwide.com: tipografia bold com tracking negativo (display 168px a 1440px, entrelinha 0,79), grid de 12 colunas com margem de 48px e gutter de 20px, botões com troca de seta no hover, hero em vídeo com cantos arredondados e o rodapé com a marca gigante.
+Estrutura e movimento baseados em wolverineworldwide.com: grid de 12 colunas com margem de 48px e gutter de 20px, botões com troca de seta no hover, header que vira pílula ao rolar, galeria flutuante, transições de página e o rodapé com a marca gigante.
 
-A fonte original (ABC Diatype, da Dinamo) é paga. Usamos Inter Tight como substituta gratuita. Se a licença for comprada, basta trocar a fonte em `src/app/layout.tsx` (`next/font/local`).
+Cores seguem os posts do escritório (azul-marinho, dourado areia e marfim). Tipografia em Inter Tight com pesos leves, sem itálico; fotos nas cores originais.
 
 ## Transição de página
 
@@ -40,6 +40,6 @@ A lista completa, incluindo domínio, Search Console e testes, está em `_docs/p
 
 - **Fotos de banco**: 15 imagens licenciadas no Shutterstock. Lista, IDs e como reprocessar em `_docs/imagery.md`.
 - **Foto da advogada**: `public/images/andressa.jpg` (760x1024, enviada pelo cliente). Por ser estreita, aparece em coluna, não em largura total.
-- **Vídeo do hero**: Pexels, licença gratuita ("Man Signing the Paper", vídeo 8061370), convertido para P&B.
+- **Vídeo do hero**: Pexels, licença gratuita (vídeo 8061372, advogada assinando documentos no escritório).
 - **Revisão jurídica**: os textos dos serviços citam requisitos legais (idades, pontos de 2026, prazos). Precisam da revisão da Dra. Andressa e de atualização anual da regra de pontos e da idade progressiva.
 - **Publicidade na advocacia**: o texto evita promessa de resultado e menção a preço, seguindo o Provimento 205/2021 da OAB. Vale manter esse cuidado em qualquer alteração.

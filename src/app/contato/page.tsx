@@ -11,7 +11,7 @@ import { site, whatsappLink } from "@/lib/site";
 const meta = {
   title: "Contato",
   description:
-    "Fale com a Dra. Andressa Ceccon pelo WhatsApp (41) 98467-4841. Escritório no Centro de Curitiba/PR, com atendimento online para todo o Brasil.",
+    "Fale com a Dra. Andressa Ceccon pelo WhatsApp (41) 98467-4841. Escritório no Centro de Curitiba/PR, com atendimento presencial e online para todo o Brasil.",
   path: "/contato",
 };
 
@@ -35,7 +35,9 @@ export default function ContatoPage() {
         title={
           <>
             <span className="block">Vamos</span>
-            <span className="block">conversar.</span>
+            <span className="block">
+              <em>conversar.</em>
+            </span>
           </>
         }
       />
@@ -61,10 +63,10 @@ export default function ContatoPage() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-start justify-between gap-6 border-t border-black/10 py-6 last:border-b"
+              className="group flex items-start justify-between gap-6 border-t border-ink/10 py-6 last:border-b"
             >
               <span>
-                <span className="label-mono block text-ash">{item.k}</span>
+                <span className="label-mono block text-bronze">{item.k}</span>
                 <span className="heading-xs mt-2 block max-w-[24ch]">{item.v}</span>
               </span>
               <span className="text-xl transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -73,13 +75,12 @@ export default function ContatoPage() {
             </a>
           ))}
           <p className="body-sm mt-8 max-w-[40ch] text-ash">
-            Atendimento 100% online para todo o Brasil. Reuniões presenciais no escritório em Curitiba mediante
-            agendamento.
+            Atendimento presencial no escritório, no Centro de Curitiba, e online para todo o Brasil. Visitas com hora marcada.
           </p>
         </Reveal>
 
         <div className="col-span-12 rounded-card bg-ink p-6 text-paper md:col-span-6 md:col-start-7 md:p-10">
-          <p className="label-mono text-white/50">Mensagem</p>
+          <p className="label-mono text-gold">Mensagem</p>
           <h2 className="heading-sm mt-4 mb-8">Conte o que você precisa.</h2>
           <ContactForm />
           <div className="mt-10 border-t border-white/10 pt-8">

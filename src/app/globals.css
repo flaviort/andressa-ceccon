@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 /*
- * Design tokens, calibrated against wolverineworldwide.com at 1440px:
- * display-xl 168px / lh .79 / -0.05em, heading-lg 128px, heading-md 57px,
- * heading-sm 33px, body-lg 19px, body-sm 15px. Fluid values scale with vw.
+ * Design tokens. Layout, type, grid, buttons and motion follow
+ * wolverineworldwide.com (lighter weights); the palette follows the firm's own
+ * posts: deep navy, sand gold and ivory.
  */
 @theme {
   --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
-  --color-ink: #010101;
-  --color-paper: #ffffff;
-  --color-fog: #f2f2f2;
-  --color-mist: #e6e6e6;
-  --color-ash: #757575;
-  --color-smoke: #b5b5b5;
+  /* "ink" is the navy used for text and dark surfaces; "paper" is ivory. */
+  --color-ink: #1b2848;
+  --color-ink-deep: #121b33;
+  --color-paper: #f8f6f1;
+  --color-fog: #efebe3;
+  --color-mist: #e4ded2;
+  --color-ash: #5f6677;
+  --color-smoke: #bdb5a5;
+  --color-gold: #d4c09a;
+  --color-bronze: #7e6236;
 
-  --radius-card: 20px;
-  --radius-btn: 12px;
+  --radius-card: 6px;
+  --radius-btn: 5px;
 
   --spacing-margin: var(--grid-margin);
   --spacing-gutter: var(--grid-gutter);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 :root {
@@ -56,7 +60,7 @@ html {
 body {
   background: var(--color-paper);
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
@@ -102,69 +106,92 @@ html.lenis body {
 }
 
 /* ---------- Type scale ---------- */
+/* Same family as the reference's grotesk, at lighter weights than its 700. */
 @utility display-xl {
-  font-size: clamp(64px, 11.67vw, 220px);
-  line-height: 0.79;
-  letter-spacing: -0.05em;
-  font-weight: 700;
+  font-size: clamp(48px, 7.4vw, 128px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  font-weight: 600;
 }
 @utility display-lg {
-  font-size: clamp(52px, 8.9vw, 168px);
-  line-height: 0.79;
-  letter-spacing: -0.05em;
-  font-weight: 700;
+  font-size: clamp(42px, 5.9vw, 100px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-weight: 600;
 }
 @utility heading-lg {
-  font-size: clamp(40px, 5.6vw, 96px);
-  line-height: 0.86;
-  letter-spacing: -0.045em;
-  font-weight: 700;
+  font-size: clamp(34px, 4.1vw, 66px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 600;
 }
 @utility heading-md {
-  font-size: clamp(32px, 3.96vw, 64px);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  font-weight: 700;
+  font-size: clamp(28px, 3vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 600;
 }
 @utility heading-sm {
-  font-size: clamp(24px, 2.3vw, 40px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  font-size: clamp(24px, 2.1vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 500;
 }
 @utility heading-xs {
-  font-size: clamp(20px, 1.4vw, 24px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  font-size: clamp(20px, 1.5vw, 25px);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 500;
 }
 @utility body-lg {
-  font-size: clamp(17px, 1.32vw, 21px);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-size: clamp(18px, 1.45vw, 23px);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
 }
 @utility body-md {
-  font-size: 16px;
-  line-height: 1.35;
-  letter-spacing: -0.015em;
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
 }
 @utility body-sm {
-  font-size: clamp(14px, 1.04vw, 15px);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
 }
+/* Small caps-style label, like "AUXÍLIO-ACIDENTE" in the firm's posts. */
 @utility label-mono {
-  font-family: var(--font-mono);
-  font-size: 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
   line-height: 1.2;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+:root {
+  --accent: var(--color-bronze);
+}
+[data-theme="dark"] {
+  --accent: var(--color-gold);
+}
+/* Links and buttons read at 500. Low specificity so font-* utilities still win;
+   paragraphs inside card links stay at the body weight. */
+:where(a, button) {
+  font-weight: 500;
+}
+:where(a, button) :where(p) {
+  font-weight: 400;
+}
+
+:is(h1, h2, h3, p, span) em {
+  font-style: normal;
+  color: var(--accent);
 }
 
 /* ---------- Button (arrow swap like the reference) ---------- */
 .btn {
-  --btn-bg: rgb(0 0 0 / 0.08);
-  --btn-bg-hover: rgb(0 0 0 / 0.14);
+  --btn-bg: rgb(27 40 72 / 0.07);
+  --btn-bg-hover: rgb(27 40 72 / 0.13);
   --btn-fg: var(--color-ink);
   position: relative;
   display: inline-flex;
@@ -174,7 +201,8 @@ html.lenis body {
   border-radius: var(--radius-btn);
   color: var(--btn-fg);
   background: var(--btn-bg);
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 500;
   letter-spacing: -0.01em;
   white-space: nowrap;
   overflow: hidden;
@@ -221,8 +249,14 @@ html.lenis body {
 }
 .btn--dark {
   --btn-bg: var(--color-ink);
-  --btn-bg-hover: #2a2a2a;
+  --btn-bg-hover: #26355c;
   --btn-fg: var(--color-paper);
+}
+/* Primary call to action on dark surfaces. */
+.btn--gold {
+  --btn-bg: var(--color-gold);
+  --btn-bg-hover: #e2d2b2;
+  --btn-fg: var(--color-ink);
 }
 .btn--light {
   --btn-bg: var(--color-paper);
@@ -238,14 +272,14 @@ html.lenis body {
 }
 .btn--outline {
   --btn-bg: transparent;
-  --btn-bg-hover: rgb(0 0 0 / 0.05);
-  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.15);
+  --btn-bg-hover: rgb(27 40 72 / 0.05);
+  box-shadow: inset 0 0 0 1px rgb(27 40 72 / 0.2);
 }
 .btn--small {
   height: 38px;
   padding: 0 14px;
-  font-size: 14px;
-  border-radius: 10px;
+  font-size: 15px;
+  border-radius: 4px;
 }
 .btn--small .btn__inner {
   gap: 16px;
@@ -269,10 +303,10 @@ html.lenis body {
 
 /* Prose for long-form service content */
 .prose-legal h2 {
-  font-size: clamp(26px, 2.3vw, 40px);
-  line-height: 1;
-  letter-spacing: -0.035em;
-  font-weight: 700;
+  font-size: clamp(26px, 2.2vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 600;
   margin: 2.2em 0 0.6em;
 }
 .prose-legal h3 {
@@ -284,10 +318,10 @@ html.lenis body {
 }
 .prose-legal p,
 .prose-legal li {
-  font-size: clamp(17px, 1.25vw, 19px);
+  font-size: clamp(18px, 1.4vw, 21px);
   line-height: 1.5;
   letter-spacing: -0.015em;
-  color: #2b2b2b;
+  color: #3a4257;
 }
 .prose-legal p + p {
   margin-top: 1em;
@@ -318,7 +352,7 @@ html.lenis body {
 /* ---------- View transitions ---------- */
 ::view-transition {
   pointer-events: none;
-  background: var(--color-ink);
+  background: var(--color-ink-deep);
 }
 /* The page wrapper and header carry their own names, so root only holds the
    white canvas. Hiding it lets the black backdrop show behind the pages. */
@@ -365,7 +399,7 @@ html.lenis body {
 @keyframes page-in {
   from {
     transform: translateY(100vh);
-    clip-path: inset(0 0 0 0 round 28px 28px 0 0);
+    clip-path: inset(0 0 0 0 round 8px 8px 0 0);
   }
   to {
     transform: translateY(0);
@@ -391,3 +425,98 @@ html.lenis body {
 [data-split="load"] {
   visibility: hidden;
 }
+
+/* ---------- Header (condenses into a pill, like the reference) ---------- */
+/* Lets width animate to max-content where supported; elsewhere it snaps. */
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+}
+.site-header__bar {
+  padding: 18px var(--grid-margin) 0;
+  transition: transform 0.45s var(--ease-out-cubic);
+}
+.site-header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+  height: 46px;
+  margin-inline: auto;
+  padding-inline: 2px;
+  transition:
+    width 0.45s var(--ease-out-cubic),
+    padding 0.45s var(--ease-out-cubic),
+    color 0.45s var(--ease-out-cubic);
+}
+.site-header__bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: rgb(27 40 72 / 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out-cubic);
+}
+.site-header__nav {
+  gap: 28px;
+  transition: gap 0.45s var(--ease-out-cubic);
+}
+.logo {
+  --logo-h: 18px;
+  position: relative;
+  display: block;
+  height: var(--logo-h);
+  width: calc(var(--logo-h) * 10.905);
+  overflow: hidden;
+  transition: width 0.45s var(--ease-out-cubic);
+}
+.logo__full,
+.logo__mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  transition: opacity 0.3s var(--ease-out-cubic);
+}
+.logo__mark {
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .logo {
+    --logo-h: 21px;
+  }
+}
+[data-compact] .site-header__inner {
+  width: max-content;
+  padding-inline: 16px 6px;
+  --accent: var(--color-gold);
+}
+[data-compact] .site-header__bg {
+  opacity: 1;
+}
+[data-compact] .site-header__nav {
+  gap: 22px;
+}
+[data-compact] .logo {
+  width: calc(var(--logo-h) * 1.459);
+}
+[data-compact] .logo__full {
+  opacity: 0;
+}
+[data-compact] .logo__mark {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+@media (max-width: 767px) {
+  [data-compact] .site-header__inner {
+    padding-inline: 16px 14px;
+    gap: 24px;
+  }
+}
+

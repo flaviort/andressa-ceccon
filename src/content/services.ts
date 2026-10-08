@@ -31,7 +31,7 @@ export const services: Service[] = [
     index: "01",
     metaTitle: "Planejamento Previdenciário em Curitiba e Online",
     metaDescription:
-      "Descubra qual regra de aposentadoria rende mais no seu caso antes de pedir ao INSS. Planejamento previdenciário com advogada especialista, 100% online.",
+      "Descubra qual regra de aposentadoria rende mais no seu caso antes de pedir ao INSS. Atendimento presencial em Curitiba ou online.",
     keywords: [
       "planejamento previdenciário",
       "advogada previdenciária Curitiba",
@@ -40,7 +40,7 @@ export const services: Service[] = [
       "regras de transição INSS",
     ],
     image: "/images/planejamento.jpg",
-    imageAlt: "Homem maduro lendo uma carta à mesa, junto a uma janela",
+    imageAlt: "Homem idoso de óculos analisando documentos à mesa de casa",
     excerpt:
       "O estudo que mostra quando você pode se aposentar, por qual regra e com qual valor. Feito antes do pedido, quando ainda dá para escolher.",
     lead:
@@ -97,7 +97,7 @@ export const services: Service[] = [
       },
       {
         q: "Preciso ir ao escritório?",
-        a: "Não. Todo o atendimento pode ser feito online, com envio de documentos digitalizados e reuniões por vídeo ou WhatsApp.",
+        a: "Você escolhe. O atendimento pode ser presencial, no escritório no Centro de Curitiba, ou online, com envio de documentos digitalizados e reuniões por vídeo ou WhatsApp.",
       },
     ],
     related: ["aposentadoria-por-tempo-de-contribuicao", "calculos-previdenciarios", "revisao-de-beneficios"],

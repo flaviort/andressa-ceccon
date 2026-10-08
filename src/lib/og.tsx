@@ -1,13 +1,18 @@
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { ANDRESSA_PATHS, CECCON_PATHS, WORDMARK_RATIO, WORDMARK_VIEWBOX } from "@/components/ui/logo-paths";
 import { ogFonts, readAsset } from "@/lib/og-fonts";
 
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
 
+const NAVY = "#1b2848";
+const GOLD = "#d4c09a";
+const IVORY = "#f8f6f1";
+
 /**
- * Shared 1200x630 share card: page photo under a dark overlay, wordmark,
- * mono label and a bold title. `photo` is a path inside /public.
+ * Shared 1200x630 share card in the site palette: page photo under a navy
+ * wash, the original logotype, gold tracked label and a semibold title.
  */
 export async function renderOg({
   title,
@@ -23,18 +28,24 @@ export async function renderOg({
 }) {
   const [data, fonts] = await Promise.all([readAsset(join(process.cwd(), "public", photo)), ogFonts()]);
   const src = `data:image/jpeg;base64,${data}`;
-  const size = title.length > 34 ? 76 : 96;
+  const size = title.length > 34 ? 72 : 88;
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: "#010101", fontFamily: "Inter Tight" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: NAVY, fontFamily: "Inter Tight" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt="" width={1200} height={630} style={{ position: "absolute", inset: 0, objectFit: "cover", objectPosition: position, width: 1200, height: 630 }} />
+        <img
+          src={src}
+          alt=""
+          width={1200}
+          height={630}
+          style={{ position: "absolute", inset: 0, objectFit: "cover", objectPosition: position, width: 1200, height: 630, opacity: 0.45 }}
+        />
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(1,1,1,0.55) 0%, rgba(1,1,1,0.35) 40%, rgba(1,1,1,0.92) 100%)",
+            background: "linear-gradient(90deg, rgba(18,27,51,0.95) 0%, rgba(27,40,72,0.75) 55%, rgba(27,40,72,0.35) 100%)",
           }}
         />
         <div
@@ -45,18 +56,19 @@ export async function renderOg({
             justifyContent: "space-between",
             width: "100%",
             padding: 64,
-            color: "#fff",
+            color: IVORY,
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", fontSize: 26, letterSpacing: 2, textTransform: "uppercase" }}>
-            <b>Andressa</b>
-            <span>Ceccon</span>
-            <span style={{ margin: "0 16px", opacity: 0.5 }}>|</span>
-            <b>AC</b>
-          </div>
+          <svg viewBox={WORDMARK_VIEWBOX} width={300} height={300 / WORDMARK_RATIO} fill={IVORY}>
+            {[...ANDRESSA_PATHS, ...CECCON_PATHS].map((d) => (
+              <path key={d.slice(0, 24)} d={d} />
+            ))}
+          </svg>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 22, letterSpacing: 3, textTransform: "uppercase", opacity: 0.7, marginBottom: 20 }}>{label}</span>
-            <span style={{ fontSize: size, fontWeight: 700, letterSpacing: -4, lineHeight: 0.92, maxWidth: 1000 }}>{title}</span>
+            <span style={{ fontSize: 20, letterSpacing: 5, textTransform: "uppercase", color: GOLD, marginBottom: 24 }}>{label}</span>
+            <span style={{ fontWeight: 600, fontSize: size, lineHeight: 0.98, letterSpacing: -3, maxWidth: 980 }}>
+              {title}
+            </span>
           </div>
         </div>
       </div>

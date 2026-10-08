@@ -5,11 +5,11 @@ export default function NotFound() {
   return (
     <PageTransition>
       <section className="container-x flex min-h-svh flex-col justify-end pt-[var(--header-h)] pb-16">
-        <p className="label-mono text-ash">Erro 404</p>
+        <p className="label-mono text-bronze">Erro 404</p>
         <h1 className="display-xl mt-6">
           Página
           <br />
-          <span className="text-smoke">não encontrada.</span>
+          <em>não encontrada.</em>
         </h1>
         <div className="mt-10 flex flex-wrap gap-2">
           <Button href="/" variant="dark">

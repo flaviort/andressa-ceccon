@@ -56,9 +56,9 @@ export function ClipReveal({ children, className }: { children: React.ReactNode;
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.fromTo(
           ref.current,
-          { clipPath: "inset(18% 6% 0% 6% round 20px)" },
+          { clipPath: "inset(18% 6% 0% 6% round 6px)" },
           {
-            clipPath: "inset(0% 0% 0% 0% round 20px)",
+            clipPath: "inset(0% 0% 0% 0% round 6px)",
             ease: "none",
             scrollTrigger: { trigger: ref.current, start: "top 95%", end: "top 35%", scrub: true },
           },

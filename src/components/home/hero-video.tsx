@@ -28,7 +28,7 @@ export function HeroVideo({ src, poster }: { src: string; poster: string }) {
   return (
     <video
       ref={ref}
-      className="absolute inset-0 h-full w-full object-cover"
+      className="absolute inset-0 h-full w-full object-cover saturate-50"
       poster={poster}
       muted
       loop

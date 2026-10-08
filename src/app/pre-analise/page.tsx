@@ -31,11 +31,11 @@ export default function PreAnalisePage() {
           <div className="md:sticky md:top-28">
             <ol className="flex flex-col gap-6">
               <li>
-                <span className="label-mono text-ash">Passo 1</span>
+                <span className="label-mono text-bronze">Passo 1</span>
                 <p className="body-lg mt-2">Informe seus dados e responda às perguntas ao lado.</p>
               </li>
               <li>
-                <span className="label-mono text-ash">Passo 2</span>
+                <span className="label-mono text-bronze">Passo 2</span>
                 <p className="body-lg mt-2">
                   Com base nas respostas, apresentamos a possibilidade de iniciar o seu planejamento previdenciário, que
                   mostra o benefício a que você tem direito e qual traz o melhor retorno financeiro ao longo da vida.

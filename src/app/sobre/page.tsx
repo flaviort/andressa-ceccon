@@ -22,8 +22,8 @@ export const metadata = pageMetadata(meta);
 
 const values = [
   {
-    title: "Atendimento 100% online",
-    text: "Documentos enviados pelo celular, reuniões por vídeo e acompanhamento do processo pela área do cliente, de qualquer lugar do Brasil.",
+    title: "Presencial ou online",
+    text: "Atendimento no escritório, no Centro de Curitiba, ou por vídeo e WhatsApp, com o processo acompanhado pela área do cliente.",
   },
   {
     title: "Rigor técnico",
@@ -57,7 +57,9 @@ export default function SobrePage() {
           <>
             <span className="block">Responsabilidade,</span>
             <span className="block">dedicação e</span>
-            <span className="block text-smoke">pessoalidade.</span>
+            <span className="block">
+              <em>pessoalidade.</em>
+            </span>
           </>
         }
       />
@@ -75,7 +77,7 @@ export default function SobrePage() {
           />
         </Parallax>
         <div className="col-span-12 md:col-span-6 lg:col-span-6 lg:col-start-7">
-          <p className="label-mono text-ash">{site.oab}</p>
+          <p className="label-mono text-bronze">{site.oab}</p>
           <p className="heading-sm mt-5 max-w-[22ch]">
             Atendimento próximo, do primeiro contato até o primeiro pagamento do benefício.
           </p>
@@ -91,7 +93,7 @@ export default function SobrePage() {
             O escritório foi idealizado pela Dra. Andressa Ceccon para atuar com responsabilidade, dedicação, excelência e
             pessoalidade. A estratégia de cada caso parte do que o cliente precisa, de forma transparente e ética.
           </ScrubText>
-          <div className="body-lg mt-12 grid gap-6 text-[#2b2b2b] md:grid-cols-2">
+          <div className="body-lg mt-12 grid gap-6 text-[#3a4257] md:grid-cols-2">
             <p>
               Com sede em Curitiba/PR e atuação em todo o território nacional, o escritório é especializado em
               planejamento previdenciário e em requerimentos de benefícios em geral junto ao INSS.
@@ -107,11 +109,11 @@ export default function SobrePage() {
       <section data-theme="dark" className="bg-ink py-24 text-paper md:py-36" aria-labelledby="formacao">
         <div className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-12">
           <div className="col-span-12 md:col-span-5">
-            <p className="label-mono text-white/50">Advogada responsável</p>
+            <p className="label-mono text-gold">Advogada responsável</p>
             <SplitReveal as="h2" className="heading-lg mt-6">
               <span id="formacao">Dra. Andressa Ceccon</span>
             </SplitReveal>
-            <p className="label-mono mt-6 text-white/50">{site.oab}</p>
+            <p className="label-mono mt-6 text-gold">{site.oab}</p>
           </div>
           <Reveal as="dl" className="col-span-12 grid gap-px overflow-hidden rounded-card bg-white/10 md:col-span-7">
             {[
@@ -121,7 +123,7 @@ export default function SobrePage() {
               ["Abrangência", "Sede em Curitiba/PR, clientes em todo o Brasil"],
             ].map(([k, v]) => (
               <div key={k} className="grid gap-2 bg-ink p-6 md:grid-cols-[160px_1fr] md:p-8">
-                <dt className="label-mono pt-1 text-white/50">{k}</dt>
+                <dt className="label-mono pt-1 text-gold">{k}</dt>
                 <dd className="body-lg text-white/90">{v}</dd>
               </div>
             ))}
@@ -133,10 +135,10 @@ export default function SobrePage() {
         <SplitReveal as="h2" className="heading-md max-w-[16ch]">
           <span id="valores">Compromisso com o seu caso</span>
         </SplitReveal>
-        <Reveal className="mt-14 grid gap-x-[var(--grid-gutter)] gap-y-10 border-t border-black/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="mt-14 grid gap-x-[var(--grid-gutter)] gap-y-10 border-t border-ink/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v, i) => (
             <div key={v.title}>
-              <span className="label-mono text-ash">0{i + 1}</span>
+              <span className="label-mono text-bronze">0{i + 1}</span>
               <h3 className="heading-xs mt-4">{v.title}</h3>
               <p className="body-sm mt-3 text-ash">{v.text}</p>
             </div>
@@ -144,7 +146,7 @@ export default function SobrePage() {
         </Reveal>
       </section>
 
-      <PushCta title={["Seja", "bem-", "vindo."]} image="/images/idade.jpg" />
+      <PushCta title={["Seja", "bem-vindo."]} image="/images/idade.jpg" />
     </PageTransition>
   );
 }

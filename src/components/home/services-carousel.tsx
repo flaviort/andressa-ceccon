@@ -86,10 +86,10 @@ export function ServicesCarousel({ items }: { items: Service[] }) {
           </Link>
         </div>
         <div className="flex gap-2">
-          <button type="button" onClick={() => scrollBy(-1)} disabled={edge.start} aria-label="Anterior" className="grid size-11 place-items-center rounded-btn bg-black/[0.06] transition hover:bg-black/[0.12] disabled:opacity-30">
+          <button type="button" onClick={() => scrollBy(-1)} disabled={edge.start} aria-label="Anterior" className="grid size-11 place-items-center rounded-btn bg-ink/[0.06] transition hover:bg-ink/[0.12] disabled:opacity-30">
             ←
           </button>
-          <button type="button" onClick={() => scrollBy(1)} disabled={edge.end} aria-label="Próximo" className="grid size-11 place-items-center rounded-btn bg-black/[0.06] transition hover:bg-black/[0.12] disabled:opacity-30">
+          <button type="button" onClick={() => scrollBy(1)} disabled={edge.end} aria-label="Próximo" className="grid size-11 place-items-center rounded-btn bg-ink/[0.06] transition hover:bg-ink/[0.12] disabled:opacity-30">
             →
           </button>
         </div>
@@ -113,9 +113,9 @@ export function ServicesCarousel({ items }: { items: Service[] }) {
                 />
               </div>
               <div className="mt-4 flex gap-4">
-                <span className="label-mono pt-1 text-ash">{s.index}</span>
+                <span className="label-mono pt-1 text-bronze">{s.index}</span>
                 <div>
-                  <h3 className="text-[19px] leading-[1.2] font-medium tracking-[-0.02em]">{s.title}</h3>
+                  <h3 className="text-[21px] leading-[1.2] font-medium tracking-[-0.02em]">{s.title}</h3>
                   <p className="body-sm mt-2 text-ash">{s.excerpt}</p>
                 </div>
               </div>

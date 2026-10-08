@@ -27,12 +27,12 @@ export function ScrubText({
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         const split = SplitText.create(el, { type: "words", autoSplit: true });
-        const from = tone === "dark" ? "#c4c4c4" : "rgba(255,255,255,0.28)";
+        const from = tone === "dark" ? "#c9c2b4" : "rgba(248,246,241,0.28)";
         const tween = gsap.fromTo(
           split.words,
           { color: from },
           {
-            color: tone === "dark" ? "#010101" : "#ffffff",
+            color: tone === "dark" ? "#1b2848" : "#f8f6f1",
             ease: "none",
             stagger: 0.1,
             scrollTrigger: { trigger: el, start: "top 85%", end: "bottom 45%", scrub: true },
