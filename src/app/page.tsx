@@ -1,0 +1,193 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Counter } from "@/components/home/counter";
+import { Hero } from "@/components/home/hero";
+import { ImageGalaxy } from "@/components/home/image-galaxy";
+import { PushCta } from "@/components/home/push-cta";
+import { ServicesCarousel } from "@/components/home/services-carousel";
+import { PageTransition } from "@/components/motion/page-transition";
+import { Parallax } from "@/components/motion/parallax";
+import { ClipReveal, Reveal } from "@/components/motion/reveal";
+import { ScrubText } from "@/components/motion/scrub-text";
+import { SplitReveal } from "@/components/motion/split-reveal";
+import { Button } from "@/components/ui/button";
+import { getService, services } from "@/content/services";
+import { pageGraph } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
+import { site, whatsappLink } from "@/lib/site";
+import { JsonLd } from "@/components/ui/json-ld";
+
+const meta = {
+  title: "Andressa Ceccon | Advogada Previdenciária em Curitiba",
+  description:
+    "Advocacia previdenciária em Curitiba, com atendimento online em todo o Brasil. Planejamento, aposentadorias, pensão, BPC/LOAS e benefícios do INSS.",
+  path: "/",
+};
+
+export const metadata = pageMetadata({ ...meta, absoluteTitle: true });
+
+export default function HomePage() {
+  const planning = getService("planejamento-previdenciario")!;
+
+  return (
+    <PageTransition>
+      <JsonLd
+        data={pageGraph({
+          path: meta.path,
+          name: meta.title,
+          description: meta.description,
+          trail: [{ name: "Início", path: "/" }],
+          extra: [
+            {
+              "@type": "ItemList",
+              name: "Serviços",
+              itemListElement: services.map((s, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                name: s.title,
+                url: `${site.url}/servicos/${s.slug}`,
+              })),
+            },
+          ],
+        })}
+      />
+      <Hero />
+
+      {/* Intro: two columns, small bold lead + scroll-filled statement */}
+      <section className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 py-24 md:py-40">
+        <SplitReveal as="h2" className="heading-xs col-span-12 md:col-span-4">
+          Advocacia previdenciária, do pedido ao primeiro pagamento.
+        </SplitReveal>
+        <div className="col-span-12 md:col-span-7 md:col-start-6">
+          <ScrubText className="heading-sm">
+            Há 10 anos ajudamos pessoas a entender seus direitos junto ao INSS e a escolher, com segurança, o caminho
+            certo para a aposentadoria. Cada caso recebe estratégia própria, conduzida de perto pela advogada
+            responsável.
+          </ScrubText>
+          <Button href="/sobre" className="mt-10">
+            Conheça o escritório
+          </Button>
+        </div>
+      </section>
+
+      <ImageGalaxy />
+
+      {/* Featured: large dark card */}
+      <section className="md:container-x my-16 md:my-28" aria-labelledby="destaque-title">
+        <div data-theme="dark" className="grid overflow-hidden bg-ink text-paper md:grid-cols-12 md:rounded-card">
+          <Parallax className="relative aspect-[4/3] md:col-span-7 md:aspect-auto md:min-h-[640px]" amount={8}>
+            <Image src={planning.image} alt={planning.imageAlt} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
+          </Parallax>
+          <div className="flex flex-col justify-between gap-12 p-6 md:col-span-5 md:p-10">
+            <div>
+              <p className="label-mono text-white/50">Em destaque</p>
+              <SplitReveal as="h2" className="heading-md mt-6">
+                <span id="destaque-title">Planejamento Previdenciário</span>
+              </SplitReveal>
+              <p className="body-sm mt-6 max-w-[38ch] text-white/75">
+                Depois que o INSS concede a aposentadoria, não dá para trocar de regra. O planejamento compara todas as
+                opções antes do pedido, com datas e valores, para que a escolha seja sua.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <Button href={`/servicos/${planning.slug}`} variant="glass">
+                Saiba mais
+              </Button>
+              <Link
+                href="/pre-analise"
+                className="group relative flex h-40 w-full flex-col justify-between rounded-[12px] bg-white/10 p-4 transition-colors hover:bg-white/20 sm:w-48"
+              >
+                <span className="label-mono text-white/60">5 perguntas</span>
+                <span className="text-[19px] leading-tight font-medium tracking-[-0.02em]">
+                  Fazer a pré-análise <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Online service */}
+      <section className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 py-24 md:py-36">
+        <SplitReveal as="h2" className="heading-xs col-span-12 md:col-span-4">
+          Atendimento 100% online, em todo o Brasil.
+        </SplitReveal>
+        <div className="col-span-12 md:col-span-7 md:col-start-6">
+          <ScrubText className="heading-sm">
+            Sede em Curitiba, clientes em todo o país. Você envia os documentos pelo celular, acompanha cada etapa pela
+            área do cliente e fala direto com quem cuida do seu processo.
+          </ScrubText>
+          <div className="mt-10 flex flex-wrap gap-2">
+            <Button href={whatsappLink("Olá! Gostaria de saber mais sobre o atendimento online.")} variant="dark">
+              Falar no WhatsApp
+            </Button>
+            <Button href={site.clientArea} variant="outline" icon="↗">
+              Área do cliente
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Lawyer */}
+      <section className="container-x grid grid-cols-12 items-end gap-x-[var(--grid-gutter)] gap-y-10 pb-24 md:pb-36" aria-labelledby="advogada-title">
+        <ClipReveal className="relative col-span-12 aspect-[4/5] overflow-hidden rounded-card md:col-span-5">
+          <Image src="/images/andressa.jpg" alt="Dra. Andressa Ceccon sorrindo, de blazer claro, em seu escritório" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover object-top" />
+        </ClipReveal>
+        <div className="col-span-12 md:col-span-6 md:col-start-7">
+          <p className="label-mono text-ash">Quem conduz o seu caso</p>
+          <SplitReveal as="h2" className="heading-lg mt-5">
+            <span id="advogada-title">Dra. Andressa Ceccon</span>
+          </SplitReveal>
+          <p className="body-lg mt-8 max-w-[48ch] text-[#2b2b2b]">
+            Bacharela em Direito pela PUC/PR e pós-graduada em Direito e Processo do Trabalho e Direito Previdenciário
+            pela EMATRA IX. Atua há 10 anos com foco em planejamento previdenciário e na concessão de benefícios junto
+            ao INSS.
+          </p>
+          <Button href="/sobre" className="mt-8">
+            Sobre o escritório
+          </Button>
+        </div>
+      </section>
+
+      {/* Snapshot: numbers */}
+      <section className="border-y border-black/10" aria-labelledby="numeros-title">
+        <div className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)]">
+          <div className="col-span-12 flex flex-col justify-between gap-8 py-12 md:col-span-5 md:py-16">
+            <h2 id="numeros-title" className="heading-sm">
+              O escritório em números
+            </h2>
+            <Button href="/contato" variant="outline" size="small" className="self-start">
+              Fale com a gente
+            </Button>
+          </div>
+          <div className="col-span-12 border-black/10 py-12 md:col-span-7 md:border-l md:py-16 md:pl-10">
+            <div className="flex items-end justify-between gap-6">
+              <p className="label-mono text-ash">Anos de atuação no previdenciário</p>
+              <p className="text-[clamp(120px,16vw,260px)] leading-[0.75] font-bold tracking-[-0.06em]">
+                <Counter to={10} />
+                <span className="text-smoke">.</span>
+              </p>
+            </div>
+            <Reveal as="dl" className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-black/10 pt-6 md:grid-cols-4">
+              {[
+                ["Atendimento", "100% online"],
+                ["Atuação", "Todo o Brasil"],
+                ["Sede", "Curitiba/PR"],
+                ["Registro", site.oab],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt className="label-mono text-ash">{k}</dt>
+                  <dd className="body-md mt-2 font-medium">{v}</dd>
+                </div>
+              ))}
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <ServicesCarousel items={services} />
+
+      <PushCta />
+    </PageTransition>
+  );
+}

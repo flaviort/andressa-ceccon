@@ -1,0 +1,393 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens, calibrated against wolverineworldwide.com at 1440px:
+ * display-xl 168px / lh .79 / -0.05em, heading-lg 128px, heading-md 57px,
+ * heading-sm 33px, body-lg 19px, body-sm 15px. Fluid values scale with vw.
+ */
+@theme {
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-ink: #010101;
+  --color-paper: #ffffff;
+  --color-fog: #f2f2f2;
+  --color-mist: #e6e6e6;
+  --color-ash: #757575;
+  --color-smoke: #b5b5b5;
+
+  --radius-card: 20px;
+  --radius-btn: 12px;
+
+  --spacing-margin: var(--grid-margin);
+  --spacing-gutter: var(--grid-gutter);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+:root {
+  --grid-margin: 16px;
+  --grid-gutter: 12px;
+  --header-h: 72px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --grid-margin: 32px;
+    --grid-gutter: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --grid-margin: 48px;
+  }
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* No grey flash on tap; focus and hover states already give feedback. */
+a,
+button,
+summary,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---------- Layout ---------- */
+@utility container-x {
+  width: 100%;
+  padding-inline: var(--grid-margin);
+  margin-inline: auto;
+}
+
+/* ---------- Type scale ---------- */
+@utility display-xl {
+  font-size: clamp(64px, 11.67vw, 220px);
+  line-height: 0.79;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+@utility display-lg {
+  font-size: clamp(52px, 8.9vw, 168px);
+  line-height: 0.79;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+@utility heading-lg {
+  font-size: clamp(40px, 5.6vw, 96px);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+@utility heading-md {
+  font-size: clamp(32px, 3.96vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+@utility heading-sm {
+  font-size: clamp(24px, 2.3vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+@utility heading-xs {
+  font-size: clamp(20px, 1.4vw, 24px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+@utility body-lg {
+  font-size: clamp(17px, 1.32vw, 21px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+@utility body-md {
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+@utility body-sm {
+  font-size: clamp(14px, 1.04vw, 15px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ---------- Button (arrow swap like the reference) ---------- */
+.btn {
+  --btn-bg: rgb(0 0 0 / 0.08);
+  --btn-bg-hover: rgb(0 0 0 / 0.14);
+  --btn-fg: var(--color-ink);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: var(--radius-btn);
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background-color 0.4s var(--ease-out-expo),
+    color 0.4s var(--ease-out-expo);
+}
+.btn:hover {
+  background: var(--btn-bg-hover);
+}
+.btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.btn__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.btn__icon {
+  display: inline-block;
+  transition:
+    transform 0.5s var(--ease-out-expo),
+    opacity 0.3s;
+}
+.btn__icon--lead {
+  position: absolute;
+  left: 0;
+  transform: translateX(-28px);
+  opacity: 0;
+}
+.btn:hover .btn__inner {
+  transform: translateX(22px);
+}
+.btn:hover .btn__icon--lead {
+  transform: translateX(-22px);
+  opacity: 1;
+}
+.btn:hover .btn__icon--trail {
+  transform: translateX(28px);
+  opacity: 0;
+}
+.btn--dark {
+  --btn-bg: var(--color-ink);
+  --btn-bg-hover: #2a2a2a;
+  --btn-fg: var(--color-paper);
+}
+.btn--light {
+  --btn-bg: var(--color-paper);
+  --btn-bg-hover: var(--color-mist);
+  --btn-fg: var(--color-ink);
+}
+.btn--glass {
+  --btn-bg: rgb(255 255 255 / 0.12);
+  --btn-bg-hover: rgb(255 255 255 / 0.22);
+  --btn-fg: var(--color-paper);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.btn--outline {
+  --btn-bg: transparent;
+  --btn-bg-hover: rgb(0 0 0 / 0.05);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.15);
+}
+.btn--small {
+  height: 38px;
+  padding: 0 14px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+.btn--small .btn__inner {
+  gap: 16px;
+}
+
+/* ---------- Underline links ---------- */
+.link-u {
+  background: linear-gradient(currentColor, currentColor) no-repeat 100% 100% / 0 1px;
+  transition: background-size 0.5s var(--ease-out-expo);
+}
+.link-u:hover {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+/* Split text line masks */
+.split-line {
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+
+/* Prose for long-form service content */
+.prose-legal h2 {
+  font-size: clamp(26px, 2.3vw, 40px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  margin: 2.2em 0 0.6em;
+}
+.prose-legal h3 {
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 1.8em 0 0.5em;
+}
+.prose-legal p,
+.prose-legal li {
+  font-size: clamp(17px, 1.25vw, 19px);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: #2b2b2b;
+}
+.prose-legal p + p {
+  margin-top: 1em;
+}
+.prose-legal ul {
+  margin: 1em 0;
+  display: grid;
+  gap: 0.6em;
+}
+.prose-legal li {
+  position: relative;
+  padding-left: 1.4em;
+}
+.prose-legal li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.6em;
+  height: 1px;
+  background: currentColor;
+}
+.prose-legal strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* ---------- View transitions ---------- */
+::view-transition {
+  pointer-events: none;
+  background: var(--color-ink);
+}
+/* The page wrapper and header carry their own names, so root only holds the
+   white canvas. Hiding it lets the black backdrop show behind the pages. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  opacity: 0;
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* Old page sinks and dims, new page rises as a rounded sheet. */
+::view-transition-old(.page-exit) {
+  animation: page-out 0.9s var(--ease-in-out-quart) both;
+  transform-origin: 50% 0%;
+}
+::view-transition-new(.page-enter) {
+  animation: page-in 0.9s var(--ease-in-out-quart) both;
+}
+::view-transition-group(.page-enter),
+::view-transition-group(.page-exit) {
+  animation-duration: 0.9s;
+}
+
+@keyframes page-out {
+  from {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  to {
+    transform: scale(0.94) translateY(-2%);
+    filter: brightness(0.35);
+  }
+}
+@keyframes page-in {
+  from {
+    transform: translateY(100vh);
+    clip-path: inset(0 0 0 0 round 28px 28px 0 0);
+  }
+  to {
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0 round 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+  .btn__inner,
+  .btn__icon {
+    transition: none !important;
+  }
+}
+
+/* Hero headings stay hidden until GSAP has split them, avoiding a flash.
+   A <noscript> style in the root layout reveals them when JS is off. */
+[data-split="load"] {
+  visibility: hidden;
+}
