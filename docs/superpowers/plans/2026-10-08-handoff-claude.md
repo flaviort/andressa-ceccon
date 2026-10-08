@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- Todo texto escrito (copy, docs, comentários, commits, skills) sem travessão (U+2014), sem emoji e com voz humana. O caractere de travessão nunca aparece literalmente em arquivos do kit; no código, use `"—"`.
+- Todo texto escrito (copy, docs, comentários, commits, skills) sem travessão (U+2014), sem emoji e com voz humana. O caractere de travessão nunca aparece literalmente em arquivos do kit; no código, use `"\u2014"`.
 - Publicidade da advocacia (Provimento 205/2021 da OAB): sem promessa de resultado, sem preço, sem "o melhor". Atendimento presencial em Curitiba e online, nunca "100% online".
 - Nenhum arquivo do kit contém usuário do GitHub, time da Vercel ou URL do repositório. Comandos `gh` usam os placeholders `{owner}/{repo}`, que o próprio `gh` resolve. O único endereço fixo é `site.url` em `src/lib/site.ts`.
 - Docs e skills em português. Comentários de código em inglês, como no resto do repositório.
@@ -102,7 +102,7 @@ import {
 } from "../scripts/check-content.mjs";
 import { readJpegComments, setJpegSource } from "../scripts/jpeg-comment.mjs";
 
-const DASH = "—";
+const DASH = "\u2014";
 
 test("flags dashes and emoji anywhere", () => {
   const issues = textIssues("a.md", `linha boa\nfrase ${DASH} ruim\nok \u{1F600}`);
@@ -280,7 +280,7 @@ import { pathToFileURL } from "node:url";
 import { parse as parseYaml } from "yaml";
 import { readJpegComments } from "./jpeg-comment.mjs";
 
-const DASH = "—";
+const DASH = "\u2014";
 const EMOJI = /\p{Emoji_Presentation}|️/u;
 const phrase = (src) => new RegExp(`(?<!\\p{L})(?:${src})(?!\\p{L})`, "iu");
 
