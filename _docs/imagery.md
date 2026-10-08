@@ -14,7 +14,7 @@ ffmpeg -i shutterstock_<id>.jpg -vf "scale='min(2400,iw)':-2:flags=lanczos" -q:v
 | --- | --- | --- |
 | `planejamento.jpg` | Planejamento previdenciário, card de destaque da home | 2706461347 |
 | `idade.jpg` | Aposentadoria por idade, galáxia, CTA da página Sobre, OG de /servicos | 2699568907 |
-| `transicao.jpg` | Regras de transição, OG de /contato | 2633039561 |
+| `transicao.jpg` | Regras de transição, OG de /contato, post regras de transição | 2633039561 |
 | `especial.jpg` | Aposentadoria especial, galáxia | 2758900805 |
 | `rural.jpg` | Aposentadoria rural, galáxia | 2710106783 |
 | `pcd.jpg` | Pessoa com deficiência, galáxia | 2727319989 |
@@ -23,7 +23,7 @@ ffmpeg -i shutterstock_<id>.jpg -vf "scale='min(2400,iw)':-2:flags=lanczos" -q:v
 | `incapacidade.jpg` | Benefícios por incapacidade, galáxia | 2762332177 |
 | `maternidade.jpg` | Salário-maternidade, galáxia | 2688637561 |
 | `revisao.jpg` | Revisão de benefícios | 2738502725 |
-| `calculos.jpg` | Cálculos previdenciários | 2763305203 |
+| `calculos.jpg` | Cálculos previdenciários, OG de /blog | 2763305203 |
 | `maos.jpg` | OG de /pre-analise | 2741819071 |
 | `cta.jpg` | CTA final em tela cheia | 2581692597 |
 | `gestante.jpg` | Galáxia | 2678349491 |

@@ -12,6 +12,8 @@ type PageMeta = {
   /** Skip the "| Andressa Ceccon" suffix (used by the home page). */
   absoluteTitle?: boolean;
   keywords?: string[];
+  /** Marks the page as an article (blog posts) for Open Graph. Dates in AAAA-MM-DD. */
+  article?: { publishedTime: string; modifiedTime: string };
 };
 
 /**
@@ -20,22 +22,18 @@ type PageMeta = {
  * that sets only part of it would lose the rest; never write it by hand.
  * The og:image comes from each route's opengraph-image file.
  */
-export function pageMetadata({ title, description, path, absoluteTitle, keywords }: PageMeta): Metadata {
+export function pageMetadata({ title, description, path, absoluteTitle, keywords, article }: PageMeta): Metadata {
   const withBrand = `${title} | ${BRAND}`;
   const fullTitle = absoluteTitle || withBrand.length > TITLE_MAX ? title : withBrand;
+  const base = { title: fullTitle, description, url: path, siteName: site.name, locale: "pt_BR" };
   return {
     title: { absolute: fullTitle },
     description,
     keywords,
     alternates: { canonical: path },
-    openGraph: {
-      title: fullTitle,
-      description,
-      url: path,
-      siteName: site.name,
-      locale: "pt_BR",
-      type: "website",
-    },
+    openGraph: article
+      ? { ...base, type: "article", publishedTime: article.publishedTime, modifiedTime: article.modifiedTime, authors: [site.lawyer] }
+      : { ...base, type: "website" },
     twitter: { card: "summary_large_image", title: fullTitle, description },
   };
 }

@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/content/services";
+import { posts } from "@/lib/blog";
 import { site } from "@/lib/site";
 
 // Bump when page content changes; search engines use it to decide what to recrawl.
 const UPDATED = new Date("2026-10-07");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/sobre", "/servicos", "/pre-analise", "/contato", "/politica-de-privacidade"];
+  const pages = ["", "/sobre", "/servicos", "/pre-analise", "/blog", "/contato", "/politica-de-privacidade"];
   return [
     ...pages.map((p) => ({
       url: `${site.url}${p}`,
@@ -19,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: UPDATED,
       changeFrequency: "monthly" as const,
       priority: s.slug === "planejamento-previdenciario" ? 0.95 : 0.9,
+    })),
+    ...posts.map((p) => ({
+      url: `${site.url}/blog/${p.slug}`,
+      lastModified: new Date(p.updated),
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
     })),
   ];
 }

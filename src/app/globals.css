@@ -354,6 +354,41 @@ html.lenis body {
   color: var(--color-ink);
   font-weight: 600;
 }
+.prose-legal > :first-child {
+  margin-top: 0;
+}
+.prose-legal ol {
+  margin: 1em 0;
+  display: grid;
+  gap: 0.6em;
+  counter-reset: item;
+}
+.prose-legal ol > li {
+  counter-increment: item;
+  padding-left: 2em;
+}
+/* Numbered lists use the 01, 02 numbering in bronze, like the rest of the site. */
+.prose-legal ol > li::before {
+  content: counter(item, decimal-leading-zero);
+  top: 0.35em;
+  width: auto;
+  height: auto;
+  background: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-bronze);
+}
+.prose-legal a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.prose-legal blockquote {
+  margin: 1.6em 0;
+  padding-left: 1.2em;
+  border-left: 1px solid var(--color-bronze);
+}
 
 /* ---------- View transitions ---------- */
 ::view-transition {
