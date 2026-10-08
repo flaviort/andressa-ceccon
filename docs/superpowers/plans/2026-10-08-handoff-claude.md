@@ -281,7 +281,7 @@ import { parse as parseYaml } from "yaml";
 import { readJpegComments } from "./jpeg-comment.mjs";
 
 const DASH = "\u2014";
-const EMOJI = /\p{Emoji_Presentation}|️/u;
+const EMOJI = /\p{Emoji_Presentation}|\uFE0F/u;
 const phrase = (src) => new RegExp(`(?<!\\p{L})(?:${src})(?!\\p{L})`, "iu");
 
 /**
