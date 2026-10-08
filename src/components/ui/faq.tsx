@@ -29,7 +29,7 @@ export function Faq({ items }: { items: { q: string; a: string }[] }) {
                 onClick={() => setOpen(expanded ? null : i)}
                 className="group flex w-full cursor-pointer items-start justify-between gap-6 py-6 text-left"
               >
-                <span className="text-[clamp(18px,1.4vw,22px)] leading-[1.25] font-medium tracking-[-0.02em]">
+                <span className="text-[clamp(1.125rem,1.4vw,1.375rem)] leading-[1.25] font-medium tracking-[-0.02em]">
                   {item.q}
                 </span>
                 <span

@@ -20,7 +20,7 @@ const questions = [
 ] as const;
 
 const field =
-  "w-full rounded-btn bg-fog px-4 py-4 text-[18px] tracking-[-0.01em] outline-none transition placeholder:text-ash focus:bg-mist focus:ring-2 focus:ring-ink";
+  "w-full rounded-btn bg-fog px-4 py-4 text-[1.125rem] tracking-[-0.01em] outline-none transition placeholder:text-ash focus:bg-mist focus:ring-2 focus:ring-ink";
 
 /**
  * There is no backend: the answers are assembled into a WhatsApp message the
@@ -75,11 +75,11 @@ export function PreAnaliseForm() {
             {q.options.map((opt) => (
               <label key={opt} className="cursor-pointer">
                 <input type="radio" name={q.name} value={opt} className="peer sr-only" />
-                <span className="group/opt body-md flex h-12 items-center gap-3 rounded-btn bg-fog pr-5 pl-4 transition hover:bg-mist peer-checked:bg-ink peer-checked:text-paper peer-checked:hover:bg-ink-deep peer-focus-visible:ring-2 peer-focus-visible:ring-ink peer-focus-visible:ring-offset-2">
+                <span className="group/opt body-md flex min-h-12 items-center py-2 gap-3 rounded-btn bg-fog pr-5 pl-4 transition hover:bg-mist peer-checked:bg-ink peer-checked:text-paper peer-checked:hover:bg-ink-deep peer-focus-visible:ring-2 peer-focus-visible:ring-ink peer-focus-visible:ring-offset-2">
                   {/* Radio marker: an empty ring, filled with a gold dot once chosen. */}
                   <span
                     aria-hidden="true"
-                    className="grid size-[18px] shrink-0 place-items-center rounded-full ring-[1.5px] ring-ink/35 transition group-hover/opt:ring-ink/60 [:checked+*_&]:ring-gold"
+                    className="grid size-[1.125rem] shrink-0 place-items-center rounded-full ring-[1.5px] ring-ink/35 transition group-hover/opt:ring-ink/60 [:checked+*_&]:ring-gold"
                   >
                     <span className="size-2 scale-0 rounded-full bg-gold transition-transform [:checked+*_&]:scale-100" />
                   </span>

@@ -5,7 +5,7 @@ import { sendContact, type ContactState } from "@/app/contato/actions";
 import { whatsappLink } from "@/lib/site";
 
 const field =
-  "w-full rounded-btn bg-white/10 px-4 py-4 text-[18px] tracking-[-0.01em] text-paper outline-none transition placeholder:text-white/50 focus:bg-white/15 focus:ring-2 focus:ring-paper";
+  "w-full rounded-btn bg-white/10 px-4 py-4 text-[1.125rem] tracking-[-0.01em] text-paper outline-none transition placeholder:text-white/50 focus:bg-white/15 focus:ring-2 focus:ring-paper";
 
 export function ContactForm() {
   const [state, action, pending] = useActionState<ContactState, FormData>(sendContact, { status: "idle" });
@@ -37,7 +37,7 @@ export function ContactForm() {
         <label htmlFor="c-email" className="sr-only">E-mail (opcional)</label>
         <input id="c-email" name="email" type="email" maxLength={200} autoComplete="email" placeholder="E-mail (opcional)" defaultValue={v?.email} className={field} />
         <label htmlFor="c-tel" className="sr-only">Telefone com DDD (opcional)</label>
-        <input id="c-tel" name="telefone" type="tel" maxLength={40} autoComplete="tel" placeholder="Telefone com DDD (opcional)" defaultValue={v?.telefone} className={field} />
+        <input id="c-tel" name="telefone" type="tel" maxLength={40} autoComplete="tel" placeholder="Telefone (opcional)" defaultValue={v?.telefone} className={field} />
       </div>
       <label htmlFor="c-msg" className="sr-only">Mensagem</label>
       <textarea id="c-msg" name="mensagem" required maxLength={5000} rows={5} placeholder="Conte brevemente a sua situação" defaultValue={v?.mensagem} className={`${field} resize-none`} />

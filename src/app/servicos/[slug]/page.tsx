@@ -174,7 +174,7 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
                 <li key={d}>{d}</li>
               ))}
             </ul>
-            <p className="!text-[16px] text-ash">
+            <p className="!text-[1rem] text-ash">
               A lista varia conforme o caso. Na primeira conversa indicamos exatamente o que reunir.
             </p>
           </section>
@@ -210,7 +210,7 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
                 <div className="mt-4 flex gap-4">
                   <span className="label-mono pt-1 text-bronze">{r.index}</span>
                   <div>
-                    <h3 className="text-[21px] leading-[1.2] font-medium tracking-[-0.02em]">{r.title}</h3>
+                    <h3 className="text-[1.3125rem] leading-[1.2] font-medium tracking-[-0.02em]">{r.title}</h3>
                     <p className="body-sm mt-2 text-ash">{r.excerpt}</p>
                   </div>
                 </div>

@@ -122,7 +122,7 @@ export default function SobrePage() {
               ["Atuação", "10 anos de advocacia previdenciária, com foco em planejamento e em pedidos administrativos ao INSS"],
               ["Abrangência", "Escritório em Curitiba/PR e atendimento online para todo o Brasil"],
             ].map(([k, v]) => (
-              <div key={k} className="grid gap-2 bg-ink p-6 md:grid-cols-[160px_1fr] md:p-8">
+              <div key={k} className="grid gap-2 bg-ink p-6 md:grid-cols-[10rem_1fr] md:p-8">
                 <dt className="label-mono pt-1 text-paper/65">{k}</dt>
                 <dd className="body-lg text-white/90">{v}</dd>
               </div>

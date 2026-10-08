@@ -13,7 +13,7 @@ export default function PrivacidadePage() {
   return (
     <PageTransition>
       <PageHeader crumbs={[{ label: "Início", href: "/" }, { label: "Privacidade" }]} title="Política de privacidade" />
-      <article className="prose-legal container-x max-w-[820px] pb-24 md:ml-[calc(41.66%)] md:pb-36">
+      <article className="prose-legal container-x max-w-[51.25rem] pb-24 md:ml-[calc(41.66%)] md:pb-36">
         <p>
           Esta política explica como o site {site.url.replace("https://", "")} trata dados pessoais, nos termos da Lei
           Geral de Proteção de Dados (Lei 13.709/2018).

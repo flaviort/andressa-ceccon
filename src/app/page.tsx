@@ -98,7 +98,7 @@ export default function HomePage() {
                 className="group relative flex h-40 w-full flex-col justify-between rounded-[6px] bg-white/10 p-4 transition-colors hover:bg-white/20 lg:w-52"
               >
                 <span className="label-mono text-paper/65">5 perguntas</span>
-                <span className="text-[21px] leading-tight font-medium tracking-[-0.02em]">
+                <span className="text-[1.3125rem] leading-tight font-medium tracking-[-0.02em]">
                   Fazer a pré-análise <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
                 </span>
               </Link>
@@ -164,7 +164,7 @@ export default function HomePage() {
           <div className="col-span-12 border-ink/10 py-12 md:col-span-7 md:border-l md:py-16 md:pl-10">
             <div className="flex items-end justify-between gap-6">
               <p className="label-mono text-ash">Anos de atuação no previdenciário</p>
-              <p className="text-[clamp(110px,13vw,210px)] leading-[0.8] font-semibold tracking-[-0.06em]">
+              <p className="text-[clamp(6.875rem,13vw,13.125rem)] leading-[0.8] font-semibold tracking-[-0.06em]">
                 <Counter to={10} />
                 <span className="text-ink">.</span>
               </p>

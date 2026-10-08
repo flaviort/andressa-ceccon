@@ -45,7 +45,7 @@ export function Hero() {
 
           <Link
             href="/sobre"
-            className="group hidden w-full max-w-[360px] items-stretch gap-[var(--grid-gutter)] justify-self-end rounded-[6px] bg-ink/40 p-2 text-paper ring-1 ring-paper/10 backdrop-blur-xl transition-colors hover:bg-ink/60 lg:col-span-4 lg:flex"
+            className="group hidden w-full max-w-[22.5rem] items-stretch gap-[var(--grid-gutter)] justify-self-end rounded-[6px] bg-ink/40 p-2 text-paper ring-1 ring-paper/10 backdrop-blur-xl transition-colors hover:bg-ink/60 lg:col-span-4 lg:flex"
           >
             <span className="relative aspect-square w-24 shrink-0 overflow-hidden rounded-[4px]">
               <Image
@@ -58,8 +58,8 @@ export function Hero() {
             </span>
             <span className="flex flex-col justify-between py-1 pr-2">
               <span className="flex flex-col gap-2">
-                <span className="label-mono text-[11px] text-paper/65">O escritório</span>
-                <span className="text-[19px] leading-snug font-medium tracking-[-0.015em]">Dra. Andressa Ceccon, 10 anos no Direito Previdenciário</span>
+                <span className="label-mono text-[0.6875rem] text-paper/65">O escritório</span>
+                <span className="text-[1.1875rem] leading-snug font-medium tracking-[-0.015em]">Dra. Andressa Ceccon, 10 anos no Direito Previdenciário</span>
               </span>
               <span className="body-sm text-paper/70">
                 Conhecer <span className="inline-block transition-transform group-hover:translate-x-1">→</span>

@@ -33,17 +33,17 @@
 :root {
   --grid-margin: 16px;
   --grid-gutter: 12px;
-  --header-h: 72px;
+  --header-h: 4.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   :root {
     --grid-margin: 32px;
     --grid-gutter: 20px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
   :root {
     --grid-margin: 48px;
   }
@@ -60,7 +60,7 @@ html {
 body {
   background: var(--color-paper);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.5;
 }
 
@@ -108,60 +108,60 @@ html.lenis body {
 /* ---------- Type scale ---------- */
 /* Same family as the reference's grotesk, at lighter weights than its 700. */
 @utility display-xl {
-  font-size: clamp(48px, 7.4vw, 128px);
+  font-size: clamp(3rem, 7.4vw, 8rem);
   line-height: 0.9;
   letter-spacing: -0.045em;
   font-weight: 600;
 }
 @utility display-lg {
-  font-size: clamp(42px, 5.9vw, 100px);
+  font-size: clamp(2.625rem, 5.9vw, 6.25rem);
   line-height: 0.92;
   letter-spacing: -0.04em;
   font-weight: 600;
 }
 @utility heading-lg {
-  font-size: clamp(34px, 4.1vw, 66px);
+  font-size: clamp(2.125rem, 4.1vw, 4.125rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
   font-weight: 600;
 }
 @utility heading-md {
-  font-size: clamp(28px, 3vw, 48px);
+  font-size: clamp(1.75rem, 3vw, 3rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
   font-weight: 600;
 }
 @utility heading-sm {
-  font-size: clamp(24px, 2.1vw, 34px);
+  font-size: clamp(1.5rem, 2.1vw, 2.125rem);
   line-height: 1.18;
   letter-spacing: -0.02em;
   font-weight: 500;
 }
 @utility heading-xs {
-  font-size: clamp(20px, 1.5vw, 25px);
+  font-size: clamp(1.25rem, 1.5vw, 1.5625rem);
   line-height: 1.2;
   letter-spacing: -0.015em;
   font-weight: 500;
 }
 @utility body-lg {
-  font-size: clamp(18px, 1.45vw, 23px);
+  font-size: clamp(1.125rem, 1.45vw, 1.4375rem);
   line-height: 1.45;
   letter-spacing: -0.01em;
 }
 @utility body-md {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.45;
   letter-spacing: -0.005em;
 }
 @utility body-sm {
-  font-size: clamp(15px, 1.15vw, 17px);
+  font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
   line-height: 1.45;
   letter-spacing: -0.005em;
 }
 /* Small caps-style label, like "AUXÍLIO-ACIDENTE" in the firm's posts. */
 @utility label-mono {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -196,12 +196,12 @@ html.lenis body {
   position: relative;
   display: inline-flex;
   align-items: center;
-  height: 50px;
-  padding: 0 20px;
+  height: 3.125rem;
+  padding: 0 1.25rem;
   border-radius: var(--radius-btn);
   color: var(--btn-fg);
   background: var(--btn-bg);
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -219,7 +219,7 @@ html.lenis body {
 .btn__inner {
   display: inline-flex;
   align-items: center;
-  gap: 24px;
+  gap: 1.4em;
   transition: transform 0.5s var(--ease-out-expo);
 }
 .btn__icon {
@@ -234,7 +234,7 @@ html.lenis body {
 .btn__icon--lead {
   position: absolute;
   left: 0;
-  transform: translateX(-28px);
+  transform: translateX(-1.65em);
   opacity: 0;
 }
 /* Touch screens keep :hover after a tap, which would leave the arrows
@@ -244,14 +244,14 @@ html.lenis body {
     background: var(--btn-bg-hover);
   }
   .btn:hover .btn__inner {
-    transform: translateX(22px);
+    transform: translateX(1.3em);
   }
   .btn:hover .btn__icon--lead {
-    transform: translateX(-22px);
+    transform: translateX(-1.3em);
     opacity: 1;
   }
   .btn:hover .btn__icon--trail {
-    transform: translateX(28px);
+    transform: translateX(1.65em);
     opacity: 0;
   }
 }
@@ -309,14 +309,14 @@ html.lenis body {
 
 /* Prose for long-form service content */
 .prose-legal h2 {
-  font-size: clamp(26px, 2.2vw, 36px);
+  font-size: clamp(1.625rem, 2.2vw, 2.25rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
   font-weight: 600;
   margin: 2.2em 0 0.6em;
 }
 .prose-legal h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.15;
   letter-spacing: -0.02em;
   font-weight: 700;
@@ -324,7 +324,7 @@ html.lenis body {
 }
 .prose-legal p,
 .prose-legal li {
-  font-size: clamp(18px, 1.4vw, 21px);
+  font-size: clamp(1.125rem, 1.4vw, 1.3125rem);
   line-height: 1.5;
   letter-spacing: -0.015em;
   color: #3a4257;
@@ -469,7 +469,7 @@ html.lenis body {
   }
 }
 .site-header__bar {
-  padding: 18px var(--grid-margin) 0;
+  padding: 1.125rem var(--grid-margin) 0;
   transition: transform 0.45s var(--ease-out-cubic);
 }
 .site-header__inner {
@@ -477,9 +477,9 @@ html.lenis body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 2rem;
   width: 100%;
-  height: 46px;
+  height: 2.875rem;
   margin-inline: auto;
   padding-inline: 2px;
   transition:
@@ -498,10 +498,10 @@ html.lenis body {
   transition: opacity 0.4s var(--ease-out-cubic);
 }
 .site-header__nav {
-  gap: 28px;
+  gap: 1.75rem;
   /* At the top the links sit in their own navy pill; once the whole header
      condenses into the pill, this one fades out and hands over. */
-  padding: 5px 5px 5px 22px;
+  padding: 0.3125rem 0.3125rem 0.3125rem 1.375rem;
   border-radius: 6px;
   color: var(--color-paper);
   --accent: var(--color-gold);
@@ -519,6 +519,8 @@ html.lenis body {
   display: block;
   height: var(--logo-h);
   width: calc(var(--logo-h) * 10.905);
+  /* Never squeezed by the nav: a clipped logotype reads as a bug. */
+  flex-shrink: 0;
   overflow: hidden;
   transition: width 0.45s var(--ease-out-cubic);
 }
@@ -534,21 +536,21 @@ html.lenis body {
 .logo__mark {
   opacity: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .logo {
     --logo-h: 21px;
   }
 }
 [data-compact] .site-header__inner {
   width: max-content;
-  padding-inline: 16px 6px;
+  padding-inline: 1rem 0.375rem;
   --accent: var(--color-gold);
 }
 [data-compact] .site-header__bg {
   opacity: 1;
 }
 [data-compact] .site-header__nav {
-  gap: 22px;
+  gap: 1.375rem;
   padding: 0;
   background-color: transparent;
   backdrop-filter: none;
@@ -564,9 +566,9 @@ html.lenis body {
   opacity: 1;
   transition-delay: 0.1s;
 }
-@media (max-width: 767px) {
+@media (width < 48rem) {
   [data-compact] .site-header__inner {
-    padding-inline: 16px 14px;
-    gap: 24px;
+    padding-inline: 1rem 0.875rem;
+    gap: 1.5rem;
   }
 }

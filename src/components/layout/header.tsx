@@ -97,7 +97,7 @@ export function Header() {
             <Logo />
           </Link>
 
-          <nav aria-label="Principal" className="site-header__nav relative hidden items-center md:flex">
+          <nav aria-label="Principal" className="site-header__nav relative hidden items-center whitespace-nowrap md:flex">
             {mainNav.map((item) => {
               const active = pathname === item.href;
               return (
@@ -202,7 +202,7 @@ function MobileMenu({ open, onClose, pathname }: { open: boolean; onClose: () =>
                 href={item.href}
                 onClick={onClose}
                 aria-current={pathname === item.href ? "page" : undefined}
-                className="flex items-baseline justify-between py-3 text-[34px] leading-none font-semibold tracking-[-0.04em]"
+                className="flex items-baseline justify-between py-3 text-[2.125rem] leading-none font-semibold tracking-[-0.04em]"
                 style={{ transitionDelay: open ? `${120 + i * 40}ms` : "0ms" }}
               >
                 {item.label}

@@ -76,12 +76,12 @@ export function ServicesCarousel({ items }: { items: Service[] }) {
 
   return (
     <section className="py-16 md:py-32" aria-labelledby="carousel-title">
-      <div className="container-x mb-8 flex items-end justify-between gap-6 md:mb-10">
+      <div className="container-x mb-8 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 md:mb-10">
         <div className="flex items-baseline gap-5">
           <h2 id="carousel-title" className="heading-sm">
             Serviços
           </h2>
-          <Link href="/servicos" className="body-md link-u text-ash">
+          <Link href="/servicos" className="body-md link-u whitespace-nowrap text-ash">
             Ver todos ↗
           </Link>
         </div>
@@ -115,7 +115,7 @@ export function ServicesCarousel({ items }: { items: Service[] }) {
               <div className="mt-4 flex gap-4">
                 <span className="label-mono pt-1 text-bronze">{s.index}</span>
                 <div>
-                  <h3 className="text-[21px] leading-[1.2] font-medium tracking-[-0.02em]">{s.title}</h3>
+                  <h3 className="text-[1.3125rem] leading-[1.2] font-medium tracking-[-0.02em]">{s.title}</h3>
                   <p className="body-sm mt-2 text-ash">{s.excerpt}</p>
                 </div>
               </div>

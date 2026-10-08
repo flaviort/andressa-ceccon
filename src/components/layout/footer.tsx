@@ -18,7 +18,7 @@ export async function Footer() {
           <ul className="flex flex-col gap-1">
             {[{ label: "Início", href: "/" }, ...mainNav, { label: "Pré-análise", href: "/pre-analise" }].map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-[22px] leading-tight font-medium tracking-[-0.02em] link-u">
+                <Link href={item.href} className="text-[1.375rem] leading-tight font-medium tracking-[-0.02em] link-u">
                   {item.label}
                 </Link>
               </li>
