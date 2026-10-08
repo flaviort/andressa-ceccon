@@ -1,5 +1,5 @@
-import { ViewTransition } from "react";
 import { Footer } from "@/components/layout/footer";
+import { SheetTransition } from "@/components/motion/sheet-transition";
 
 /**
  * Wraps every page so route changes run the "sheet" transition defined in
@@ -14,11 +14,11 @@ export function PageTransition({
   footer?: boolean;
 }) {
   return (
-    <ViewTransition enter="page-enter" exit="page-exit" default="none">
+    <SheetTransition>
       <div className="relative bg-paper">
         <main id="conteudo">{children}</main>
         {footer && <Footer />}
       </div>
-    </ViewTransition>
+    </SheetTransition>
   );
 }

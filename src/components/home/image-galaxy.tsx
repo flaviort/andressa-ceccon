@@ -46,7 +46,7 @@ export function ImageGalaxy() {
   );
 
   return (
-    <section ref={ref} className="relative py-28 md:py-48" aria-labelledby="galaxy-title">
+    <section ref={ref} className="relative pt-8 md:py-48" aria-labelledby="galaxy-title">
       <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
         {tiles.map((t) => (
           <div
@@ -61,11 +61,11 @@ export function ImageGalaxy() {
         ))}
       </div>
 
-      <div className="container-x relative flex flex-col items-center text-center">
+      <div className="container-x relative flex flex-col items-start md:items-center md:text-center">
         <ScrubText as="h2" className="heading-lg max-w-[13ch] md:display-lg md:max-w-[13ch]">
           <span id="galaxy-title">Benefícios do INSS para <em>cada fase da vida.</em></span>
         </ScrubText>
-        <p className="body-lg mt-8 max-w-[44ch] text-ash md:mt-10">
+        <p className="body-lg mt-6 max-w-[44ch] text-ash md:mt-10">
           O INSS entra em cena em momentos bem diferentes: o nascimento de um filho, uma doença que afasta do trabalho,
           a perda de alguém da família, a aposentadoria. Cada situação tem regras próprias, e vale conhecer as suas antes
           de fazer o pedido.
@@ -75,9 +75,11 @@ export function ImageGalaxy() {
         </Button>
       </div>
 
-      <div className="container-x mt-14 grid grid-cols-3 gap-2 md:hidden" aria-hidden="true">
-        {tiles.slice(0, 6).map((t) => (
-          <div key={t.src} className="relative aspect-[4/5] overflow-hidden rounded-[6px]">
+      {/* Phones get a staggered strip instead of the scattered tiles: the middle
+          column drops down so the grid keeps a bit of the desktop drift. */}
+      <div className="container-x mt-10 grid grid-cols-3 gap-2 pb-8 md:hidden" aria-hidden="true">
+        {tiles.slice(0, 6).map((t, i) => (
+          <div key={t.src} className={`relative aspect-[3/4] overflow-hidden rounded-[6px] ${i % 3 === 1 ? "translate-y-8" : ""}`}>
             <Image src={t.src} alt="" fill sizes="33vw" className="object-cover" />
           </div>
         ))}

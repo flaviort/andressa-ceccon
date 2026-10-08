@@ -139,10 +139,10 @@ async function ServiceContent({ params }: { params: PageProps<"/servicos/[slug]"
               <p className="heading-xs mt-4">Quer saber se tem direito?</p>
               <p className="body-sm mt-3 text-white/70">Fale com a advogada e receba uma orientação inicial.</p>
               <div className="mt-6 flex flex-col gap-2">
-                <Button href={whatsappLink(`Olá! Gostaria de falar sobre ${service.title}.`)} variant="light" size="small">
+                <Button href={whatsappLink(`Olá! Gostaria de falar sobre ${service.title}.`)} variant="light">
                   WhatsApp
                 </Button>
-                <Button href="/pre-analise" variant="outline-light" size="small">
+                <Button href="/pre-analise" variant="outline-light">
                   Pré-análise
                 </Button>
               </div>

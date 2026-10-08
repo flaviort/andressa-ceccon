@@ -9,6 +9,9 @@ export const site = {
   phoneDisplay: "+55 41 98467-4841",
   phoneE164: "+5541984674841",
   whatsapp: "5541984674841",
+  // Inbox that receives the contact form (via Resend). Not shown on the site.
+  // Still to be confirmed with the client; CONTACT_TO overrides it.
+  contactInbox: "contato@andressaceccon.com.br",
   address: {
     street: "Rua Alfredo Bufren, 285, Bloco A, Sobreloja",
     district: "Centro",

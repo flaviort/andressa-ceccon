@@ -84,8 +84,8 @@ export default function ContatoPage() {
           <h2 className="heading-sm mt-4 mb-8">Conte o que você precisa.</h2>
           <ContactForm />
           <div className="mt-10 border-t border-white/10 pt-8">
-            <Button href="/pre-analise" variant="outline-light" size="small">
-              Prefere responder a pré-análise?
+            <Button href="/pre-analise" variant="outline-light">
+              Fazer a pré-análise
             </Button>
           </div>
         </div>

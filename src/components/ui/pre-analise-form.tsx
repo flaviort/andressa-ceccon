@@ -70,11 +70,12 @@ export function PreAnaliseForm() {
             <span className="label-mono block text-bronze">0{i + 2}</span>
             <span className="heading-xs mt-2 block">{q.label}</span>
           </legend>
-          <div className="flex flex-wrap gap-2">
+          {/* On phones the options fill the row; yes/no pairs split it in half. */}
+          <div className={`grid gap-2 md:flex md:flex-wrap ${q.options.length === 2 ? "grid-cols-2" : ""}`}>
             {q.options.map((opt) => (
               <label key={opt} className="cursor-pointer">
                 <input type="radio" name={q.name} value={opt} className="peer sr-only" />
-                <span className="group/opt body-md inline-flex h-12 items-center gap-3 rounded-btn bg-fog pr-5 pl-4 transition hover:bg-mist peer-checked:bg-ink peer-checked:text-paper peer-checked:hover:bg-ink-deep peer-focus-visible:ring-2 peer-focus-visible:ring-ink peer-focus-visible:ring-offset-2">
+                <span className="group/opt body-md flex h-12 items-center gap-3 rounded-btn bg-fog pr-5 pl-4 transition hover:bg-mist peer-checked:bg-ink peer-checked:text-paper peer-checked:hover:bg-ink-deep peer-focus-visible:ring-2 peer-focus-visible:ring-ink peer-focus-visible:ring-offset-2">
                   {/* Radio marker: an empty ring, filled with a gold dot once chosen. */}
                   <span
                     aria-hidden="true"

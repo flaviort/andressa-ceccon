@@ -75,7 +75,7 @@ export function ServicesCarousel({ items }: { items: Service[] }) {
   };
 
   return (
-    <section className="py-20 md:py-32" aria-labelledby="carousel-title">
+    <section className="py-16 md:py-32" aria-labelledby="carousel-title">
       <div className="container-x mb-8 flex items-end justify-between gap-6 md:mb-10">
         <div className="flex items-baseline gap-5">
           <h2 id="carousel-title" className="heading-sm">

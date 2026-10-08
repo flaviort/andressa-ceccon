@@ -54,7 +54,7 @@ export default function HomePage() {
       <Hero />
 
       {/* Intro: two columns, small bold lead + scroll-filled statement */}
-      <section className="container-x relative z-[1] grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 py-24 md:py-40">
+      <section className="container-x relative z-[1] grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 py-16 md:py-40">
         <SplitReveal as="h2" className="heading-xs col-span-12 md:col-span-4">
           Advocacia previdenciária em Curitiba, do planejamento ao benefício.
         </SplitReveal>
@@ -108,7 +108,7 @@ export default function HomePage() {
       </section>
 
       {/* Online service */}
-      <section className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 py-24 md:py-36">
+      <section className="container-x grid grid-cols-12 gap-x-[var(--grid-gutter)] gap-y-8 py-16 md:py-36">
         <SplitReveal as="h2" className="heading-xs col-span-12 md:col-span-4">
           Presencial em Curitiba, <em>online</em> em todo o Brasil.
         </SplitReveal>
@@ -130,7 +130,7 @@ export default function HomePage() {
       </section>
 
       {/* Lawyer */}
-      <section className="container-x grid grid-cols-12 items-end gap-x-[var(--grid-gutter)] gap-y-10 pb-24 md:pb-36" aria-labelledby="advogada-title">
+      <section className="container-x grid grid-cols-12 items-end gap-x-[var(--grid-gutter)] gap-y-10 pb-16 md:pb-36" aria-labelledby="advogada-title">
         <ClipReveal className="relative col-span-12 aspect-[4/5] overflow-hidden rounded-card md:col-span-5">
           <Image src="/images/andressa.jpg" alt="Dra. Andressa Ceccon sorrindo, de blazer claro, em seu escritório" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover object-top" />
         </ClipReveal>
@@ -157,7 +157,7 @@ export default function HomePage() {
             <h2 id="numeros-title" className="heading-sm">
               O escritório em números
             </h2>
-            <Button href="/contato" variant="outline" size="small" className="self-start">
+            <Button href="/contato" variant="outline" className="self-start">
               Fale com a gente
             </Button>
           </div>

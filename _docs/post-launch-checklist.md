@@ -13,6 +13,8 @@
 - [ ] Apontar `andressaceccon.com.br` para o Vercel e redirecionar `www` para o domínio sem `www` (painel de domínios)
 - [ ] Conferir HTTPS e os headers de segurança em securityheaders.com
 - [ ] Definir `GOOGLE_SITE_VERIFICATION` nas variáveis de ambiente de produção
+- [ ] Formulário de contato: criar a conta no Resend, verificar o domínio e definir `RESEND_API_KEY` e `RESEND_FROM` em produção
+- [ ] Confirmar com a cliente o e-mail que recebe o formulário (`contactInbox` em `src/lib/site.ts`, hoje contato@andressaceccon.com.br) e enviar uma mensagem de teste
 
 ## Busca
 

@@ -6,7 +6,6 @@ type Props = {
   href: string;
   children: React.ReactNode;
   variant?: Variant;
-  size?: "md" | "small";
   className?: string;
   external?: boolean;
   icon?: React.ReactNode;
@@ -16,11 +15,10 @@ type Props = {
  * Pill button with the reference site's arrow swap: on hover the trailing
  * arrow slides out to the right while a leading one slides in from the left.
  */
-export function Button({ href, children, variant = "default", size = "md", className, external, icon }: Props) {
+export function Button({ href, children, variant = "default", className, external, icon }: Props) {
   const cls = [
     "btn",
     variant !== "default" && `btn--${variant}`,
-    size === "small" && "btn--small",
     className,
   ]
     .filter(Boolean)
