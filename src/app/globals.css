@@ -365,17 +365,22 @@ html.lenis body {
 }
 .prose-legal ol > li {
   counter-increment: item;
-  padding-left: 2em;
+  padding-left: 2.5rem;
 }
-/* Numbered lists use the 01, 02 numbering in bronze, like the rest of the site. */
+/* Numbered lists use the 01, 02 numbering in bronze, like the rest of the site.
+   The number sits inline in the first line, so it shares the text's baseline
+   at any font size instead of being nudged down by a fixed offset. */
 .prose-legal ol > li::before {
   content: counter(item, decimal-leading-zero);
-  top: 0.35em;
-  width: auto;
+  position: static;
+  display: inline-block;
+  width: 2.5rem;
+  margin-left: -2.5rem;
   height: auto;
   background: none;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
   color: var(--color-bronze);
 }
 .prose-legal a {
