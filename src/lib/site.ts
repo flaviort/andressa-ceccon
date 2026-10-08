@@ -36,5 +36,6 @@ export const mainNav = [
   { label: "Escritório", href: "/sobre" },
   { label: "Serviços", href: "/servicos" },
   { label: "Planejamento", href: "/servicos/planejamento-previdenciario" },
+  { label: "Blog", href: "/blog" },
   { label: "Contato", href: "/contato" },
 ] as const;

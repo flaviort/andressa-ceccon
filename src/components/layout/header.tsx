@@ -97,7 +97,7 @@ export function Header() {
             <Logo />
           </Link>
 
-          <nav aria-label="Principal" className="site-header__nav relative hidden items-center whitespace-nowrap md:flex">
+          <nav aria-label="Principal" className="site-header__nav relative hidden items-center whitespace-nowrap lg:flex">
             {mainNav.map((item) => {
               const active = pathname === item.href;
               return (
@@ -122,7 +122,7 @@ export function Header() {
 
           <button
             type="button"
-            className="relative body-sm flex items-center gap-2 md:hidden"
+            className="relative body-sm flex items-center gap-2 lg:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
             ref={toggleRef}
@@ -182,7 +182,7 @@ function MobileMenu({ open, onClose, pathname }: { open: boolean; onClose: () =>
       aria-modal="true"
       aria-label="Menu"
       inert={!open}
-      className={`fixed inset-0 z-50 flex flex-col bg-ink text-paper transition-[clip-path] duration-700 ease-[var(--ease-in-out-quart)] md:hidden ${
+      className={`fixed inset-0 z-50 flex flex-col bg-ink text-paper transition-[clip-path] duration-700 ease-[var(--ease-in-out-quart)] lg:hidden ${
         open ? "pointer-events-auto [clip-path:inset(0_0_0_0)]" : "pointer-events-none [clip-path:inset(0_0_100%_0)]"
       }`}
       data-lenis-prevent
