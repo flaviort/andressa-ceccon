@@ -19,7 +19,7 @@ ffmpeg -i shutterstock_<id>.jpg -vf "scale='min(2400,iw)':-2:flags=lanczos" -q:v
 | `rural.jpg` | Aposentadoria rural, galáxia | 2710106783 |
 | `pcd.jpg` | Pessoa com deficiência, galáxia | 2727319989 |
 | `pensao.jpg` | Pensão por morte, galáxia | 2738114549 |
-| `bpc.jpg` | BPC/LOAS, galáxia | 2699270509 |
+| `bpc.jpg` | BPC/LOAS, galáxia, post BPC/LOAS | 2699270509 |
 | `incapacidade.jpg` | Benefícios por incapacidade, galáxia | 2762332177 |
 | `maternidade.jpg` | Salário-maternidade, galáxia | 2688637561 |
 | `revisao.jpg` | Revisão de benefícios | 2738502725 |
