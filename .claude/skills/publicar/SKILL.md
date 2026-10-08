@@ -98,4 +98,17 @@ Abra a página no endereço real (o domínio está em `site.url`, `src/lib/site.
 
 - **Conflito com mudanças de outra pessoa:** no branch, `git fetch` e `git merge origin/main` (nunca rebase: o branch já foi enviado e reescrever o histórico exigiria `--force`). Se o conflito não for claramente seu, pare e explique.
 - **O site no ar quebrou depois de publicar:** explique o que aconteceu e ofereça voltar à versão anterior. Com o "sim", reverta pelo GitHub (`gh pr view <número> --json mergeCommit` e então `git revert <sha>` num branch novo, publicando por este mesmo fluxo) ou peça para a pessoa usar "Instant Rollback" no painel da Vercel.
-- **Nunca:** `git push --force`, push direto no `main`, apagar branch de outra pessoa, `vercel --prod`.
+- **Nunca:** `git push --force`, apagar branch de outra pessoa, `vercel --prod`.
+
+## Publicar direto, sem prévia
+
+Só quando a pessoa pedir explicitamente ("publica direto", "não precisa de prévia"). Rode a skill `revisar`, junte o branch ao `main` e envie:
+
+```bash
+git switch main
+git pull
+git merge <branch>
+git push origin main
+```
+
+O app pede confirmação no push. Depois siga o passo 5 a partir de "Espere o deploy de produção" e confira o site no ar.

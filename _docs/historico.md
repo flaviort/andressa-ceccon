@@ -48,4 +48,4 @@ As regras que dá para conferir por script (travessão, emoji, termos vetados pe
 
 ## Publicação
 
-Toda mudança vai por branch, prévia da Vercel, aprovação de quem pediu e pull request. Assim um erro nunca chega direto ao site público, e os desenvolvedores podem acompanhar pelo GitHub tudo o que foi publicado.
+Por padrão, toda mudança vai por branch, prévia da Vercel, aprovação de quem pediu e pull request. Assim um erro não chega direto ao site público, e os desenvolvedores podem acompanhar pelo GitHub o que foi publicado. O escritório tem liberdade para publicar direto quando quiser (por exemplo, uma correção pequena): basta pedir, e o app só pede uma confirmação. O que fica bloqueado é o que apaga histórico (`--force`) ou publica por fora do GitHub (Vercel CLI), porque isso deixaria o site no ar diferente do repositório.

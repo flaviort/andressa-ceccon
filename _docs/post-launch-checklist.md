@@ -11,7 +11,6 @@
 ## Transferência para o escritório
 
 - [ ] GitHub: transferir o repositório para a conta do escritório ou adicioná-la como colaboradora com permissão de escrita. Os desenvolvedores mantêm acesso.
-- [ ] GitHub: no `main`, ativar "Require a pull request before merging" (Settings, Branches) para reforçar o fluxo de publicação.
 - [ ] Vercel: transferir o projeto para a conta do escritório, ou recriá-lo lá ligado ao repositório.
 - [ ] Vercel: conferir que cada branch gera uma prévia (Preview Deployments).
 - [ ] Vercel: em Settings, Deployment Protection, desligar "Vercel Authentication" para as prévias. Ligada, a prévia pede login da Vercel no celular da cliente e no navegador do Claude.

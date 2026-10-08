@@ -46,6 +46,8 @@ Antes de qualquer coisa ir para o site, o Claude manda um **link de prévia**: o
 - Quer ajustar: diga o que mudar. Ele refaz e manda uma prévia nova.
 - Desistiu: diga "não publica, pode descartar".
 
+Para algo pequeno e urgente, como um erro de digitação, você pode pular a prévia: diga **"publica direto, sem prévia"**. O Claude roda as checagens e publica; o app pede uma confirmação antes.
+
 Se o texto fala de idade, prazo, valor ou percentual, o Claude lembra que a Dra. Andressa precisa aprovar antes. Ela é a responsável pelo conteúdo perante a OAB.
 
 ## Quando chamar o desenvolvedor

@@ -12,7 +12,7 @@ No dia a dia, a Dra. Andressa e o marido, sem conhecimento técnico. Fale em por
 
 1. `git fetch` e `git status`. Se o `main` remoto tiver novidades, atualize o `main` local antes de tudo. Se o `git fetch` falhar (sem internet ou login do GitHub expirado), explique em uma frase, sugira `gh auth login` e só siga com trabalho local; nada vai ao ar até a conexão voltar.
 2. Se houver branch não publicado ou mudanças não salvas de antes, conte em linguagem simples e pergunte se continua ou descarta. Nunca siga em cima disso sem perguntar. Para descartar: `git switch main`, fechar o PR se existir (`gh pr close <número> --delete-branch`) e `git branch -D <branch>` (o app pede confirmação).
-3. Toda mudança acontece num branch (`post/`, `pagina/`, `ajuste/`), nunca no `main`.
+3. Por padrão, toda mudança acontece num branch (`post/`, `pagina/`, `ajuste/`), não no `main`.
 
 ## Regras que nunca mudam
 
@@ -20,8 +20,8 @@ No dia a dia, a Dra. Andressa e o marido, sem conhecimento técnico. Fale em por
 - Publicidade da advocacia (Provimento 205/2021): sem promessa de resultado, sem preço, sem "o melhor". Atendimento presencial em Curitiba e online, nunca "100% online".
 - Texto com idade, prazo, valor ou percentual precisa da aprovação da Dra. Andressa. Quando ela mesma pede, o "sim" dela na prévia vale como aprovação.
 - Pedido que cria algo e diz "coloca no ar": crie com a skill certa (`novo-post`, `nova-pagina`), depois `revisar` e `publicar`.
-- Publicar é sempre: revisar, prévia, "sim" da pessoa, pull request, produção, conferir no ar (skill `publicar`).
-- Nunca `--force`, nunca push no `main`, nunca apagar histórico.
+- Publicar, por padrão: revisar, prévia, "sim" da pessoa, pull request, produção, conferir no ar (skill `publicar`). Se a pessoa pedir explicitamente para publicar direto, sem prévia (por exemplo, para corrigir um erro de digitação), pode enviar direto ao `main` depois de `npm run check` e `npm run build` passarem; o app pede confirmação.
+- Nunca `--force`, nunca apagar histórico, nunca publicar pela Vercel CLI (o site no ar precisa ser sempre o que está no GitHub).
 - Antes de publicar: `npm run check` e `npm run build` passando.
 - Imagens nas cores originais, com a origem gravada e registrada em `_docs/imagery.md`.
 
