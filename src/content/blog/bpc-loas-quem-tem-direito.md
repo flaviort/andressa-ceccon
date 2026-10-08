@@ -2,9 +2,9 @@
 title: BPC/LOAS, quem tem direito ao benefício assistencial
 description: O BPC paga um salário mínimo a idosos e pessoas com deficiência de baixa renda, sem exigir contribuição. Veja os requisitos e cuidados.
 date: 2026-10-08
-cover: /images/bpc.jpg
-coverAlt: Retrato de uma senhora idosa em ambiente com pouca luz
-coverSource: Shutterstock 2699270509
+cover: /images/blog/bpc-loas-quem-tem-direito.jpg
+coverAlt: Mão de uma pessoa idosa apoiada na mão de uma pessoa mais jovem
+coverSource: Pexels 17408384
 services: [bpc-loas, aposentadoria-pessoa-com-deficiencia, aposentadoria-por-idade]
 ---
 
