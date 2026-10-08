@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   cacheComponents: true,
   partialPrefetching: true,
+  // Posts are read from disk at module scope; keep them in the function bundle
+  // for any request that renders a blog route at runtime.
+  outputFileTracingIncludes: {
+    "/blog": ["./src/content/blog/**/*"],
+    "/blog/**": ["./src/content/blog/**/*"],
+    "/sitemap.xml": ["./src/content/blog/**/*"],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },
@@ -27,7 +34,6 @@ const nextConfig: NextConfig = {
       { source: "/area-do-cliente", destination: "https://astreasoftware.appspot.com", permanent: true },
       { source: "/trabalhe-conosco", destination: "/contato", permanent: true },
       { source: "/formulario-recebido", destination: "/contato", permanent: true },
-      { source: "/blog/:path*", destination: "/servicos", permanent: true },
     ];
   },
   async headers() {
