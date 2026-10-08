@@ -37,6 +37,44 @@ Página de cada imagem: `https://www.shutterstock.com/image-photo/-<ID>`. O hist
 
 ## Critérios de escolha
 
-Cenas naturais e documentais, em cores. Mãos e figuras de costas em temas sensíveis (pensão, BPC). Nada de sorriso posado para a câmera, bandeiras de outros países ou martelo de juiz (não é usado no Brasil).
+Cenas naturais e documentais, em cores. Mãos e figuras de costas em temas sensíveis (pensão, BPC). Nada de sorriso posado para a câmera, bandeiras de outros países ou martelo de juiz (não é usado no Brasil). Sem marca d'água, sem texto na imagem, de preferência horizontal.
 
 2532363173 e 2744179163 também foram licenciadas, mas saíram do site por serem P&B no original.
+
+## Imagens novas (posts e páginas)
+
+O escritório não tem acesso à conta do Shutterstock. Para imagens novas, a ordem de preferência é:
+
+1. **Foto enviada pela cliente** (do escritório, de eventos, da própria advogada).
+2. **Banco gratuito** com licença que permite uso comercial sem atribuição: [Pexels](https://www.pexels.com/license/) ou [Unsplash](https://unsplash.com/license).
+3. **Pedido específico** da cliente, quando ela já tem a imagem em mente.
+
+Nunca use imagem gerada por IA representando pessoas reais ou cenas jurídicas, nem foto com marca d'água ou texto sobre a imagem.
+
+### Processo
+
+1. Confira a licença na página da foto.
+2. Peça permissão à pessoa antes de baixar, dizendo o nome do arquivo e de onde vem.
+3. Redimensione para no máximo 2400px de largura:
+
+   ```bash
+   ffmpeg -i original.jpg -vf "scale='min(2400,iw)':-2:flags=lanczos" -q:v 4 public/images/blog/<slug>.jpg
+   ```
+
+4. Grave a origem no próprio arquivo:
+
+   ```bash
+   npm run tag-image -- public/images/blog/<slug>.jpg "Pexels 1234567 (https://www.pexels.com/photo/1234567/), Pexels License. Resized."
+   ```
+
+   Para foto da cliente: `"Photo provided by the client. Resized."`
+
+5. Registre na tabela "Imagens do blog" abaixo (ou numa linha nova da tabela certa).
+6. Rode `npm run check`. Ele acusa imagem sem registro ou sem origem gravada.
+
+A capa do post aparece em 21/9 no topo e em 4/3 na listagem, então prefira fotos horizontais com o assunto no centro.
+
+## Imagens do blog
+
+| Arquivo | Onde aparece | Origem | Link |
+| --- | --- | --- | --- |
