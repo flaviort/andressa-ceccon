@@ -29,10 +29,18 @@
       "Bash(vercel ls *)",
       "Bash(vercel inspect *)",
       "Bash(ffmpeg *)",
-      "Bash(ffprobe *)"
+      "Bash(ffprobe *)",
+      "Bash(git merge origin/main)",
+      "Bash(gh pr close *)",
+      "Bash(npm run dev)",
+      "Bash(npm run dev *)",
+      "Bash(npm start)",
+      "Bash(npm start *)",
+      "Bash(curl -s http://localhost*)"
     ],
     "ask": [
-      "Bash(gh pr merge *)"
+      "Bash(gh pr merge *)",
+      "Bash(git branch -D *)"
     ],
     "deny": [
       "Bash(git push --force*)",
@@ -43,7 +51,6 @@
       "Bash(git push -u origin main*)",
       "Bash(git push origin HEAD:main*)",
       "Bash(git reset --hard*)",
-      "Bash(git branch -D *)",
       "Bash(git clean *)",
       "Bash(rm -rf *)",
       "Bash(vercel --prod*)",

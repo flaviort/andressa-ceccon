@@ -35,13 +35,13 @@ O `npm run check` pega parte disso. A lista de expressões vetadas é a constant
 
 Qualquer texto que cite **idade, pontuação, prazo, valor ou percentual** precisa da aprovação da Dra. Andressa antes de ir ao ar. A responsabilidade pelo conteúdo perante a OAB é dela.
 
-- Não invente regra. Se o dado não está em `src/content/services.ts` nem foi passado por ela, pergunte.
+- Não invente regra. Se o dado não está em `src/content/services.ts` nem foi passado por ela, escreva sem ele e pergunte na prévia se quer incluir e qual regra usar.
 - Se o pedido vier de outra pessoa (o marido, alguém do escritório), avise na hora da prévia que ela precisa aprovar.
 - As regras mudam todo ano (veja "Manutenção anual"). Ao citar um número, diga a que ano ele se refere ("em 2026, 93 pontos").
 
 ## Anatomia de um post
 
-Cada post é um arquivo em `src/content/blog/<slug>.md`. O slug é o título em minúsculas, sem acento, com hífens (`bpc-loas-quem-tem-direito`). Ele vira o endereço: `/blog/bpc-loas-quem-tem-direito`.
+Cada post é um arquivo em `src/content/blog/<slug>.md`. O slug é curto (3 a 6 palavras), derivado do título, em minúsculas, sem acento, com hífens (`bpc-loas-quem-tem-direito`). Ele vira o endereço: `/blog/bpc-loas-quem-tem-direito`.
 
 ```yaml
 ---
@@ -65,7 +65,7 @@ services: [bpc-loas, aposentadoria-pessoa-com-deficiencia]
 | `cover` | sim | Foto de capa, um `.jpg` em `public/images/` (posts novos usam `public/images/blog/`). |
 | `coverAlt` | sim | Descrição do que aparece na foto. |
 | `coverSource` | sim | Origem da foto (ex.: `Pexels 1234567`, `Foto da cliente`). |
-| `services` | não | Slugs de `src/content/services.ts` que aparecem como cards no fim. Dois ou três. |
+| `services` | não, mas recomendado | Slugs de `src/content/services.ts` que aparecem como cards no fim. Use o serviço do próprio tema e um ou dois da lista `related` dele. |
 
 O texto vem depois do cabeçalho, em Markdown:
 

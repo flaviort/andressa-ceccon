@@ -10,7 +10,7 @@ Rode na ordem e só siga se cada passo passar.
 1. `npm run check`. Se falhar, corrija cada item listado. Termo vetado: reescreva a frase, nunca edite a lista `BANNED` só para passar.
 2. `npm test` e `npm run lint`.
 3. `npm run build`. Se falhar, leia a mensagem inteira; erros de post vêm em português com o nome do arquivo.
-4. Abra o site local (servidor `dev` do `.claude/launch.json`, porta 3100) no navegador do Claude e confira cada página que mudou.
+4. Com o build passando, abra o site local (servidor `dev` do `.claude/launch.json`, porta 3100) no navegador do Claude e confira cada página que mudou. Sem navegador disponível, rode o servidor e confira com `curl` que a página responde, tem um h1 e o título certo, e avise a pessoa que a conferência visual fica para a prévia.
 
 ## Checklist do que o script não pega
 

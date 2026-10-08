@@ -69,7 +69,13 @@ Nunca use imagem gerada por IA representando pessoas reais ou cenas jurídicas, 
 
    Para foto da cliente: `"Photo provided by the client. Resized."`
 
-5. Registre na tabela "Imagens do blog" abaixo (ou numa linha nova da tabela certa).
+5. Registre na tabela "Imagens do blog" abaixo, uma linha por foto, neste formato:
+
+   ```
+   | `blog/auxilio-acidente.jpg` | post auxílio-acidente | Pexels 1234567 | https://www.pexels.com/photo/1234567/ |
+   ```
+
+   O nome do arquivo entre crases é o que o `npm run check` procura.
 6. Rode `npm run check`. Ele acusa imagem sem registro ou sem origem gravada.
 
 A capa do post aparece em 21/9 no topo e em 4/3 na listagem, então prefira fotos horizontais com o assunto no centro.

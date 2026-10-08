@@ -9,6 +9,7 @@ Quem pede normalmente não é técnico. Explique cada etapa em uma frase simples
 
 ## 1. Preparar
 
+- Se a mudança pedida ainda não foi feita (por exemplo "escreve um post sobre X e coloca no ar"), faça primeiro com a skill certa (`novo-post`, `nova-pagina`) e volte aqui.
 - Confira o branch: `git branch --show-current`. Se for `main`, crie um: `git switch -c <tipo>/<descricao-curta>` (`post/`, `pagina/`, `ajuste/`).
 - Rode a skill `revisar`. Não siga se algo falhar.
 
@@ -57,7 +58,11 @@ Mande para a pessoa, nesta forma:
 > O que mudou: <duas ou três linhas>
 > Posso publicar no site?
 
-Se o texto cita idade, prazo, valor ou percentual, ou se quem pediu não é a Dra. Andressa, acrescente: "Como o texto trata de regras do INSS, a Dra. Andressa precisa aprovar antes."
+Se o texto cita idade, prazo, valor ou percentual:
+- quem pediu é a Dra. Andressa: diga quais números o texto cita ("o texto cita o prazo de 15 dias e a carência de 12 meses; confira antes de aprovar"). O "sim" dela vale como aprovação jurídica;
+- quem pediu é outra pessoa: acrescente "Como o texto trata de regras do INSS, a Dra. Andressa precisa aprovar antes" e só publique com o ok dela.
+
+Se ficou algum dado de fora por não estar no site, ou se a capa é provisória, diga isso na mesma mensagem.
 
 Só siga com um "sim" claro. Qualquer outra resposta é ajuste: faça, volte ao passo 2 e mande a prévia nova.
 
