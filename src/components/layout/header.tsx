@@ -11,7 +11,10 @@ import { useLenis } from "@/components/motion/smooth-scroll";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(pathname === "/");
+  // Starts light to match the server render, which does not know the route.
+  // Seeding it from the pathname made hydration keep the server's navy class
+  // while state already said dark, so nothing re-rendered and the logo stuck.
+  const [dark, setDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const lenis = useLenis();
@@ -42,6 +45,7 @@ export function Header() {
     };
     // After a route change the new page may still be streaming in or sitting
     // under the view transition overlay, so sample again once it settles.
+    onScroll();
     const timers = [60, 350, 800, 1400].map((ms) => setTimeout(sample, ms));
     const vt = (document as Document & { activeViewTransition?: ViewTransition | null }).activeViewTransition;
     vt?.finished.then(sample, sample);
