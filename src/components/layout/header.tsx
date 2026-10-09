@@ -25,10 +25,17 @@ export function Header() {
       frame = 0;
       const y = window.scrollY;
       setScrolled(y > 80);
-      const under = document
-        .elementsFromPoint(window.innerWidth / 2, 36)
-        .find((el) => !el.closest("header"));
-      setDark(under?.closest("[data-theme]")?.getAttribute("data-theme") === "dark");
+      // Geometry, not hit-testing: elementsFromPoint returns nothing while the
+      // page is prerendered or the viewport has no size yet, which left the
+      // logo navy over the hero until the first scroll.
+      const x = window.innerWidth / 2;
+      let theme: string | null = null;
+      for (const el of document.querySelectorAll("[data-theme]")) {
+        if (el.closest("header")) continue;
+        const r = el.getBoundingClientRect();
+        if (r.top <= 36 && r.bottom > 36 && r.left <= x && r.right >= x) theme = el.getAttribute("data-theme");
+      }
+      setDark(theme === "dark");
     };
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(sample);
@@ -40,11 +47,19 @@ export function Header() {
     vt?.finished.then(sample, sample);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+    // A prerendered or back/forward-cached page becomes visible without
+    // scrolling, after the timers above have already run.
+    window.addEventListener("pageshow", sample);
+    document.addEventListener("visibilitychange", sample);
+    document.addEventListener("prerenderingchange", sample);
     return () => {
       timers.forEach(clearTimeout);
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      window.removeEventListener("pageshow", sample);
+      document.removeEventListener("visibilitychange", sample);
+      document.removeEventListener("prerenderingchange", sample);
     };
   }, [pathname]);
 
