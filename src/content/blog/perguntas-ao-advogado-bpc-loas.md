@@ -52,10 +52,6 @@ Pergunte o que acontece nesse caso: se o atendimento já inclui recurso ou açã
 
 WhatsApp, telefone, e-mail ou reunião presencial. Com que frequência você vai ter notícias e quem é a pessoa de contato no escritório.
 
-### "Como funcionam os honorários?"
-
-Pergunte sem constrangimento e peça que tudo fique num contrato escrito, com o que está incluído e o que não está.
-
 ## Nem tudo tem resposta na primeira conversa
 
 Algumas respostas dependem da análise dos documentos. Se a renda da família fica perto do limite, por exemplo, só depois de ver os comprovantes dá para avaliar o caso com mais segurança.
