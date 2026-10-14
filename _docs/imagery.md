@@ -90,3 +90,5 @@ A capa do post aparece em 21/9 no topo e em 4/3 na listagem, então prefira foto
 | `blog/bpc-loas-quem-tem-direito.jpg` | post BPC/LOAS | Pexels 17408384 | https://www.pexels.com/photo/17408384/ |
 | `blog/auxilio-acidente-depois-de-voltar-ao-trabalho.jpg` | post auxílio-acidente | Pexels 20860594 | https://www.pexels.com/photo/20860594/ |
 | `blog/aposentadoria-pcd-como-se-preparar.jpg` | post aposentadoria da pessoa com deficiência | Pexels 8437063 | https://www.pexels.com/photo/8437063/ |
+| `blog/adaptacoes-na-aposentadoria-pcd.jpg` | post adaptações da pessoa com deficiência | Pexels 8415494 | https://www.pexels.com/photo/8415494/ |
+| `blog/perguntas-ao-advogado-bpc-loas.jpg` | post perguntas ao advogado no BPC/LOAS | Pexels 5756577 | https://www.pexels.com/photo/5756577/ |

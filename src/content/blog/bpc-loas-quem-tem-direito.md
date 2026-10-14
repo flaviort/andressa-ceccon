@@ -2,6 +2,7 @@
 title: BPC/LOAS, quem tem direito ao benefício assistencial
 description: O BPC paga um salário mínimo a idosos e pessoas com deficiência de baixa renda, sem exigir contribuição. Veja os requisitos e cuidados.
 date: 2026-10-08
+updated: 2026-10-13
 cover: /images/blog/bpc-loas-quem-tem-direito.jpg
 coverAlt: Mão de uma pessoa idosa apoiada na mão de uma pessoa mais jovem
 coverSource: Pexels 17408384
@@ -57,6 +58,18 @@ Depende do caso. A pessoa com deficiência pode ter o benefício suspenso quando
 5. Comprovantes de gastos com saúde.
 
 A lista pode variar conforme a situação de cada família.
+
+## Dar entrada é só o começo
+
+Dá para fazer o pedido sem advogado. Mas a entrada é só a primeira etapa. Depois vêm:
+
+1. A conferência dos documentos e do CadÚnico.
+2. A perícia médica e a avaliação social, no caso de pessoa com deficiência.
+3. As exigências do INSS, que são pedidos de documentos ou informações a mais. Algumas têm prazo de 30 dias.
+
+Sem ninguém orientando, um detalhe pode encerrar o pedido, como uma exigência que passou do prazo ou um documento que faltou. Aí pode ser preciso recomeçar do zero, com nova espera, e meses de pagamento podem ficar para trás.
+
+Se você vai contratar ajuda, veja [o que perguntar na primeira conversa com um advogado](/blog/perguntas-ao-advogado-bpc-loas).
 
 ## Precisa de ajuda com o pedido
 
